@@ -50,7 +50,7 @@ export class ItemSpotPlaceholder extends LitElement {
 
   render() {
     return html`
-      <div class="container spot" hidden=${!this.isDraggedOver}></div>
+      <div class="container spot" hidden="${!this.isDraggedOver}"></div>
       <slot></slot>
     `;
   }

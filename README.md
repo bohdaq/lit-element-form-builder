@@ -1,6 +1,8 @@
-# LitElement JavaScript starter 
+# LitElement Form Builder 
 
-This project includes a sample component using LitElement with JavaScript.
+This project includes a Form Builder component using LitElement with JavaScript.
+
+TODO: update info below
 
 ## Setup
 

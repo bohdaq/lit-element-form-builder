@@ -14,6 +14,7 @@ export class AppShell extends LitElement {
         display: flex;
         font-family: 'Patrick Hand';
       }
+      
       .left-pane {
         flex: auto;
         width: 50%;
@@ -26,13 +27,13 @@ export class AppShell extends LitElement {
         padding: 16px;
         padding-bottom: 0;
       }
+
       .right-pane-inner-container {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
       }
-
 
       .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -52,14 +53,15 @@ export class AppShell extends LitElement {
         display: unset;
       }
 
-
       h4 {
         font-size: 1.5em;
       }
+
       .controls-label {
         margin: 0em 2em;
         text-align: center;
       }
+
       .form-label {
         margin: 0;
       }
@@ -197,7 +199,7 @@ export class AppShell extends LitElement {
     if (this.isDndInsideForm) return;
 
     //item-spot-placeholder
-    if(event.target.tagName === 'ITEM-SPOT-PLACEHOLDER') {
+    if (event.target.tagName === 'ITEM-SPOT-PLACEHOLDER') {
       event.target.onDraggedOverEnd();
     }
 
@@ -264,16 +266,16 @@ export class AppShell extends LitElement {
   _onDragEnter(event) {
     this.isFromTopToBottom = false;
 
-    if(this.isDndInsideForm) {
+    if (this.isDndInsideForm) {
       //do not highlight selected item
-      if(event.target.control && event.target.index === this.selectedInFormIndex) return;
+      if (event.target.control && event.target.index === this.selectedInFormIndex) return;
       //do not highlight separator on top
-      if(!event.target.control && event.target.index === this.selectedInFormIndex) return;
+      if (!event.target.control && event.target.index === this.selectedInFormIndex) return;
       //do not highlight separator on the bottom
-      if(!event.target.control && event.target.index === (this.selectedInFormIndex + 1))  return;
+      if (!event.target.control && event.target.index === (this.selectedInFormIndex + 1)) return;
 
       this.isFromTopToBottom = this.selectedInFormIndex <= event.target.index;
-    } 
+    }
 
     event.target.onDraggedOver();
   }
@@ -296,10 +298,10 @@ export class AppShell extends LitElement {
     };
 
     //item-spot-placeholder
-    if(event.target.tagName === 'ITEM-SPOT-PLACEHOLDER') {
+    if (event.target.tagName === 'ITEM-SPOT-PLACEHOLDER') {
       this.fire('move-control-after-index', {
-          index: _index,
-          insertAfter: this.formItemList.length,
+        index: _index,
+        insertAfter: this.formItemList.length,
       })
       event.target.onDraggedOverEnd();
       return;
@@ -378,9 +380,9 @@ export class AppShell extends LitElement {
   }
 
   isEmptyTextShown(formItemList, selectedIndex, isDndInsideForm) {
-    if(selectedIndex !== this.NOT_SELECTED_INDEX) return false;
-    if(formItemList.length !== 0) return false;
-    
+    if (selectedIndex !== this.NOT_SELECTED_INDEX) return false;
+    if (formItemList.length !== 0) return false;
+
     return true;
   }
 

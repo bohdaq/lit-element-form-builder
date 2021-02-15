@@ -16,6 +16,7 @@ export class DraggableEntity extends LitElement {
         display: flex;
         position: relative;
       }
+
       ::slotted(*) {
         padding-left: 1em;
         font-size: var(--choice-item-font-size, 1em);
@@ -26,6 +27,7 @@ export class DraggableEntity extends LitElement {
         display: flex;
         align-items: center;
       }
+      
       :host([selected="true"]) {
         border: 1px solid;
         border-image-slice: 1;

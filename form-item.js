@@ -59,7 +59,7 @@ export class FormItem extends LitElement {
     return {
       selected: {
         type: Boolean,
-        converter: (value, type) => { 
+        converter: (value, type) => {
           return value === 'true';
         }
       },
