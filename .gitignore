@@ -1,0 +1,5 @@
+/node_modules/
+.vscode
+
+# only generated for size check
+my-element.bundled.js
