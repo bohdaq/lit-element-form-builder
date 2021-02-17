@@ -6,7 +6,7 @@ import './item-spot-placeholder.js';
 
 
 
-export class AppShell extends LitElement {
+export class FormBuilder extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -404,4 +404,4 @@ export class AppShell extends LitElement {
 
 }
 
-window.customElements.define('app-shell', AppShell);
+window.customElements.define('form-builder', FormBuilder);

@@ -18,9 +18,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'app-shell.js',
+  input: 'form-builder.js',
   output: {
-    file: 'app-shell.bundled.js',
+    file: 'form-builder.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {

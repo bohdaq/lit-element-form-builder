@@ -113,8 +113,8 @@
       ]
     },
     {
-      "name": "app-shell",
-      "path": "./app-shell.js",
+      "name": "form-builder",
+      "path": "./form-builder.js",
       "attributes": [
         {
           "name": "cardDragOver",
@@ -171,6 +171,11 @@
         {
           "name": "selectedInFormIndex",
           "attribute": "selectedInFormIndex",
+          "type": "number",
+          "default": "\"NOT_SELECTED_INDEX\""
+        },
+        {
+          "name": "inFormHoveredOverItemIndex",
           "type": "number",
           "default": "\"NOT_SELECTED_INDEX\""
         },

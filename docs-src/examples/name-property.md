@@ -1,15 +1,15 @@
 ---
 layout: example.11ty.cjs
-title: <app-shell> ⌲ Examples ⌲ Name Property
+title: <form-builder> ⌲ Examples ⌲ Name Property
 tags: example
 name: Name Property
 description: Setting the name property
 ---
 
-<app-shell name="Earth"></app-shell>
+<form-builder name="Earth"></form-builder>
 
 <h3>HTML</h3>
 
 ```html
-<app-shell name="Earth"></app-shell>
+<form-builder name="Earth"></form-builder>
 ```
