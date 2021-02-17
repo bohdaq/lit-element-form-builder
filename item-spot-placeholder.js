@@ -5,7 +5,7 @@ export class ItemSpotPlaceholder extends LitElement {
     return css`
       :host {
         display: block;
-        height: 5em;
+        height: 4em;
       }
 
       .container {
@@ -28,7 +28,7 @@ export class ItemSpotPlaceholder extends LitElement {
       .spot {
         background-image: linear-gradient(to right, #f49336, #eea81b, #e0bf00, #cad500, #a8eb12);
         padding: 1em 0;
-        margin: 1em 0;
+        margin-top: 1em;
       }
     `;
   }

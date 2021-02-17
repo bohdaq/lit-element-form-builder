@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="../docs.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono">
     <link href="../prism-okaidia.css" rel="stylesheet" />
-    <script type="module" src="../my-element.bundled.js"></script>
+    <script type="module" src="../app-shell.bundled.js"></script>
   </head>
   <body>
     
 <header>
-  <h1>&lt;my-element></h1>
+  <h1>&lt;app-shell></h1>
   <h2>A web component just for me.</h2>
 </header>
     
@@ -29,75 +29,7 @@
         
       <h1>API</h1>
       
-        <h2>&lt;my-element></h2>
-        <div>
-          An example element.
-        </div>
-        
-    <h3>Attributes</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
-      </tr>
-      
-        <tr>
-          <td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
-        </tr>
-      
-        <tr>
-          <td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
-        </tr>
-      
-    </table>
-  
-        
-    <h3>Properties</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
-      </tr>
-      
-        <tr>
-          <td>name</td><td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
-        </tr>
-      
-        <tr>
-          <td>count</td><td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
-        </tr>
-      
-    </table>
-    
-        
-            
-        
-    <h3>Slots</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th>
-      </tr>
-      
-        <tr>
-          <td></td><td>This element has a slot</td>
-        </tr>
-      
-    </table>
-    
-        
-    <h3>CSS Shadow Parts</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th>
-      </tr>
-      
-        <tr>
-          <td>button</td><td>The button</td>
-        </tr>
-      
-    </table>
-  
-        
-        
-        <h2>&lt;my-element></h2>
+        <h2>&lt;draggable-entity></h2>
         <div>
           undefined
         </div>
@@ -109,11 +41,7 @@
       </tr>
       
         <tr>
-          <td>name</td><td>undefined</td><td>string</td><td>undefined</td>
-        </tr>
-      
-        <tr>
-          <td>count</td><td>undefined</td><td>number</td><td>undefined</td>
+          <td>control</td><td>undefined</td><td>string</td><td>undefined</td>
         </tr>
       
     </table>
@@ -126,19 +54,239 @@
       </tr>
       
         <tr>
-          <td>name</td><td>name</td><td>undefined</td><td>string</td><td>undefined</td>
+          <td>control</td><td>control</td><td>undefined</td><td>string</td><td>undefined</td>
+        </tr>
+      
+    </table>
+    
+        
+            
+          
+        
+        
+        
+        <h2>&lt;form-item></h2>
+        <div>
+          undefined
+        </div>
+        
+    <h3>Attributes</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>selected</td><td>undefined</td><td>boolean</td><td>undefined</td>
         </tr>
       
         <tr>
-          <td>count</td><td>count</td><td>undefined</td><td>number</td><td>undefined</td>
+          <td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>undefined</td>
         </tr>
       
         <tr>
-          <td>hasUpdated</td><td>undefined</td><td>undefined</td><td>number</td><td>undefined</td>
+          <td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>false</td>
+        </tr>
+      
+    </table>
+  
+        
+    <h3>Properties</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>selected</td><td>selected</td><td>undefined</td><td>boolean</td><td>undefined</td>
         </tr>
       
         <tr>
-          <td>updateComplete</td><td>undefined</td><td>undefined</td><td>Promise<any></td><td>undefined</td>
+          <td>isFromTopToBottom</td><td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>isDraggedOver</td><td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>false</td>
+        </tr>
+      
+        <tr>
+          <td>fromTopToBottom</td><td>undefined</td><td>undefined</td><td>boolean</td><td>true</td>
+        </tr>
+      
+    </table>
+    
+        
+            
+          
+        
+        
+        
+        <h2>&lt;item-separator></h2>
+        <div>
+          undefined
+        </div>
+        
+    <h3>Attributes</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>index</td><td>undefined</td><td>number</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+    </table>
+  
+        
+    <h3>Properties</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>index</td><td>index</td><td>undefined</td><td>number</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>isDraggedOver</td><td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+    </table>
+    
+        
+            
+          
+        
+        
+        
+        <h2>&lt;item-spot-placeholder></h2>
+        <div>
+          undefined
+        </div>
+        
+    <h3>Attributes</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>index</td><td>undefined</td><td>number</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+    </table>
+  
+        
+    <h3>Properties</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>index</td><td>index</td><td>undefined</td><td>number</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>isDraggedOver</td><td>isDraggedOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+    </table>
+    
+        
+            
+          
+        
+        
+        
+        <h2>&lt;app-shell></h2>
+        <div>
+          undefined
+        </div>
+        
+    <h3>Attributes</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>cardDragOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>selectedIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+        </tr>
+      
+        <tr>
+          <td>selectedInFormIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+        </tr>
+      
+        <tr>
+          <td>formItemList</td><td>undefined</td><td>array</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>controlList</td><td>undefined</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
+        </tr>
+      
+        <tr>
+          <td>isDndInsideForm</td><td>undefined</td><td>boolean</td><td>false</td>
+        </tr>
+      
+        <tr>
+          <td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>false</td>
+        </tr>
+      
+    </table>
+  
+        
+    <h3>Properties</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Attribute</th><th>Description</th><th>Type</th><th>Default</th>
+      </tr>
+      
+        <tr>
+          <td>cardDragOver</td><td>cardDragOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+        </tr>
+      
+        <tr>
+          <td>NOT_SELECTED_INDEX</td><td>undefined</td><td>undefined</td><td>number</td><td>999</td>
+        </tr>
+      
+        <tr>
+          <td>selectedIndex</td><td>selectedIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+        </tr>
+      
+        <tr>
+          <td>selectedInFormIndex</td><td>selectedInFormIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+        </tr>
+      
+        <tr>
+          <td>formItemList</td><td>formItemList</td><td>undefined</td><td>array</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>controlList</td><td>controlList</td><td>undefined</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
+        </tr>
+      
+        <tr>
+          <td>isDndInsideForm</td><td>isDndInsideForm</td><td>undefined</td><td>boolean</td><td>false</td>
+        </tr>
+      
+        <tr>
+          <td>isFromTopToBottom</td><td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>false</td>
         </tr>
       
     </table>

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from '../node_modules/lit-element/lit-element.js';
+import { LitElement, html, css } from 'lit-element';
 import './draggable-entity.js';
 import './form-item.js';
 import './item-separator.js';
@@ -9,7 +9,6 @@ import './item-spot-placeholder.js';
 export class AppShell extends LitElement {
   static get styles() {
     return css`
-      @import url(//fonts.googleapis.com/css?family=Patrick+Hand);
       :host {
         display: flex;
         font-family: 'Patrick Hand';
@@ -25,7 +24,6 @@ export class AppShell extends LitElement {
         flex: auto;
         width: 50%;
         padding: 16px;
-        padding-bottom: 0;
       }
 
       .right-pane-inner-container {
@@ -97,7 +95,11 @@ export class AppShell extends LitElement {
   constructor() {
     super();
     this.NOT_SELECTED_INDEX = 999;
+
     this.selectedIndex = this.NOT_SELECTED_INDEX;
+    this.selectedInFormIndex = this.NOT_SELECTED_INDEX;
+    this.inFormHoveredOverItemIndex = this.NOT_SELECTED_INDEX;
+
     this.formItemList = [];
     this.controlList = [
       { control: 'textbox' },
@@ -159,7 +161,7 @@ export class AppShell extends LitElement {
                 `)}
         <p hidden=${!this.isEmptyTextShown(this.formItemList, this.selectedIndex, this.isDndInsideForm)}>Currently, there are no items on the form. Drag them from Controls section and drop here...</p>        
         <item-spot-placeholder 
-                  hidden="${!this.isItemSpotPlaceholderShown(this.formItemList)}"
+                  hidden="${!this.isItemSpotPlaceholderShown(this.isDndInsideForm, this.inFormHoveredOverItemIndex)}"
                   @dragstart="${this._onFormDragStart}"  
                   @dragover="${this.onFormDragOver}" 
                   @drop="${this._onFormDrop}"
@@ -197,6 +199,7 @@ export class AppShell extends LitElement {
 
   _onDrop(event) {
     if (this.isDndInsideForm) return;
+    this.isDndInsideForm = true;
 
     //item-spot-placeholder
     if (event.target.tagName === 'ITEM-SPOT-PLACEHOLDER') {
@@ -277,6 +280,7 @@ export class AppShell extends LitElement {
       this.isFromTopToBottom = this.selectedInFormIndex <= event.target.index;
     }
 
+    this.inFormHoveredOverItemIndex = event.target.index;
     event.target.onDraggedOver();
   }
 
@@ -291,6 +295,7 @@ export class AppShell extends LitElement {
     const _targetIndex = event.target.index;
 
     this.selectedInFormIndex = this.NOT_SELECTED_INDEX;
+    this.inFormHoveredOverItemIndex = this.NOT_SELECTED_INDEX;
 
     if (_index === _targetIndex) {
       event.target.onDraggedOverEnd();
@@ -386,8 +391,15 @@ export class AppShell extends LitElement {
     return true;
   }
 
-  isItemSpotPlaceholderShown(formItemList) {
-    return formItemList.length > 0;
+  isItemSpotPlaceholderShown(isDndInsideForm) {
+    if(isDndInsideForm) {
+      return false;
+    } else {
+      if(this.inFormHoveredOverItemIndex +1 === this.formItemList.length){
+        return false;
+      }
+    }
+    return true;
   }
 
 }
