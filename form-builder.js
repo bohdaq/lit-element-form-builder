@@ -185,7 +185,7 @@ export class FormBuilder extends LitElement {
                 `)}
         <p hidden=${!this.isEmptyTextShown(this.formItemList, this.selectedIndex, this.isDndInsideForm)}>Currently, there are no items on the form. Drag them from Controls section and drop here...</p>        
         <item-spot-placeholder 
-                  hidden="${!this.isItemSpotPlaceholderShown(this.isDndInsideForm, this.inFormHoveredOverItemIndex)}"
+                  hidden="${this.isDndInsideForm}"
                   @dragstart="${this._onFormDragStart}"  
                   @dragover="${this.onFormDragOver}" 
                   @drop="${this._onFormDrop}"
@@ -405,17 +405,6 @@ export class FormBuilder extends LitElement {
     if (selectedIndex !== this.NOT_SELECTED_INDEX) return false;
     if (formItemList.length !== 0) return false;
 
-    return true;
-  }
-
-  isItemSpotPlaceholderShown(isDndInsideForm) {
-    if(isDndInsideForm) {
-      return false;
-    } else {
-      if(this.inFormHoveredOverItemIndex +1 === this.formItemList.length){
-        return false;
-      }
-    }
     return true;
   }
 

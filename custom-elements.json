@@ -4,9 +4,11 @@
     {
       "name": "draggable-entity",
       "path": "./draggable-entity.js",
+      "description": "Control which can be put of the form",
       "attributes": [
         {
           "name": "control",
+          "description": "Control which can be put on the form",
           "type": "string"
         }
       ],
@@ -14,6 +16,7 @@
         {
           "name": "control",
           "attribute": "control",
+          "description": "Control which can be put on the form",
           "type": "string"
         }
       ]
