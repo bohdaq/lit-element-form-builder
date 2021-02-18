@@ -5,7 +5,9 @@ import './item-separator.js';
 import './item-spot-placeholder.js';
 
 
-
+/**
+ * Form Builder using Drag'n'Drop written in LitElement
+ */
 export class FormBuilder extends LitElement {
   static get styles() {
     return css`
@@ -68,33 +70,67 @@ export class FormBuilder extends LitElement {
 
   static get properties() {
     return {
+       /**
+       * List of available controls to be dragged onto form.
+       */
       controlList: {
         type: Array
       },
+       /**
+       * List of controls on the form.
+       */
       formItemList: {
         type: Array,
       },
+       /**
+       * Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel
+       */
       isDndInsideForm: {
         type: Boolean
       },
+      /**
+       * Index of the selected item from control panel
+       */
       selectedIndex: {
         type: Number
       },
+      /**
+       * Index of the selected item from form panel
+       */
       selectedInFormIndex: {
         type: Number
       },
-      cardDragOver: {
+      /**
+       * Property to determine whether drag over is being done over form panel using item from control panel
+       */
+      isDragOverFormPanelFromControlPanel: {
         type: Boolean
       },
+      /**
+       * Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa
+       */
       isFromTopToBottom: {
         type: Boolean
+      },
+      /**
+       * Applicable only to reordering inside the form panel. Property to determine index of hovered over control
+       */
+      inFormHoveredOverItemIndex: {
+        type: Boolean
+      },
+      /**
+       * Value for not selected index 
+       */
+      NOT_SELECTED_INDEX: {
+        type: Number
       }
     };
   }
 
   constructor() {
     super();
-    this.NOT_SELECTED_INDEX = 999;
+    this.NOT_SELECTED_INDEX = 999999;
+    this.isDragOverFormPanelFromControlPanel = false;
 
     this.selectedIndex = this.NOT_SELECTED_INDEX;
     this.selectedInFormIndex = this.NOT_SELECTED_INDEX;
@@ -172,7 +208,7 @@ export class FormBuilder extends LitElement {
   }
 
   _isDraggingOntoForm(isDndInsideForm, selectedIndex) {
-    this.cardDragOver = (this.selectedIndex !== this.NOT_SELECTED_INDEX) && !isDndInsideForm;
+    this.isDragOverFormPanelFromControlPanel = (this.selectedIndex !== this.NOT_SELECTED_INDEX) && !isDndInsideForm;
     return (this.selectedIndex !== this.NOT_SELECTED_INDEX) && !isDndInsideForm;
   }
 

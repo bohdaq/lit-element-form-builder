@@ -211,7 +211,7 @@
         
         <h2>&lt;form-builder></h2>
         <div>
-          undefined
+          Form Builder using Drag'n'Drop written in LitElement
         </div>
         
     <h3>Attributes</h3>
@@ -221,31 +221,39 @@
       </tr>
       
         <tr>
-          <td>cardDragOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+          <td>NOT_SELECTED_INDEX</td><td>Value for not selected index</td><td>number</td><td>999999</td>
         </tr>
       
         <tr>
-          <td>selectedIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+          <td>isDragOverFormPanelFromControlPanel</td><td>Property to determine whether drag over is being done over form panel using item from control panel</td><td>boolean</td><td>false</td>
         </tr>
       
         <tr>
-          <td>selectedInFormIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+          <td>selectedIndex</td><td>Index of the selected item from control panel</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>formItemList</td><td>undefined</td><td>array</td><td>[]</td>
+          <td>selectedInFormIndex</td><td>Index of the selected item from form panel</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>controlList</td><td>undefined</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
+          <td>inFormHoveredOverItemIndex</td><td>Applicable only to reordering inside the form panel. Property to determine index of hovered over control</td><td>boolean</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>isDndInsideForm</td><td>undefined</td><td>boolean</td><td>false</td>
+          <td>formItemList</td><td>List of controls on the form.</td><td>array</td><td>[]</td>
         </tr>
       
         <tr>
-          <td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>false</td>
+          <td>controlList</td><td>List of available controls to be dragged onto form.</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
+        </tr>
+      
+        <tr>
+          <td>isDndInsideForm</td><td>Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel</td><td>boolean</td><td>false</td>
+        </tr>
+      
+        <tr>
+          <td>isFromTopToBottom</td><td>Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa</td><td>boolean</td><td>false</td>
         </tr>
       
     </table>
@@ -258,39 +266,39 @@
       </tr>
       
         <tr>
-          <td>cardDragOver</td><td>cardDragOver</td><td>undefined</td><td>boolean</td><td>undefined</td>
+          <td>NOT_SELECTED_INDEX</td><td>NOT_SELECTED_INDEX</td><td>Value for not selected index</td><td>number</td><td>999999</td>
         </tr>
       
         <tr>
-          <td>NOT_SELECTED_INDEX</td><td>undefined</td><td>undefined</td><td>number</td><td>999</td>
+          <td>isDragOverFormPanelFromControlPanel</td><td>isDragOverFormPanelFromControlPanel</td><td>Property to determine whether drag over is being done over form panel using item from control panel</td><td>boolean</td><td>false</td>
         </tr>
       
         <tr>
-          <td>selectedIndex</td><td>selectedIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+          <td>selectedIndex</td><td>selectedIndex</td><td>Index of the selected item from control panel</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>selectedInFormIndex</td><td>selectedInFormIndex</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+          <td>selectedInFormIndex</td><td>selectedInFormIndex</td><td>Index of the selected item from form panel</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>inFormHoveredOverItemIndex</td><td>undefined</td><td>undefined</td><td>number</td><td>"NOT_SELECTED_INDEX"</td>
+          <td>inFormHoveredOverItemIndex</td><td>inFormHoveredOverItemIndex</td><td>Applicable only to reordering inside the form panel. Property to determine index of hovered over control</td><td>boolean</td><td>"NOT_SELECTED_INDEX"</td>
         </tr>
       
         <tr>
-          <td>formItemList</td><td>formItemList</td><td>undefined</td><td>array</td><td>[]</td>
+          <td>formItemList</td><td>formItemList</td><td>List of controls on the form.</td><td>array</td><td>[]</td>
         </tr>
       
         <tr>
-          <td>controlList</td><td>controlList</td><td>undefined</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
+          <td>controlList</td><td>controlList</td><td>List of available controls to be dragged onto form.</td><td>array</td><td>[{"control":"textbox"},{"control":"number"},{"control":"combobox"}]</td>
         </tr>
       
         <tr>
-          <td>isDndInsideForm</td><td>isDndInsideForm</td><td>undefined</td><td>boolean</td><td>false</td>
+          <td>isDndInsideForm</td><td>isDndInsideForm</td><td>Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel</td><td>boolean</td><td>false</td>
         </tr>
       
         <tr>
-          <td>isFromTopToBottom</td><td>isFromTopToBottom</td><td>undefined</td><td>boolean</td><td>false</td>
+          <td>isFromTopToBottom</td><td>isFromTopToBottom</td><td>Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa</td><td>boolean</td><td>false</td>
         </tr>
       
     </table>
