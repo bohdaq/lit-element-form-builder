@@ -26,7 +26,7 @@ title: <form-builder> ⌲ Home
   </div>
 </section>
 
-## Configure with attributes
+## Configure
 
 <section class="columns">
   <div>
@@ -63,15 +63,14 @@ const name="lit-html";
 
 render(html`
   <h2>This is a &lt;form-builder&gt;</h2>
-  <form-builder .name=${name}></form-builder>
+  <form-builder></form-builder>
 `, document.body);
 ```
 
   </div>
   <div>
 
-<h2>This is a &lt;form-builder&gt;</h2>
-<form-builder name="lit-html"></form-builder>
+<form-builder></form-builder>
 
   </div>
 </section>
