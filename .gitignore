@@ -1,5 +1,5 @@
 /node_modules/
 .vscode
-
+.idea
 # only generated for size check
 my-element.bundled.js
