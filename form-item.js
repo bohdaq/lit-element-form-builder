@@ -37,7 +37,9 @@ export class FormItem extends LitElement {
       
       [selected="true"] {
         border-radius: 0;
-        border: 1px solid #f49336;
+        border: 1px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, #f49336, #eea81b, #e0bf00, #cad500, #a8eb12);
       }
 
       [hidden="true"] {
