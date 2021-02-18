@@ -1,5 +1,8 @@
 import { LitElement, html, css } from 'lit-element';
 
+/**
+ * Separator between controls in the form panel
+ */
 export class ItemSeparator extends LitElement {
   static get styles() {
     return css`
@@ -36,9 +39,15 @@ export class ItemSeparator extends LitElement {
 
   static get properties() {
     return {
+      /**
+       * Index in the form for this element (same as assosiated control)
+       */
       index: {
         type: Number
       },
+      /**
+       * Is control being dragged over this element
+       */
       isDraggedOver: {
         type: Boolean
       }

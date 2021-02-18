@@ -1,5 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
 
+
+/**
+ * Control from the form panel
+ */
 export class FormItem extends LitElement {
   static get styles() {
     return css`
@@ -57,15 +61,24 @@ export class FormItem extends LitElement {
 
   static get properties() {
     return {
+      /**
+       * Is current control selected
+       */
       selected: {
         type: Boolean,
         converter: (value, type) => {
           return value === 'true';
         }
       },
+      /**
+       * Is control being dragged over this element
+       */
       isDraggedOver: {
         type: Boolean
       },
+      /**
+       * Is drag'n'drop being done from top to bottom or vice versa
+       */
       isFromTopToBottom: {
         type: Boolean
       }

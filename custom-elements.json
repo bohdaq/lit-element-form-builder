@@ -21,17 +21,21 @@
     {
       "name": "form-item",
       "path": "./form-item.js",
+      "description": "Control from the form panel",
       "attributes": [
         {
           "name": "selected",
+          "description": "Is current control selected",
           "type": "boolean"
         },
         {
           "name": "isFromTopToBottom",
+          "description": "Is drag'n'drop being done from top to bottom or vice versa",
           "type": "boolean"
         },
         {
           "name": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean",
           "default": "false"
         }
@@ -40,16 +44,19 @@
         {
           "name": "selected",
           "attribute": "selected",
+          "description": "Is current control selected",
           "type": "boolean"
         },
         {
           "name": "isFromTopToBottom",
           "attribute": "isFromTopToBottom",
+          "description": "Is drag'n'drop being done from top to bottom or vice versa",
           "type": "boolean"
         },
         {
           "name": "isDraggedOver",
           "attribute": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean",
           "default": "false"
         },
@@ -63,13 +70,16 @@
     {
       "name": "item-separator",
       "path": "./item-separator.js",
+      "description": "Separator between controls in the form panel",
       "attributes": [
         {
           "name": "index",
+          "description": "Index in the form for this element (same as assosiated control)",
           "type": "number"
         },
         {
           "name": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean"
         }
       ],
@@ -77,11 +87,13 @@
         {
           "name": "index",
           "attribute": "index",
+          "description": "Index in the form for this element (same as assosiated control)",
           "type": "number"
         },
         {
           "name": "isDraggedOver",
           "attribute": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean"
         }
       ]
@@ -89,13 +101,16 @@
     {
       "name": "item-spot-placeholder",
       "path": "./item-spot-placeholder.js",
+      "description": "Placeholder for a control to be dropped, placed at the bottom of the form panel",
       "attributes": [
         {
           "name": "index",
+          "description": "Index in the form for this element",
           "type": "number"
         },
         {
           "name": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean"
         }
       ],
@@ -103,11 +118,13 @@
         {
           "name": "index",
           "attribute": "index",
+          "description": "Index in the form for this element",
           "type": "number"
         },
         {
           "name": "isDraggedOver",
           "attribute": "isDraggedOver",
+          "description": "Is control being dragged over this element",
           "type": "boolean"
         }
       ]

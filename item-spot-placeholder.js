@@ -1,5 +1,8 @@
 import { LitElement, html, css } from 'lit-element';
 
+/**
+ * Placeholder for a control to be dropped, placed at the bottom of the form panel
+ */
 export class ItemSpotPlaceholder extends LitElement {
   static get styles() {
     return css`
@@ -35,9 +38,15 @@ export class ItemSpotPlaceholder extends LitElement {
 
   static get properties() {
     return {
+      /**
+       * Index in the form for this element
+       */
       index: {
         type: Number
       },
+      /**
+       * Is control being dragged over this element
+       */
       isDraggedOver: {
         type: Boolean
       }
