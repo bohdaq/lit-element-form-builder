@@ -31,11 +31,14 @@ title: <form-builder> ⌲ Home
 <section class="columns">
   <div>
 
-`<form-builder>` can be configured with JSON.
+`<form-builder>` can be configured with JSON. You can subscribe to 'form-builder-updated' event to get updates.
 
 ```html
 <form-builder id="builder"></form-builder>
 document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+  console.log('form-builder-updated ', event.detail);
+});
 ```
 
   </div>
@@ -44,6 +47,9 @@ document.querySelector('#builder').controlList = [{ control: 'textbox' }];
 <form-builder id="builder"></form-builder>
 <script>
   document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+  document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+    console.log('form-builder-updated ', event.detail);
+  });
 </script>
 
   </div>

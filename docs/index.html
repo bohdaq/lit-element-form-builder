@@ -41,13 +41,16 @@
 <h2>Configure</h2>
 <section class="columns">
   <div>
-<p><code>&lt;form-builder&gt;</code> can be configured with JSON.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form-builder</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>builder<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form-builder</span><span class="token punctuation">></span></span><br>document.querySelector('#builder').controlList = [{ control: 'textbox' }];</code></pre>
+<p><code>&lt;form-builder&gt;</code> can be configured with JSON. You can subscribe to 'form-builder-updated' event to get updates.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form-builder</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>builder<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form-builder</span><span class="token punctuation">></span></span><br>document.querySelector('#builder').controlList = [{ control: 'textbox' }];<br>document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {<br>  console.log('form-builder-updated ', event.detail);<br>});</code></pre>
   </div>
   <div>
 <p><form-builder id="builder"></form-builder></p>
 <script>
   document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+  document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+    console.log('form-builder-updated ', event.detail);
+  });
 </script>
   </div>
 </section>

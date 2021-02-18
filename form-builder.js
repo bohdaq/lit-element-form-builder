@@ -114,7 +114,6 @@ export class FormBuilder extends LitElement {
     this.addEventListener('add-control-after-index', this._addControlAfterIndex);
     this.addEventListener('move-control-before-index', this._moveControlBeforeIndex);
     this.addEventListener('move-control-after-index', this._moveControlAfterIndex);
-    this.addEventListener('swap-controls', this._swapControls);
   }
 
   render() {
@@ -330,18 +329,21 @@ export class FormBuilder extends LitElement {
   _addControl(event) {
     const _config = event.detail;
     this.formItemList = [...this.formItemList, { control: _config.control }];
+    this.fire('form-builder-updated', this.formItemList);
   }
 
   _addControlBeforeIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertBefore, 0, { control: _config.control });
     this.formItemList = [...this.formItemList];
+    this.fire('form-builder-updated', this.formItemList);
   }
 
   _addControlAfterIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertAfter, 0, { control: _config.control });
     this.formItemList = [...this.formItemList];
+    this.fire('form-builder-updated', this.formItemList);
   }
 
 
@@ -352,28 +354,18 @@ export class FormBuilder extends LitElement {
     this.formItemList.splice(_config.index + 1, 1);
 
     this.formItemList = [... this.formItemList];
+    this.fire('form-builder-updated', this.formItemList);
   }
 
   _moveControlAfterIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertAfter, 0, this.formItemList.splice(_config.index, 1)[0]);
     this.formItemList = [... this.formItemList];
+    this.fire('form-builder-updated', this.formItemList);
   }
 
-  _swapControls(event) {
-    const _config = event.detail;
-    this.formItemList = [... this._swapItemsInArray(this.formItemList, _config.index, _config.targetIndex)];
-  }
-
-  _swapItemsInArray(_array, _indexOne, _indexTwo) {
-    const temp = _array[_indexOne];
-    _array[_indexOne] = _array[_indexTwo];
-    _array[_indexTwo] = temp;
-    return _array;
-  }
 
   fire(eventName, params) {
-    console.log(eventName, params);
     let _event = new CustomEvent(eventName, {
       detail: params
     });
