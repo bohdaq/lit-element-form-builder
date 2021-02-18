@@ -11,17 +11,22 @@ description: A basic example
 
   }
 </style>
-<form-builder>
-</form-builder>
 
-<h3>CSS</h3>
-
-```css
-  
-```
 
 <h3>HTML</h3>
 
 ```html
-<form-builder></form-builder>
+<form-builder id="builder"></form-builder>
+<script>
+  document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+  document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+    console.log('form-builder-updated ', event.detail);
+  });
+</script>
 ```
+
+
+<h3>Demo</h3>
+<form-builder>
+</form-builder>
+

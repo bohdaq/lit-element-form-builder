@@ -35,10 +35,12 @@ title: <form-builder> ⌲ Home
 
 ```html
 <form-builder id="builder"></form-builder>
-document.querySelector('#builder').controlList = [{ control: 'textbox' }];
-document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
-  console.log('form-builder-updated ', event.detail);
-});
+<script>
+  document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+  document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+    console.log('form-builder-updated ', event.detail);
+  });
+</script>
 ```
 
   </div>

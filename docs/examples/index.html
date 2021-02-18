@@ -32,10 +32,6 @@
       <nav class="collection">
         <ul>
           
-                  <li class=>
-                    <a href="name-property/">Setting the name property</a>
-                  </li>
-                
                   <li class=selected>
                     <a href="">A basic example</a>
                   </li>
@@ -48,12 +44,11 @@
 
   }
 </style>
+<h3>HTML</h3>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form-builder</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>builder<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form-builder</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#builder'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>controlList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> control<span class="token operator">:</span> <span class="token string">'textbox'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#builder'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'form-builder-updated'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'form-builder-updated '</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h3>Demo</h3>
 <form-builder>
 </form-builder>
-<h3>CSS</h3>
-<pre class="language-css"><code class="language-css">  </code></pre>
-<h3>HTML</h3>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form-builder</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form-builder</span><span class="token punctuation">></span></span></code></pre>
 
       </div>
     </section>
