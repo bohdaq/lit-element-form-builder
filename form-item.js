@@ -95,7 +95,7 @@ export class FormItem extends LitElement {
     return html`
       <div class="container spot bottom-offset" hidden="${!this._isTopSpotShown(this.isDraggedOver, this.isFromTopToBottom)}"></div>
       <div class="container" selected=${this.selected}>
-        ${this.index}. &nbsp; <slot></slot> 
+        <slot></slot> 
       </div>
       <div class="container spot top-offset" hidden="${!this._isBottomSpotShown(this.isDraggedOver, this.isFromTopToBottom)}"></div>
     `;

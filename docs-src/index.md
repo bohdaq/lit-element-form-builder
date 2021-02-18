@@ -70,7 +70,6 @@ import {html, render} from 'lit-html';
 const name="lit-html";
 
 render(html`
-  <h2>This is a &lt;form-builder&gt;</h2>
   <form-builder></form-builder>
 `, document.body);
 ```

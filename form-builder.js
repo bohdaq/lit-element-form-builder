@@ -56,15 +56,6 @@ export class FormBuilder extends LitElement {
       h4 {
         font-size: 1.5em;
       }
-
-      .controls-label {
-        margin: 0em 2em;
-        text-align: center;
-      }
-
-      .form-label {
-        margin: 0;
-      }
     `;
   }
 
@@ -155,7 +146,6 @@ export class FormBuilder extends LitElement {
   render() {
     return html`
     <div class="left-pane">
-      <h4 class="controls-label">Controls</h4>
       ${this.controlList.map((item, index) =>
       html`
         <item-separator></item-separator>
@@ -169,7 +159,6 @@ export class FormBuilder extends LitElement {
 
     </div>
     <div @dragover="${this._onDragOver}" @drop="${this._onDrop}" class="right-pane card" card-dragover=${this._isDraggingOntoForm(this.isDndInsideForm, this.selectedIndex)}>
-      <h4 class="form-label">Form</h4>
       <div id="dropContainer" class="right-pane-inner-container">
             ${this.formItemList.map((item, index) =>
         html`
