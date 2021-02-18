@@ -1,5 +1,8 @@
 import { LitElement, html, css } from 'lit-element';
 
+/**
+ * Control which can be put of the form
+ */
 export class DraggableEntity extends LitElement {
   static get styles() {
     return css`
@@ -38,6 +41,9 @@ export class DraggableEntity extends LitElement {
 
   static get properties() {
     return {
+      /**
+       * Control which can be put on the form
+       */
       control: {
         type: String
       }
