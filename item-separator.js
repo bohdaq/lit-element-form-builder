@@ -43,7 +43,7 @@ export class ItemSeparator extends LitElement {
        * Index in the form for this element (same as assosiated control)
        */
       index: {
-        type: Number
+        attribute: false
       },
       /**
        * Is control being dragged over this element

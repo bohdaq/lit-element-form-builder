@@ -39,16 +39,10 @@ export class ItemSpotPlaceholder extends LitElement {
   static get properties() {
     return {
       /**
-       * Index in the form for this element
-       */
-      index: {
-        type: Number
-      },
-      /**
        * Is control being dragged over this element
        */
       isDraggedOver: {
-        type: Boolean
+        attribute: false
       }
     };
   }

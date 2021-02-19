@@ -18,7 +18,7 @@ description: A basic example
 ```html
 <form-builder id="builder"></form-builder>
 <script>
-  document.querySelector('#builder').controlList = [{ control: 'textbox' }];
+  document.querySelector('#builder').controlList = [{ control: 'textbox' }, { control: 'combobox' }, { control: 'document' }];
   document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
     console.log('form-builder-updated ', event.detail);
   });
@@ -27,6 +27,12 @@ description: A basic example
 
 
 <h3>Demo</h3>
-<form-builder>
+<form-builder id="builder">
 </form-builder>
+<script>
+  document.querySelector('#builder').controlList = [{ control: 'textbox' }, { control: 'combobox' }, { control: 'document' }];
+  document.querySelector('#builder').addEventListener('form-builder-updated', (event) => {
+    console.log('form-builder-updated ', event.detail);
+  });
+</script>
 

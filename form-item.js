@@ -82,7 +82,7 @@ export class FormItem extends LitElement {
        * Is drag'n'drop being done from top to bottom or vice versa
        */
       isFromTopToBottom: {
-        type: Boolean
+        attribute: false
       }
     };
   }

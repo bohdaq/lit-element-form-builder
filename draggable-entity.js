@@ -45,7 +45,7 @@ export class DraggableEntity extends LitElement {
        * Control which can be put on the form
        */
       control: {
-        type: String
+        attribute: false
       }
     };
   }
