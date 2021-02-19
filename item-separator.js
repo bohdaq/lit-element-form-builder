@@ -49,13 +49,14 @@ export class ItemSeparator extends LitElement {
        * Is control being dragged over this element
        */
       isDraggedOver: {
-        type: Boolean
+        attribute: false
       }
     };
   }
 
   constructor() {
     super();
+    this.isDraggedOver = false;
   }
 
   render() {

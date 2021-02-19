@@ -35,12 +35,6 @@
           "name": "isFromTopToBottom",
           "description": "Is drag'n'drop being done from top to bottom or vice versa",
           "type": "boolean"
-        },
-        {
-          "name": "isDraggedOver",
-          "description": "Is control being dragged over this element",
-          "type": "boolean",
-          "default": "false"
         }
       ],
       "properties": [
@@ -58,9 +52,7 @@
         },
         {
           "name": "isDraggedOver",
-          "attribute": "isDraggedOver",
           "description": "Is control being dragged over this element",
-          "type": "boolean",
           "default": "false"
         },
         {
@@ -79,11 +71,6 @@
           "name": "index",
           "description": "Index in the form for this element (same as assosiated control)",
           "type": "number"
-        },
-        {
-          "name": "isDraggedOver",
-          "description": "Is control being dragged over this element",
-          "type": "boolean"
         }
       ],
       "properties": [
@@ -95,9 +82,8 @@
         },
         {
           "name": "isDraggedOver",
-          "attribute": "isDraggedOver",
           "description": "Is control being dragged over this element",
-          "type": "boolean"
+          "default": "false"
         }
       ]
     },

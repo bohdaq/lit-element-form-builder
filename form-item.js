@@ -76,7 +76,7 @@ export class FormItem extends LitElement {
        * Is control being dragged over this element
        */
       isDraggedOver: {
-        type: Boolean
+        attribute: false
       },
       /**
        * Is drag'n'drop being done from top to bottom or vice versa

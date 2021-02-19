@@ -186,7 +186,7 @@ export class FormBuilder extends LitElement {
                 `)}
         <p hidden=${!this.isEmptyTextShown(this.formItemList, this.selectedIndex, this.isDndInsideForm)}>Currently, there are no items on the form. Drag them from Controls section and drop here...</p>        
         <item-spot-placeholder 
-                  hidden="${this.isDndInsideForm}"
+                  hidden="${this.selectedIndex === this.NOT_SELECTED_INDEX}"
                   @dragstart="${this._onFormDragStart}"  
                   @dragover="${this.onFormDragOver}" 
                   @drop="${this._onFormDrop}"
