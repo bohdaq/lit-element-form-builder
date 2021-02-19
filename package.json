@@ -1,7 +1,7 @@
 {
   "name": "@bohdaq/lit-form-builder",
-  "version": "0.0.1",
-  "description": "A simple web component for building forms using Drang and Drop",
+  "version": "0.0.3",
+  "description": "A simple web component for building forms using Drang and Drop written in lit-element",
   "main": "form-builder.js",
   "module": "form-builder.js",
   "type": "module",
@@ -72,5 +72,5 @@
   "bugs": {
     "url": "https://github.com/bohdaq/lit-element-form-builder/issues"
   },
-  "homepage": "https://github.com/bohdaq/lit-element-form-builder#readme"
+  "homepage": "https://bohdaq.github.io/lit-element-form-builder/"
 }

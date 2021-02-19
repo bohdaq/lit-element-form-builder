@@ -146,6 +146,11 @@ export class FormBuilder extends LitElement {
 
   render() {
     return html`
+    <link rel="stylesheet" href="./node_modules/material-icons/iconfont/material-icons.css" />
+    <div class="material-icons-outlined">
+            keyboard_arrow_down
+    </div>
+    <span class="material-icons">home</span>
     <div class="left-pane">
       ${this.controlList.map((item, index) =>
       html`
