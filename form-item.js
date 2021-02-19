@@ -90,7 +90,6 @@ export class FormItem extends LitElement {
   constructor() {
     super();
     this.isDraggedOver = false;
-    this.fromTopToBottom = true;
   }
 
   render() {
