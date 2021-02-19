@@ -38,11 +38,6 @@
           "name": "isDraggedOver",
           "description": "Is control being dragged over this element",
           "default": "false"
-        },
-        {
-          "name": "fromTopToBottom",
-          "type": "boolean",
-          "default": "true"
         }
       ]
     },
