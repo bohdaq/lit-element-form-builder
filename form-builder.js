@@ -7,6 +7,7 @@ import './item-spot-placeholder.js';
 
 /**
  * Form Builder using Drag'n'Drop written in LitElement
+ * @event form-builder-updated - Event which is thrown at any given form modification.
  */
 export class FormBuilder extends LitElement {
   static get styles() {
@@ -65,55 +66,55 @@ export class FormBuilder extends LitElement {
        * List of available controls to be dragged onto form.
        */
       controlList: {
-        type: Array
+        attribute: false
       },
        /**
        * List of controls on the form.
        */
       formItemList: {
-        type: Array,
+        attribute: false
       },
        /**
        * Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel
        */
       isDndInsideForm: {
-        type: Boolean
+        attribute: false
       },
       /**
        * Index of the selected item from control panel
        */
       selectedIndex: {
-        type: Number
+        attribute: false
       },
       /**
        * Index of the selected item from form panel
        */
       selectedInFormIndex: {
-        type: Number
+        attribute: false
       },
       /**
        * Property to determine whether drag over is being done over form panel using item from control panel
        */
       isDragOverFormPanelFromControlPanel: {
-        type: Boolean
+        attribute: false
       },
       /**
        * Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa
        */
       isFromTopToBottom: {
-        type: Boolean
+        attribute: false
       },
       /**
        * Applicable only to reordering inside the form panel. Property to determine index of hovered over control
        */
       inFormHoveredOverItemIndex: {
-        type: Boolean
+        attribute: false
       },
       /**
        * Value for not selected index 
        */
       NOT_SELECTED_INDEX: {
-        type: Number
+        attribute: false
       }
     };
   }
@@ -354,21 +355,21 @@ export class FormBuilder extends LitElement {
   _addControl(event) {
     const _config = event.detail;
     this.formItemList = [...this.formItemList, { control: _config.control }];
-    this.fire('form-builder-updated', this.formItemList);
+    this.fire('form-builder-updated', this.formItemList, true);
   }
 
   _addControlBeforeIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertBefore, 0, { control: _config.control });
     this.formItemList = [...this.formItemList];
-    this.fire('form-builder-updated', this.formItemList);
+    this.fire('form-builder-updated', this.formItemList, true);
   }
 
   _addControlAfterIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertAfter, 0, { control: _config.control });
     this.formItemList = [...this.formItemList];
-    this.fire('form-builder-updated', this.formItemList);
+    this.fire('form-builder-updated', this.formItemList, true);
   }
 
 
@@ -379,20 +380,22 @@ export class FormBuilder extends LitElement {
     this.formItemList.splice(_config.index + 1, 1);
 
     this.formItemList = [... this.formItemList];
-    this.fire('form-builder-updated', this.formItemList);
+    this.fire('form-builder-updated', this.formItemList, true);
   }
 
   _moveControlAfterIndex(event) {
     const _config = event.detail;
     this.formItemList.splice(_config.insertAfter, 0, this.formItemList.splice(_config.index, 1)[0]);
     this.formItemList = [... this.formItemList];
-    this.fire('form-builder-updated', this.formItemList);
+    this.fire('form-builder-updated', this.formItemList, true);
   }
 
 
-  fire(eventName, params) {
+  fire(eventName, params, piercesShadowDom = false) {
     let _event = new CustomEvent(eventName, {
-      detail: params
+      detail: params,
+      bubbles: piercesShadowDom, 
+      composed: piercesShadowDom
     });
     this.dispatchEvent(_event);
   }

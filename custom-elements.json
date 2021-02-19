@@ -4,7 +4,7 @@
     {
       "name": "draggable-entity",
       "path": "./draggable-entity.js",
-      "description": "Control which can be put of the form",
+      "description": "Control which can be put on the form",
       "attributes": [
         {
           "name": "control",
@@ -136,125 +136,57 @@
       "name": "form-builder",
       "path": "./form-builder.js",
       "description": "Form Builder using Drag'n'Drop written in LitElement",
-      "attributes": [
-        {
-          "name": "NOT_SELECTED_INDEX",
-          "description": "Value for not selected index",
-          "type": "number",
-          "default": "999999"
-        },
-        {
-          "name": "isDragOverFormPanelFromControlPanel",
-          "description": "Property to determine whether drag over is being done over form panel using item from control panel",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "selectedIndex",
-          "description": "Index of the selected item from control panel",
-          "type": "number",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "selectedInFormIndex",
-          "description": "Index of the selected item from form panel",
-          "type": "number",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "inFormHoveredOverItemIndex",
-          "description": "Applicable only to reordering inside the form panel. Property to determine index of hovered over control",
-          "type": "boolean",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "formItemList",
-          "description": "List of controls on the form.",
-          "type": "array",
-          "default": "[]"
-        },
-        {
-          "name": "controlList",
-          "description": "List of available controls to be dragged onto form.",
-          "type": "array",
-          "default": "[{\"control\":\"textbox\"},{\"control\":\"number\"},{\"control\":\"combobox\"}]"
-        },
-        {
-          "name": "isDndInsideForm",
-          "description": "Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "isFromTopToBottom",
-          "description": "Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa",
-          "type": "boolean",
-          "default": "false"
-        }
-      ],
       "properties": [
         {
           "name": "NOT_SELECTED_INDEX",
-          "attribute": "NOT_SELECTED_INDEX",
           "description": "Value for not selected index",
-          "type": "number",
           "default": "999999"
         },
         {
           "name": "isDragOverFormPanelFromControlPanel",
-          "attribute": "isDragOverFormPanelFromControlPanel",
           "description": "Property to determine whether drag over is being done over form panel using item from control panel",
-          "type": "boolean",
           "default": "false"
         },
         {
           "name": "selectedIndex",
-          "attribute": "selectedIndex",
           "description": "Index of the selected item from control panel",
-          "type": "number",
           "default": "\"NOT_SELECTED_INDEX\""
         },
         {
           "name": "selectedInFormIndex",
-          "attribute": "selectedInFormIndex",
           "description": "Index of the selected item from form panel",
-          "type": "number",
           "default": "\"NOT_SELECTED_INDEX\""
         },
         {
           "name": "inFormHoveredOverItemIndex",
-          "attribute": "inFormHoveredOverItemIndex",
           "description": "Applicable only to reordering inside the form panel. Property to determine index of hovered over control",
-          "type": "boolean",
           "default": "\"NOT_SELECTED_INDEX\""
         },
         {
           "name": "formItemList",
-          "attribute": "formItemList",
           "description": "List of controls on the form.",
-          "type": "array",
           "default": "[]"
         },
         {
           "name": "controlList",
-          "attribute": "controlList",
           "description": "List of available controls to be dragged onto form.",
-          "type": "array",
           "default": "[{\"control\":\"textbox\"},{\"control\":\"number\"},{\"control\":\"combobox\"}]"
         },
         {
           "name": "isDndInsideForm",
-          "attribute": "isDndInsideForm",
           "description": "Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel",
-          "type": "boolean",
           "default": "false"
         },
         {
           "name": "isFromTopToBottom",
-          "attribute": "isFromTopToBottom",
           "description": "Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa",
-          "type": "boolean",
           "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "form-builder-updated",
+          "description": "Event which is thrown at any given form modification."
         }
       ]
     }
