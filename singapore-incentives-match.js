@@ -12,7 +12,6 @@ export class SingaporeIncentivesMatch extends LitElement {
       }
 
       .main-container {
-        height: 700px;
         width: 850px;
 
         border-width: 1px;
@@ -157,6 +156,23 @@ export class SingaporeIncentivesMatch extends LitElement {
       .selected {
         background-color: rgb(92,219,149);
       }
+
+      .buttons-container {
+        display: flex;
+        padding: 10px 5px 10px 20px;
+        font-size: 14px;
+        border-top: 1px solid rgb(220,220,220);
+        flex-direction: row-reverse;
+      }
+
+      .button {
+        margin: 0em 20px 0em 20px;
+        border-radius: 5px;
+        font-size: 1em;
+        color: white;
+        padding: 10px;
+        background-color: rgb(92,219,149);
+      }
     `;
   }
 
@@ -288,8 +304,14 @@ export class SingaporeIncentivesMatch extends LitElement {
           </div>
 
 
+        </div>
+
+
+        <div class="buttons-container">
+          <div class="button">Check Incentives ></div>
 
         </div>
+
 
       </div>
     `;
