@@ -366,26 +366,22 @@ export class SingaporeIncentivesMatch extends LitElement {
       <div class="main-container">
         <div class="progress-bar-container">
 
-          <!-- ${this.config.steps.map(item => html`
-            <div class="number-in-circle">${item.number}</div>
-            <div class="step-name">${item.name}</div>
-            <div class="line-separator">
-              <div class="line"></div>
-            </div>
-          `)} -->
-
-
           ${this.config.steps.map((item, index) => 
             html`
-              <div class="number-in-circle">${item.number}</div>
-              <div class="step-name">${item.name}</div>
+
+              ${this.currentStepIndex === index  ?
+                html`<div class="number-in-circle active">${item.number}</div>` :
+                html`<div class="number-in-circle">${item.number}</div>`}
 
 
-              ${this.config.steps.length !== index +1 ?
-                html`<div class="line-separator">
-                    <div class="line"></div>
-                  </div>` :
-                html``}
+                <div class="step-name">${item.name}</div>
+
+
+                ${this.config.steps.length !== index +1 ?
+                  html`<div class="line-separator">
+                      <div class="line"></div>
+                    </div>` :
+                  html``}
 
              
             `)}
