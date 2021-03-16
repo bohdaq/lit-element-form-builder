@@ -159,10 +159,9 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .buttons-container {
         display: flex;
-        padding: 10px 5px 10px 20px;
+        padding: 10px 5px;
         font-size: 14px;
         border-top: 1px solid rgb(220,220,220);
-        flex-direction: row-reverse;
       }
 
       .button {
@@ -172,6 +171,10 @@ export class SingaporeIncentivesMatch extends LitElement {
         color: white;
         padding: 10px;
         background-color: rgb(92,219,149);
+      }
+
+      .flex {
+        flex: 1;
       }
     `;
   }
@@ -447,13 +450,33 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
         <div class="buttons-container">
-          <div class="button">Check Incentives ></div>
+          <div class="button" @click=${this.previousClicked}>< Previous</div>
+          <div class="flex"></div>
+          <div class="button" @click=${this.nextClicked}>Next ></div>
+
 
         </div>
 
 
       </div>
     `;
+  }
+
+  nextClicked() {
+    console.log('nextClicked');
+
+    this.currentStepIndex = this.currentStepIndex + 1;
+    this.currentStep = this.config.steps[this.currentStepIndex];
+    this.requestUpdate();
+
+  }
+
+  previousClicked() {
+    console.log('previousClicked');
+
+    this.currentStepIndex = this.currentStepIndex - 1;
+    this.currentStep = this.config.steps[this.currentStepIndex];
+    this.requestUpdate();
   }
 
   
