@@ -187,8 +187,8 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.config = {
       steps: [
         {
-          number: 0,
-          name: 'Company Info',
+          number: 1,
+          name: 'Industry',
           type: 'QUESTIONNAIRE',
           questionList: [
             {
@@ -243,10 +243,122 @@ export class SingaporeIncentivesMatch extends LitElement {
               ]
             }
           ]
+        },
+
+        {
+          number: 2,
+          name: 'Key Features',
+          type: 'QUESTIONNAIRE',
+          questionList: [
+            {
+              question: 'Select the attributes applicable to your company?',
+              description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
+              answerList: [
+                {
+                  label: 'Low use of energy'
+                },
+                {
+                  label: 'Foreign exports'
+                },
+                {
+                  label: 'Trade financing'
+                },
+                {
+                  label: 'IP rights licensing'
+                },
+                {
+                  label: 'Innovative technology'
+                },
+                {
+                  label: 'Hiring local staff'
+                },
+                {
+                  label: 'Patents owned'
+                },
+                {
+                  label: 'New product'
+                },
+                {
+                  label: 'Innovative Technology'
+                }
+              ]
+            }
+          ]
+        },
+
+
+        {
+          number: 3,
+          name: 'Matches',
+          type: 'MATCHES',
+          heading: 'You have selected the following programs',
+          matchList: [
+            {
+              label: 'Enterprise Development Grant',
+              description: 'Early-stage funding to fast-track commercialization of the technology solutions.',
+              link: 'https://google.com'
+            },
+            {
+              label: 'IRS Co-creation Grants',
+              description: 'Supports software developers in the development of innovative solutions for tax filing preparation or tax management.',
+              link: 'https://google.com'
+            },
+          ],
+          description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
+        },
+
+
+        {
+          number: 4,
+          name: 'Applications',
+          type: 'APPLICATIONS',
+          questionList: [
+            {
+              question: 'Select the attributes applicable to your company?',
+              description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
+              answerList: [
+                {
+                  label: 'Low use of energy'
+                },
+                {
+                  label: 'Foreign exports'
+                },
+                {
+                  label: 'Trade financing'
+                },
+                {
+                  label: 'IP rights licensing'
+                },
+                {
+                  label: 'Innovative technology'
+                },
+                {
+                  label: 'Hiring local staff'
+                },
+                {
+                  label: 'Patents owned'
+                },
+                {
+                  label: 'New product'
+                },
+                {
+                  label: 'Innovative Technology'
+                }
+              ]
+            }
+          ]
         }
         
       ]
     }
+
+
+
+
+
+    this.currentStepIndex = 0;
+    this.currentStep = this.config.steps[this.currentStepIndex];
+
   }
 
   render() {
@@ -254,33 +366,30 @@ export class SingaporeIncentivesMatch extends LitElement {
       <div class="main-container">
         <div class="progress-bar-container">
 
+          <!-- ${this.config.steps.map(item => html`
+            <div class="number-in-circle">${item.number}</div>
+            <div class="step-name">${item.name}</div>
+            <div class="line-separator">
+              <div class="line"></div>
+            </div>
+          `)} -->
 
-          <div class="number-in-circle">1</div>
-          <div class="step-name">Company Info</div>
-          <div class="line-separator">
-            <div class="line"></div>
-          </div>
 
-          <div class="number-in-circle active">2</div>
-          <div class="step-name">Industry</div>
-          <div class="line-separator">
-            <div class="line"></div>
-          </div>
+          ${this.config.steps.map((item, index) => 
+            html`
+              <div class="number-in-circle">${item.number}</div>
+              <div class="step-name">${item.name}</div>
 
-          <div class="number-in-circle">3</div>
-          <div class="step-name">Key Features</div>
-          <div class="line-separator">
-            <div class="line"></div>
-          </div>
 
-          <div class="number-in-circle">4</div>
-          <div class="step-name"><span class="red">18&nbsp;</span> Matches</div>
-          <div class="line-separator">
-            <div class="line"></div>
-          </div>
+              ${this.config.steps.length !== index +1 ?
+                html`<div class="line-separator">
+                    <div class="line"></div>
+                  </div>` :
+                html``}
 
-          <div class="number-in-circle">5</div>
-          <div class="step-name">Applications</div>
+             
+            `)}
+
 
         </div>
 
