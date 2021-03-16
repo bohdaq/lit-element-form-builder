@@ -184,7 +184,69 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   constructor() {
     super();
-    
+    this.config = {
+      steps: [
+        {
+          number: 0,
+          name: 'Company Info',
+          type: 'QUESTIONNAIRE',
+          questionList: [
+            {
+              question: 'How old is your company?',
+              description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
+              answerList: [
+                {
+                  label: 'Not yet incorporated'
+                },
+                {
+                  label: '0 - 2 years'
+                },
+                {
+                  label: 'More than 2 years'
+                }
+              ]
+            },
+            {
+              question: 'What percentage of your company is owned by Singapore residents?',
+              description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
+              answerList: [
+                {
+                  label: '0%'
+                },
+                {
+                  label: 'Less than 30%'
+                },
+                {
+                  label: '30 to 50%'
+                },
+                {
+                  label: 'More than 50%'
+                }
+              ]
+            },
+            {
+              question: 'How many employees do you have in Singapore?',
+              description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
+              answerList: [
+                {
+                  label: '0 - 10'
+                },
+                {
+                  label: '11 - 50'
+                },
+                {
+                  label: '51 - 200'
+                },
+                {
+                  label: 'More than 200'
+                }
+              ]
+            }
+          ]
+        }
+        
+      ]
+    }
   }
 
   render() {
