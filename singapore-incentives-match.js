@@ -182,6 +182,23 @@ export class SingaporeIncentivesMatch extends LitElement {
         font-weight: 200;
         font-family: "Poppins",sans-serif;
       }
+
+      .blocks-container {
+        display: flex;
+      }
+
+      .block {
+        flex: 1;
+        background-color: rgb(41,152,244);
+        margin: 1em;
+        padding: 1em;
+      }
+
+      .block .title {
+        color: rgb(255,188,0);
+        text-transform: uppercase;
+        font-size: .7em;
+      }
     `;
   }
 
@@ -404,6 +421,22 @@ export class SingaporeIncentivesMatch extends LitElement {
                 html`
                 
                     <p class="matches-heading">${this.currentStep.heading}</p>
+
+                    <div class="blocks-container">
+                      
+                      <div class="tax-incentives block">
+                        <span class="title">Tax Incentives</span>
+                      </div>
+
+                      <div class="grants block">
+                        <span class="title">Grants</span>
+                      </div>
+                      
+                      <div class="funding-sources block">
+                        <span class="title">Funding Sources</span>
+                      </div>
+
+                    </div>
                     
                 
                 ` :
