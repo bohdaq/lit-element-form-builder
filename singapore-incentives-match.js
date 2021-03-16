@@ -106,11 +106,10 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .answers-container {
         display: flex;
+        padding: 30px;
+        flex-flow: wrap
       }
 
-      .answers-container {
-        padding: 30px;
-      }
 
       .answer-container {
         box-shadow: 0em 0em 0.65em 0em rgb(0 0 0 / 25%);
@@ -122,7 +121,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         align-items: center;
         text-align: center;
 
-        margin-right: 2em;
+        margin: 1em;
       }
 
       .check-mark-container {
