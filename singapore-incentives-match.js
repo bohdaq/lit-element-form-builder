@@ -391,84 +391,56 @@ export class SingaporeIncentivesMatch extends LitElement {
 
         <div class="content-container">
 
-
-          <div class="question-container">
-            <div class="question-title">How old is your company?</div>
-            <div class="question-description">Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.</div>
-            <div class="answers-container">
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">Not yet incorporated</div>
-              </div>
-
-              <div class="answer-container">
-                <div class="check-mark-container white selected">&#10003;</div>
-                <div class="answer-label">0 - 2 years</div>
-              </div>
-
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">More than 2 years</div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="question-container">
-            <div class="question-title">What percentage of your company is owned by Singapore residents?</div>
-            <div class="question-description">Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.</div>
-            <div class="answers-container">
-              <div class="answer-container">
-                <div class="check-mark-container white selected">&#10003;</div>
-                <div class="answer-label">0%</div>
-              </div>
-
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">Less than 30%</div>
-              </div>
-
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">30% to 50%</div>
-              </div>
-
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">More than 50%</div>
-              </div>
-
-            </div>
-          </div>
+        ${this.currentStep.type === 'QUESTIONNAIRE'  ?
+                html`
 
 
+            ${this.currentStep.questionList.map((item, index) => 
+              html`
 
-          <div class="question-container">
-            <div class="question-title">How many employees do you have in Singapore?</div>
-            <div class="question-description">Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.</div>
-            <div class="answers-container">
-              <div class="answer-container">
-                <div class="check-mark-container white selected">&#10003;</div>
-                <div class="answer-label">0 - 10</div>
-              </div>
+                  <div class="question-container">
+                    <div class="question-title">${item.question}</div>
+                    <div class="question-description">${item.description}</div>
+                    <div class="answers-container">
 
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">11 - 50</div>
-              </div>
 
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">51 - 200</div>
-              </div>
+                    ${item.answerList.map((answer, index) => 
+                      html`
+                        <div class="answer-container">
+                          <div class="check-mark-container white">&#10003;</div>
+                          <div class="answer-label">${answer.label}</div>
+                        </div>
+                      
+                      `)}
 
-              <div class="answer-container">
-                <div class="check-mark-container white">&#10003;</div>
-                <div class="answer-label">More than 200</div>
-              </div>
+                     
 
-            </div>
-          </div>
+                    </div>
+                  </div>
+
+              
+              `)}
+                
+
+                
+                ` :
+                html``}
+
+        ${this.currentStep.type === 'MATCHES'  ?
+                html`
+                
+                
+                
+                ` :
+                html``}
+
+        ${this.currentStep.type === 'APPLICATIONS'  ?
+                html`
+                
+                
+                ` :
+                html``}
+
 
 
         </div>
