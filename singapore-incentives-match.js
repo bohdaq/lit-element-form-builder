@@ -191,13 +191,18 @@ export class SingaporeIncentivesMatch extends LitElement {
         flex: 1;
         background-color: rgb(41,152,244);
         margin: 1em;
-        padding: 1em;
+        padding: 2em;
       }
 
       .block .title {
         color: rgb(255,188,0);
         text-transform: uppercase;
         font-size: .7em;
+      }
+
+      .numbers-block {
+        margin-top: 3em;
+        display: flex;
       }
     `;
   }
@@ -425,15 +430,38 @@ export class SingaporeIncentivesMatch extends LitElement {
                     <div class="blocks-container">
                       
                       <div class="tax-incentives block">
-                        <span class="title">Tax Incentives</span>
+                        <div class="title">Tax Incentives</div>
+
+                        <div class="numbers-block">
+                          <div class="numbers-block-left-part">
+                            <div>
+                              Number of tax incentives
+                            </div>
+                            <div>
+                              10
+                            </div>
+                          </div>
+                          <div class="numbers-block-right-part">
+                            <div>
+                            Total value of tax incentives available
+                              </div>
+                              <div>
+                                S$22k
+                              </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="grants block">
-                        <span class="title">Grants</span>
+                        <div class="title">Grants</div>
+
+                        <div></div>
                       </div>
                       
                       <div class="funding-sources block">
-                        <span class="title">Funding Sources</span>
+                        <div class="title">Funding Sources</div>
+
+                        <div></div>
                       </div>
 
                     </div>
