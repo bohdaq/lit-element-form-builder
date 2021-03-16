@@ -18,9 +18,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'form-builder.js',
+  input: 'singapore-incentives-match.js',
   output: {
-    file: 'form-builder.bundled.js',
+    file: 'singapore-incentives-match.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {

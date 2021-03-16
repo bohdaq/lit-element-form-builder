@@ -1,130 +1,14 @@
 {
   "version": "experimental",
   "tags": [
+    
     {
-      "name": "draggable-entity",
-      "path": "./draggable-entity.js",
-      "description": "Control which can be put on the form",
-      "properties": [
-        {
-          "name": "control",
-          "description": "Control which can be put on the form"
-        }
-      ]
-    },
-    {
-      "name": "form-item",
-      "path": "./form-item.js",
-      "description": "Control from the form panel",
-      "attributes": [
-        {
-          "name": "selected",
-          "description": "Is current control selected",
-          "type": "boolean"
-        }
-      ],
-      "properties": [
-        {
-          "name": "selected",
-          "attribute": "selected",
-          "description": "Is current control selected",
-          "type": "boolean"
-        },
-        {
-          "name": "isFromTopToBottom",
-          "description": "Is drag'n'drop being done from top to bottom or vice versa"
-        },
-        {
-          "name": "isDraggedOver",
-          "description": "Is control being dragged over this element",
-          "default": "false"
-        }
-      ]
-    },
-    {
-      "name": "item-separator",
-      "path": "./item-separator.js",
-      "description": "Separator between controls in the form panel",
-      "properties": [
-        {
-          "name": "index",
-          "description": "Index in the form for this element (same as assosiated control)"
-        },
-        {
-          "name": "isDraggedOver",
-          "description": "Is control being dragged over this element",
-          "default": "false"
-        }
-      ]
-    },
-    {
-      "name": "item-spot-placeholder",
-      "path": "./item-spot-placeholder.js",
-      "description": "Placeholder for a control to be dropped, placed at the bottom of the form panel",
-      "properties": [
-        {
-          "name": "isDraggedOver",
-          "description": "Is control being dragged over this element"
-        }
-      ]
-    },
-    {
-      "name": "form-builder",
-      "path": "./form-builder.js",
+      "name": "singapore-incentives-match",
+      "path": "./singapore-incentives-match.js",
       "description": "Form Builder using Drag'n'Drop written in LitElement",
       "properties": [
-        {
-          "name": "NOT_SELECTED_INDEX",
-          "description": "Value for not selected index",
-          "default": "999999"
-        },
-        {
-          "name": "isDragOverFormPanelFromControlPanel",
-          "description": "Property to determine whether drag over is being done over form panel using item from control panel",
-          "default": "false"
-        },
-        {
-          "name": "selectedIndex",
-          "description": "Index of the selected item from control panel",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "selectedInFormIndex",
-          "description": "Index of the selected item from form panel",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "inFormHoveredOverItemIndex",
-          "description": "Applicable only to reordering inside the form panel. Property to determine index of hovered over control",
-          "default": "\"NOT_SELECTED_INDEX\""
-        },
-        {
-          "name": "formItemList",
-          "description": "List of controls on the form.",
-          "default": "[]"
-        },
-        {
-          "name": "controlList",
-          "description": "List of available controls to be dragged onto form.",
-          "default": "[{\"control\":\"textbox\"},{\"control\":\"number\"},{\"control\":\"combobox\"}]"
-        },
-        {
-          "name": "isDndInsideForm",
-          "description": "Property to determine whether Drag'n'Drop is being done from controls panel to form panel, or just inside form panel",
-          "default": "false"
-        },
-        {
-          "name": "isFromTopToBottom",
-          "description": "Applicable only to reordering inside the form panel. Property to determine whether drag'n'drop performed from top to bottom or vice versa",
-          "default": "false"
-        }
       ],
-      "events": [
-        {
-          "name": "form-builder-updated",
-          "description": "Event which is thrown at any given form modification."
-        }
-      ]
+      "events": []
     }
   ]
 }
