@@ -175,6 +175,13 @@ export class SingaporeIncentivesMatch extends LitElement {
       .flex {
         flex: 1;
       }
+
+      .matches-heading {
+        text-align: center;
+        font-size: 1.7em;
+        font-weight: 200;
+        font-family: "Poppins",sans-serif;
+      }
     `;
   }
 
@@ -293,7 +300,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           number: 3,
           name: 'Matches',
           type: 'MATCHES',
-          heading: 'You have selected the following programs',
+          heading: 'You may qualify for the following programs',
           matchList: [
             {
               label: 'Enterprise Development Grant',
@@ -313,42 +320,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         {
           number: 4,
           name: 'Applications',
-          type: 'APPLICATIONS',
-          questionList: [
-            {
-              question: 'Select the attributes applicable to your company?',
-              description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
-              answerList: [
-                {
-                  label: 'Low use of energy'
-                },
-                {
-                  label: 'Foreign exports'
-                },
-                {
-                  label: 'Trade financing'
-                },
-                {
-                  label: 'IP rights licensing'
-                },
-                {
-                  label: 'Innovative technology'
-                },
-                {
-                  label: 'Hiring local staff'
-                },
-                {
-                  label: 'Patents owned'
-                },
-                {
-                  label: 'New product'
-                },
-                {
-                  label: 'Innovative Technology'
-                }
-              ]
-            }
-          ]
+          type: 'APPLICATIONS'
         }
         
       ]
@@ -431,7 +403,8 @@ export class SingaporeIncentivesMatch extends LitElement {
         ${this.currentStep.type === 'MATCHES'  ?
                 html`
                 
-                
+                    <p class="matches-heading">${this.currentStep.heading}</p>
+                    
                 
                 ` :
                 html``}
