@@ -12,7 +12,6 @@ export class SingaporeIncentivesMatch extends LitElement {
       }
 
       .main-container {
-        width: 850px;
 
         border-width: 1px;
         border-style: solid;
@@ -90,7 +89,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .content-container {
         margin: 1.5em 2em;
-        height: 786px;
+        min-height: 786px;
       }
 
       .question-description {
@@ -239,6 +238,48 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .selected-step {
         color: black; 
+      }
+
+      .description-label {
+        padding-left: 16px;
+      }
+
+      .program-row {
+        display: flex;
+
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgray;
+
+        padding: .7em;
+      }
+
+      .program-row-number {
+        font-family: "Roboto",sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0em;
+        text-transform: none;
+        color: #000;
+        padding-right: 16px;
+      }
+
+      .program-row-label {
+        font-family: "Roboto",sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0em;
+        text-transform: none;
+        color: #000;
+        background-color: transparent;
+      }
+
+      .program-row-see-details {
+        white-space: nowrap;
+        color: rgb(77,161,255);
       }
     `;
   }
@@ -538,6 +579,14 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
                     <div class="description-label">Description of the 18 program found</div>
+
+                    <div class="program-row">
+                      <div class="program-row-number">1</div>
+                      <div class="program-row-label">Enterprise Development Grant</div>
+                      <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
+                      <div class="program-row-see-details">See details</div>
+                      <div class="program-row-checkbox">C</div>
+                    </div>
                     
                 
                 ` :
