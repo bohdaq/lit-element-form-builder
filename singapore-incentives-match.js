@@ -298,6 +298,20 @@ export class SingaporeIncentivesMatch extends LitElement {
       .program-row-checkbox {
         margin-left: 1em;
       }
+
+      .explanation-text {
+        font-family: "Roboto",sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: none;
+        color: rgb(66,66,66);
+
+        margin-top: 1em;
+      }
     `;
   }
 
@@ -430,14 +444,10 @@ export class SingaporeIncentivesMatch extends LitElement {
             },
           ],
           description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
-        },
-
-
-        {
-          number: 4,
-          name: 'Applications',
-          type: 'APPLICATIONS'
         }
+
+
+       
         
       ]
     }
@@ -627,6 +637,10 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
+                    </div>
+
+                    <div class="explanation-text">
+                      We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. Check the programs you want to evaluate and click the button below.
                     </div>
                     
                 
