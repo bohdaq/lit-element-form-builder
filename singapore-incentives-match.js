@@ -204,6 +204,25 @@ export class SingaporeIncentivesMatch extends LitElement {
         margin-top: 3em;
         display: flex;
       }
+
+      .numbers-block-heading {
+        font-size: .65em;
+        color: white;
+      }
+
+      .numbers-block-left-part {
+        margin-right: .7em;
+      }
+
+      .number-of-tax-incentives, .total-value-of-tax-incentives {
+        color: white;
+        font-size: 1.5em;
+        display: flex;
+      }
+
+      .currency-container {
+        font-size: .7em;
+      }
     `;
   }
 
@@ -434,19 +453,19 @@ export class SingaporeIncentivesMatch extends LitElement {
 
                         <div class="numbers-block">
                           <div class="numbers-block-left-part">
-                            <div>
+                            <div class="numbers-block-heading">
                               Number of tax incentives
                             </div>
-                            <div>
+                            <div class="number-of-tax-incentives">
                               10
                             </div>
                           </div>
                           <div class="numbers-block-right-part">
-                            <div>
+                            <div class="numbers-block-heading">
                             Total value of tax incentives available
                               </div>
-                              <div>
-                                S$22k
+                              <div class="total-value-of-tax-incentives">
+                                <div class="currency-container">S$</div>22k
                               </div>
                           </div>
                         </div>
