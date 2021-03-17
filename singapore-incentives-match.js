@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import './the-checkbox';
 
 
 /**
@@ -585,7 +586,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-label">Enterprise Development Grant</div>
                       <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
                       <div class="program-row-see-details">See details</div>
-                      <div class="program-row-checkbox">C</div>
+                      <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
                     
                 
