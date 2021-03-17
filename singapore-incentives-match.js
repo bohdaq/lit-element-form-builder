@@ -282,6 +282,15 @@ export class SingaporeIncentivesMatch extends LitElement {
         white-space: nowrap;
         color: rgb(77,161,255);
       }
+      
+      .program-row-see-details:hover {
+        color: rgb(245,147,54);
+        cursor: pointer;
+      }
+
+      .program-row-checkbox {
+        margin-left: 1em;
+      }
     `;
   }
 
