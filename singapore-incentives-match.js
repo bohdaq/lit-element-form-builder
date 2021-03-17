@@ -57,13 +57,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         align-items: center;
         justify-content: center;
         margin-right: 10px;
+        flex: 1;
       }
 
 
       .line {
         background-color: lightgray;
         height: 1px;
-        width: 50px;
+        width: 100%;
       }
 
       .active {
@@ -385,11 +386,11 @@ export class SingaporeIncentivesMatch extends LitElement {
             html`
 
               ${this.currentStepIndex === index  ?
-                html`<div class="number-in-circle active">${item.number}</div>` :
-                html`<div class="number-in-circle">${item.number}</div>`}
+                html`<div class="number-in-circle active">${item.number}</div><div class="step-name"><b>${item.name}</b></div>` :
+                html`<div class="number-in-circle">${item.number}</div><div class="step-name">${item.name}</div>`}
 
 
-                <div class="step-name">${item.name}</div>
+                
 
 
                 ${this.config.steps.length !== index +1 ?
