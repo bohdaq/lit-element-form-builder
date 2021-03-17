@@ -90,6 +90,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .content-container {
         margin: 1.5em 2em;
+        height: 786px;
       }
 
       .question-description {
@@ -223,6 +224,21 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .currency-container {
         font-size: .7em;
+      }
+
+      .description-label {
+        font-family: "Roboto",sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: 0em;
+        text-transform: none;
+        color: rgb(66,66,66);
+      }
+
+      .selected-step {
+        color: black; 
       }
     `;
   }
@@ -386,7 +402,7 @@ export class SingaporeIncentivesMatch extends LitElement {
             html`
 
               ${this.currentStepIndex === index  ?
-                html`<div class="number-in-circle active">${item.number}</div><div class="step-name"><b>${item.name}</b></div>` :
+                html`<div class="number-in-circle active">${item.number}</div><div class="step-name selected-step"><b>${item.name}</b></div>` :
                 html`<div class="number-in-circle">${item.number}</div><div class="step-name">${item.name}</div>`}
 
 
@@ -472,19 +488,56 @@ export class SingaporeIncentivesMatch extends LitElement {
                         </div>
                       </div>
 
-                      <div class="grants block">
+                      <div class="tax-incentives block">
                         <div class="title">Grants</div>
 
-                        <div></div>
+                        <div class="numbers-block">
+                          <div class="numbers-block-left-part">
+                            <div class="numbers-block-heading">
+                              Number of grants available
+                            </div>
+                            <div class="number-of-tax-incentives">
+                              4
+                            </div>
+                          </div>
+                          <div class="numbers-block-right-part">
+                            <div class="numbers-block-heading">
+                              Total value of grants available
+                              </div>
+                              <div class="total-value-of-tax-incentives">
+                                <div class="currency-container">S$</div>37k
+                              </div>
+                          </div>
+                        </div>
                       </div>
                       
-                      <div class="funding-sources block">
+                      <div class="tax-incentives block">
                         <div class="title">Funding Sources</div>
 
-                        <div></div>
+                        <div class="numbers-block">
+                          <div class="numbers-block-left-part">
+                            <div class="numbers-block-heading">
+                              Equity programs
+                            </div>
+                            <div class="number-of-tax-incentives">
+                              4
+                            </div>
+                          </div>
+                          <div class="numbers-block-right-part">
+                            <div class="numbers-block-heading">
+                            Total value of equity programs available
+                              </div>
+                              <div class="total-value-of-tax-incentives">
+                                <div class="currency-container">S$</div>255k
+                              </div>
+                          </div>
+                        </div>
                       </div>
 
                     </div>
+
+
+                    <div class="description-label">Description of the 18 program found</div>
                     
                 
                 ` :
