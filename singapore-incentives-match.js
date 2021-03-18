@@ -424,15 +424,12 @@ export class SingaporeIncentivesMatch extends LitElement {
 
             ${this.currentStep.questionList.map((item, index) => 
               html`
-
                   <the-question .item="${item}"></the-question>
-
-              
               `)}
-                
-
-                
-                ` :
+               
+               
+               
+               ` :
                 html``}
 
         ${this.currentStep.type === 'MATCHES'  ?
