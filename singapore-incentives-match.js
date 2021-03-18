@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import './the-checkbox';
+import './the-question';
 import './the-answer';
 
 
@@ -77,44 +78,12 @@ export class SingaporeIncentivesMatch extends LitElement {
         color: red;
       }
 
-      .question-title {
-        font-family: "Poppins",sans-serif;
-        font-size: 1.2em;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        margin-right: calc(0em * -1);
-        text-transform: none;
-        color: rgba(0,0,0,1);
-      }
 
       .content-container {
         margin: 1.5em 2em;
         min-height: 786px;
       }
 
-      .question-description {
-        margin-top: 0.35em;
-        font-family: "Poppins",sans-serif;
-        font-size: 1em;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        margin-right: calc(0em * -1);
-        text-transform: none;
-        color: rgb(117,117,117);
-      }
-
-      .answers-container {
-        display: flex;
-        padding: 30px;
-        flex-flow: wrap
-      }
-
-
-      
 
       .buttons-container {
         display: flex;
@@ -456,22 +425,7 @@ export class SingaporeIncentivesMatch extends LitElement {
             ${this.currentStep.questionList.map((item, index) => 
               html`
 
-                  <div class="question-container">
-                    <div class="question-title">${item.question}</div>
-                    <div class="question-description">${item.description}</div>
-                    <div class="answers-container">
-
-
-                    ${item.answerList.map((answer, index) => 
-                      html`
-                        <the-answer>${answer.label}</the-answer>
-                      
-                      `)}
-
-                     
-
-                    </div>
-                  </div>
+                  <the-question .item="${item}"></the-question>
 
               
               `)}
