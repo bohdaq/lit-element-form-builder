@@ -209,7 +209,9 @@ export class SingaporeIncentivesMatch extends LitElement {
         color: #000;
         background-color: transparent;
         min-width: 240px;
+        max-width: 240px;
       }
+
 
       .program-row-see-details {
         white-space: nowrap;
@@ -542,6 +544,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-number">1</div>
                       <div class="program-row-label">Enterprise Development Grant</div>
                       <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -550,6 +553,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-number">2</div>
                       <div class="program-row-label">Double tax deduction for IP licensing costs</div>
                       <div class="program-row-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -558,6 +562,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-number">3</div>
                       <div class="program-row-label">IRS Co-creation Grants</div>
                       <div class="program-row-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -566,6 +571,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="program-row-number">4</div>
                       <div class="program-row-label">Financial Sector Technology Scheme</div>
                       <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
