@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import './the-checkbox';
+import './the-answer';
 
 
 /**
@@ -113,50 +114,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       }
 
 
-      .answer-container {
-        box-shadow: 0em 0em 0.65em 0em rgb(0 0 0 / 25%);
-        width: 100px;
-        padding: 10px;
-
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        text-align: center;
-
-        margin: 1em;
-      }
-
-      .check-mark-container {
-        border: 1px solid lightgray;
-        border-radius: 20px;
-        width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5px;
-      }
-
-      .white {
-        color: white;
-      }
-
-      .answer-label {
-        font-family: "Poppins",sans-serif;
-        font-size: .8em;
-        font-style: normal;
-        font-weight: 200;
-        line-height: 1.4;
-        letter-spacing: 0em;
-
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .selected {
-        background-color: rgb(92,219,149);
-      }
+      
 
       .buttons-container {
         display: flex;
@@ -506,10 +464,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
                     ${item.answerList.map((answer, index) => 
                       html`
-                        <div class="answer-container">
-                          <div class="check-mark-container white">&#10003;</div>
-                          <div class="answer-label">${answer.label}</div>
-                        </div>
+                        <the-answer>${answer.label}</the-answer>
                       
                       `)}
 
