@@ -22,6 +22,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         border-radius: 10px;
         font-size: 1em;
         background-color: rgb(255,255,255);
+        max-width: 880px;
       }
 
       .progress-bar-container {
@@ -96,9 +97,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         margin: 0em 20px 0em 20px;
         border-radius: 5px;
         font-size: 1em;
-        color: white;
         padding: 10px;
+        background-color: rgb(220,220,220);
+        color: rgb(66,66,66);
+      }
+
+      .accent {
         background-color: rgb(92,219,149);
+        color: white;
       }
 
       .flex {
@@ -597,9 +603,10 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
         <div class="buttons-container">
-          <div class="button" @click=${this.previousClicked}>< Previous</div>
+          ${this.currentStepIndex === 0 ? html`` : html`<div class="button" @click=${this.previousClicked}>< Previous</div>`}
           <div class="flex"></div>
-          <div class="button" @click=${this.nextClicked}>Next ></div>
+          ${this.currentStepIndex === this.config.steps.length - 1 ? html`` : html`<div class="button accent" @click=${this.nextClicked}>Next ></div>`}
+          
 
 
         </div>

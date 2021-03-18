@@ -52,7 +52,7 @@ class v{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const g=` ${i} `;class y{constructor(e,t,i,s){this.strings=e,this.values=t,this.type=i,this.processor=s}getHTML(){const e=this.strings.length-1;let t="",o=!1;for(let r=0;r<e;r++){const e=this.strings[r],n=e.lastIndexOf("\x3c!--");o=(n>-1||o)&&-1===e.indexOf("--\x3e",n+1);const a=l.exec(e);t+=null===a?e+(o?g:s):e.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return t+=this.strings[e],t}getTemplateElement(){const e=document.createElement("template");return e.innerHTML=this.getHTML(),e}}
+ */const g=` ${i} `;class x{constructor(e,t,i,s){this.strings=e,this.values=t,this.type=i,this.processor=s}getHTML(){const e=this.strings.length-1;let t="",o=!1;for(let r=0;r<e;r++){const e=this.strings[r],n=e.lastIndexOf("\x3c!--");o=(n>-1||o)&&-1===e.indexOf("--\x3e",n+1);const a=l.exec(e);t+=null===a?e+(o?g:s):e.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return t+=this.strings[e],t}getTemplateElement(){const e=document.createElement("template");return e.innerHTML=this.getHTML(),e}}
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -65,7 +65,7 @@ class v{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const x=e=>null===e||!("object"==typeof e||"function"==typeof e),w=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class k{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new S(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let s=0;s<t;s++){i+=e[s];const t=this.parts[s];if(void 0!==t){const e=t.value;if(x(e)||!w(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class S{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===b||x(e)&&e===this.value||(this.value=e,f(e)||(this.committer.dirty=!0))}commit(){for(;f(this.value);){const e=this.value;this.value=b,e(this)}this.value!==b&&this.committer.commit()}}class ${constructor(e){this.value=void 0,this.i=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(c()),this.endNode=e.appendChild(c())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.s(this.startNode=c()),e.s(this.endNode=c())}insertAfterPart(e){e.s(this.startNode=c()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.i=e}commit(){if(null===this.startNode.parentNode)return;for(;f(this.i);){const e=this.i;this.i=b,e(this)}const e=this.i;e!==b&&(x(e)?e!==this.value&&this.o(e):e instanceof y?this.l(e):e instanceof Node?this.h(e):w(e)?this.p(e):e===m?(this.value=m,this.clear()):this.o(e))}s(e){this.endNode.parentNode.insertBefore(e,this.endNode)}h(e){this.value!==e&&(this.clear(),this.s(e),this.value=e)}o(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.h(document.createTextNode(i)),this.value=e}l(e){const t=this.options.templateFactory(e);if(this.value instanceof v&&this.value.template===t)this.value.update(e.values);else{const i=new v(t,e.processor,this.options),s=i._clone();i.update(e.values),this.h(s),this.value=i}}p(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,s=0;for(const o of e)i=t[s],void 0===i&&(i=new $(this.options),t.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(t[s-1])),i.setValue(o),i.commit(),s++;s<t.length&&(t.length=s,this.clear(i&&i.endNode))}clear(e=this.startNode){t(this.startNode.parentNode,e.nextSibling,this.endNode)}}class _{constructor(e,t,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.i=e}commit(){for(;f(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=!!this.i;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.i=b}}class C extends k{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new P(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class P extends S{}let E=!1;(()=>{try{const e={get capture(){return E=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}})();class A{constructor(e,t,i){this.value=void 0,this.i=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.u=e=>this.handleEvent(e)}setValue(e){this.i=e}commit(){for(;f(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=this.i,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),s=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.u,this.m),s&&(this.m=z(e),this.element.addEventListener(this.eventName,this.u,this.m)),this.value=e,this.i=b}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const z=e=>e&&(E?{capture:e.capture,passive:e.passive,once:e.once}:e.capture)
+ */const y=e=>null===e||!("object"==typeof e||"function"==typeof e),w=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class k{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new S(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let s=0;s<t;s++){i+=e[s];const t=this.parts[s];if(void 0!==t){const e=t.value;if(y(e)||!w(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class S{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===b||y(e)&&e===this.value||(this.value=e,f(e)||(this.committer.dirty=!0))}commit(){for(;f(this.value);){const e=this.value;this.value=b,e(this)}this.value!==b&&this.committer.commit()}}class ${constructor(e){this.value=void 0,this.i=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(c()),this.endNode=e.appendChild(c())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.s(this.startNode=c()),e.s(this.endNode=c())}insertAfterPart(e){e.s(this.startNode=c()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.i=e}commit(){if(null===this.startNode.parentNode)return;for(;f(this.i);){const e=this.i;this.i=b,e(this)}const e=this.i;e!==b&&(y(e)?e!==this.value&&this.o(e):e instanceof x?this.l(e):e instanceof Node?this.h(e):w(e)?this.p(e):e===m?(this.value=m,this.clear()):this.o(e))}s(e){this.endNode.parentNode.insertBefore(e,this.endNode)}h(e){this.value!==e&&(this.clear(),this.s(e),this.value=e)}o(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.h(document.createTextNode(i)),this.value=e}l(e){const t=this.options.templateFactory(e);if(this.value instanceof v&&this.value.template===t)this.value.update(e.values);else{const i=new v(t,e.processor,this.options),s=i._clone();i.update(e.values),this.h(s),this.value=i}}p(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,s=0;for(const o of e)i=t[s],void 0===i&&(i=new $(this.options),t.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(t[s-1])),i.setValue(o),i.commit(),s++;s<t.length&&(t.length=s,this.clear(i&&i.endNode))}clear(e=this.startNode){t(this.startNode.parentNode,e.nextSibling,this.endNode)}}class _{constructor(e,t,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.i=e}commit(){for(;f(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=!!this.i;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.i=b}}class C extends k{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new P(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class P extends S{}let E=!1;(()=>{try{const e={get capture(){return E=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}})();class A{constructor(e,t,i){this.value=void 0,this.i=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.u=e=>this.handleEvent(e)}setValue(e){this.i=e}commit(){for(;f(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=this.i,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),s=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.u,this.m),s&&(this.m=z(e),this.element.addEventListener(this.eventName,this.u,this.m)),this.value=e,this.i=b}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const z=e=>e&&(E?{capture:e.capture,passive:e.passive,once:e.once}:e.capture)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -118,7 +118,7 @@ class{handleAttributeExpressions(e,t,i,s){const o=t[0];if("."===o){return new C(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const N=(e,...t)=>new y(e,t,"html",q)
+ */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const N=(e,...t)=>new x(e,t,"html",q)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -445,6 +445,7 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         border-radius: 10px;
         font-size: 1em;
         background-color: rgb(255,255,255);
+        max-width: 880px;
       }
 
       .progress-bar-container {
@@ -632,7 +633,9 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         color: #000;
         background-color: transparent;
         min-width: 240px;
+        max-width: 240px;
       }
+
 
       .program-row-see-details {
         white-space: nowrap;
@@ -781,6 +784,7 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                       <div class="program-row-number">1</div>
                       <div class="program-row-label">Enterprise Development Grant</div>
                       <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -789,6 +793,7 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                       <div class="program-row-number">2</div>
                       <div class="program-row-label">Double tax deduction for IP licensing costs</div>
                       <div class="program-row-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -797,6 +802,7 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                       <div class="program-row-number">3</div>
                       <div class="program-row-label">IRS Co-creation Grants</div>
                       <div class="program-row-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
@@ -805,6 +811,7 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                       <div class="program-row-number">4</div>
                       <div class="program-row-label">Financial Sector Technology Scheme</div>
                       <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
+                      <div class="flex"></div>
                       <div class="program-row-see-details">See details</div>
                       <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
                     </div>
