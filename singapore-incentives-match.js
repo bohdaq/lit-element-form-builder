@@ -332,6 +332,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           questionList: [
             {
               uuid: '0199247e-43c7-4d7f-b04f-31920ea8f4cb',
+              multipleSelection: true,
               question: 'Select the attributes applicable to your company?',
               description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
               answerList: [

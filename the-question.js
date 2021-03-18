@@ -86,7 +86,9 @@ export class TheQuestion extends LitElement {
             item.select();
           }
         } else {
-          item.deselect();
+          if(!this.item.multipleSelection) {
+            item.deselect();
+          }
         }
       });
   }
