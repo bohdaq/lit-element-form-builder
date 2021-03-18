@@ -258,52 +258,66 @@ export class SingaporeIncentivesMatch extends LitElement {
           type: 'QUESTIONNAIRE',
           questionList: [
             {
+              uuid: '7f655c89-99cb-4acd-8211-a77329483b30',
               question: 'How old is your company?',
               description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
               answerList: [
                 {
+                  uuid: 'd0792019-d321-4aa6-82e6-9fda0bd4014f',
                   label: 'Not yet incorporated'
                 },
                 {
+                  uuid: '313c0c71-cb1b-4f2d-9cfe-5691df666d3d',
                   label: '0 - 2 years'
                 },
                 {
+                  uuid: 'b35d0885-427f-4408-9823-7e19f8c777d3',
                   label: 'More than 2 years'
                 }
               ]
             },
             {
+              uuid: 'ed552cf1-0be8-46f2-8efd-5f009f2f61aa',
               question: 'What percentage of your company is owned by Singapore residents?',
               description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
               answerList: [
                 {
+                  uuid: '71bab4c1-8190-4efd-b819-79de3b489695',
                   label: '0%'
                 },
                 {
+                  uuid: '742f6e85-9985-465d-91c1-38408804df02',
                   label: 'Less than 30%'
                 },
                 {
+                  uuid: '7a487b63-0563-4f1e-9274-7d60a1831207',
                   label: '30 to 50%'
                 },
                 {
+                  uuid: 'c06f0d5e-7cf3-45fd-ab04-e2fb87f3722e',
                   label: 'More than 50%'
                 }
               ]
             },
             {
+              uuid: '6e7f42a7-66f1-4e9b-8e94-b6947d4cad58',
               question: 'How many employees do you have in Singapore?',
               description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
               answerList: [
                 {
+                  uuid: 'fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2',
                   label: '0 - 10'
                 },
                 {
+                  uuid: 'e63daf39-64fb-4008-9d03-48107e923ca5',
                   label: '11 - 50'
                 },
                 {
+                  uuid: 'b33be8f8-7783-41ed-bc5e-b1a9f4a3e154',
                   label: '51 - 200'
                 },
                 {
+                  uuid: '740fdeae-f298-4f4e-80ac-64f08e5a5a32',
                   label: 'More than 200'
                 }
               ]
@@ -317,34 +331,44 @@ export class SingaporeIncentivesMatch extends LitElement {
           type: 'QUESTIONNAIRE',
           questionList: [
             {
+              uuid: '0199247e-43c7-4d7f-b04f-31920ea8f4cb',
               question: 'Select the attributes applicable to your company?',
               description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
               answerList: [
                 {
+                  uuid: 'ded67768-42c9-4b2e-80bd-c76268905ee0',
                   label: 'Low use of energy'
                 },
                 {
+                  uuid: 'cc26b090-9650-49b6-a376-b04b9ecc9465',
                   label: 'Foreign exports'
                 },
                 {
+                  uuid: 'dda467d5-f947-4789-9aea-034bd4f85a06',
                   label: 'Trade financing'
                 },
                 {
+                  uuid: 'b7a31474-1e5f-429d-830d-18a14ee56521',
                   label: 'IP rights licensing'
                 },
                 {
+                  uuid: 'e055fa05-7fb0-4f9b-b2b3-9294fbe56e43',
                   label: 'Innovative technology'
                 },
                 {
+                  uuid: '0d64e546-2fb1-41f4-8218-4ee539cea053',
                   label: 'Hiring local staff'
                 },
                 {
+                  uuid: '05432a32-c78d-4f23-a698-fb2f14c8a037',
                   label: 'Patents owned'
                 },
                 {
+                  uuid: 'bbfaf14c-1b85-4ba9-b631-ee6e58aa09e9',
                   label: 'New product'
                 },
                 {
+                  uuid: '42697e39-a6be-46d4-81f6-c7885c877f59',
                   label: 'Innovative Technology'
                 }
               ]
