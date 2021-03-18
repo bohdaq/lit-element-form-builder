@@ -52,7 +52,7 @@ export class TheQuestion extends LitElement {
   constructor() {
     super();
 
-
+    this.addEventListener('answer-selected', this._answerSelected);
   }
 
   render() {
@@ -65,7 +65,7 @@ export class TheQuestion extends LitElement {
 
                     ${this.item.answerList.map((answer, index) => 
                       html`
-                        <the-answer>${answer.label}</the-answer>
+                        <the-answer uuid="${answer.uuid}" .item="${answer}">${answer.label}</the-answer>
                       
                       `)}
 
@@ -76,9 +76,19 @@ export class TheQuestion extends LitElement {
     `;
   }
 
-  selectAnswer() {
-      this.selected = !this.selected;
-      console.log('selectAnswer', this.selected);
+  _answerSelected(ev) {
+      console.log('answer-selected', ev.detail.uuid);
+      this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
+        if(item.item.uuid === ev.detail.uuid) {
+          if(item.selected) {
+            item.deselect();
+          } else {
+            item.select();
+          }
+        } else {
+          item.deselect();
+        }
+      });
   }
 
 

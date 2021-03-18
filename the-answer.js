@@ -63,7 +63,8 @@ export class TheAnswer extends LitElement {
 
   static get properties() {
     return {
-        selected: Boolean
+        selected: Boolean,
+        item: Boolean,
     };
   }
 
@@ -78,12 +79,12 @@ export class TheAnswer extends LitElement {
 
 
         ${this.selected ? html`
-            <div class="answer-container"  @click="${this.selectAnswer}">
+            <div class="answer-container"  @click="${this._selectAnswerEvent}">
                 <div class="check-mark-container white selected">&#10003;</div>
                 <div class="answer-label"><slot></slot></div>
             </div>
         ` : html`
-            <div class="answer-container"  @click="${this.selectAnswer}">
+            <div class="answer-container"  @click="${this._selectAnswerEvent}">
                 <div class="check-mark-container white">&#10003;</div>
                 <div class="answer-label"><slot></slot></div>
             </div>
@@ -91,9 +92,22 @@ export class TheAnswer extends LitElement {
     `;
   }
 
-  selectAnswer() {
-      this.selected = !this.selected;
-      console.log('selectAnswer', this.selected);
+  _selectAnswerEvent() {
+      let event = new CustomEvent('answer-selected', {
+        detail: this.item,
+        bubbles: true, 
+        composed: true
+      });
+      this.dispatchEvent(event);
+
+  }
+
+  select() {
+      this.selected = true;
+  }
+
+  deselect() {
+      this.selected = false;
   }
 
 
