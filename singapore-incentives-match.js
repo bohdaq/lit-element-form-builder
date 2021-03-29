@@ -329,15 +329,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                   label: 'More than 200'
                 }
               ]
-            }
-          ]
-        },
-
-        {
-          number: 2,
-          name: 'Key Features',
-          type: 'QUESTIONNAIRE',
-          questionList: [
+            },
             {
               uuid: '0199247e-43c7-4d7f-b04f-31920ea8f4cb',
               multipleSelection: true,
@@ -384,8 +376,6 @@ export class SingaporeIncentivesMatch extends LitElement {
             }
           ]
         },
-
-
         {
           number: 3,
           name: 'Matches',
@@ -424,31 +414,7 @@ export class SingaporeIncentivesMatch extends LitElement {
   render() {
     return html`
       <div class="main-container">
-        <div class="progress-bar-container">
-
-          ${this.config.steps.map((item, index) => 
-            html`
-
-              ${this.currentStepIndex === index  ?
-                html`<div class="number-in-circle active">${item.number}</div><div class="step-name selected-step"><b>${item.name}</b></div>` :
-                html`<div class="number-in-circle">${item.number}</div><div class="step-name">${item.name}</div>`}
-
-
-                
-
-
-                ${this.config.steps.length !== index +1 ?
-                  html`<div class="line-separator">
-                      <div class="line"></div>
-                    </div>` :
-                  html``}
-
-             
-            `)}
-
-
-        </div>
-
+        
         <div class="content-container">
 
         ${this.currentStep.type === 'QUESTIONNAIRE'  ?
@@ -457,7 +423,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
             ${this.currentStep.questionList.map((item, index) => 
               html`
-                  <the-question .item="${item}"></the-question>
+                  <the-question .index="${index}" .item="${item}"></the-question>
               `)}
                
                

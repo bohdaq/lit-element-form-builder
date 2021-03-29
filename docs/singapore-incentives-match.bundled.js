@@ -520,9 +520,14 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         margin: 0em 20px 0em 20px;
         border-radius: 5px;
         font-size: 1em;
-        color: white;
         padding: 10px;
+        background-color: rgb(220,220,220);
+        color: rgb(66,66,66);
+      }
+
+      .accent {
         background-color: rgb(92,219,149);
+        color: white;
       }
 
       .flex {
@@ -834,9 +839,10 @@ const D="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
 
         <div class="buttons-container">
-          <div class="button" @click=${this.previousClicked}>< Previous</div>
+          ${0===this.currentStepIndex?N``:N`<div class="button" @click=${this.previousClicked}>< Previous</div>`}
           <div class="flex"></div>
-          <div class="button" @click=${this.nextClicked}>Next ></div>
+          ${this.currentStepIndex===this.config.steps.length-1?N``:N`<div class="button accent" @click=${this.nextClicked}>Next ></div>`}
+          
 
 
         </div>

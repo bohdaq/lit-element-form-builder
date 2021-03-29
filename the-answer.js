@@ -10,30 +10,15 @@ export class TheAnswer extends LitElement {
 
 
       .answer-container {
-        box-shadow: 0em 0em 0.65em 0em rgb(0 0 0 / 25%);
-        width: 100px;
-        padding: 10px;
-
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        text-align: center;
-
+        background-color: rgba(2, 0, 35, 0.1);
+        color: rgb(2, 0, 35);
         margin: 1em;
-
         cursor: pointer;
+        padding: .2em .5em;
+        width: 10em;
       }
 
-      .check-mark-container {
-        border: 1px solid lightgray;
-        border-radius: 32px;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5px;
-      }
+
 
       .white {
         color: white;
@@ -49,12 +34,20 @@ export class TheAnswer extends LitElement {
 
         height: 35px;
         display: flex;
-        justify-content: center;
         align-items: center;
+
+        padding-left: 6px;
+        padding-right: 6px;
       }
 
       .selected {
-        background-color: rgb(92,219,149);
+        background-color: rgba(2, 0, 35, 0.3);
+        box-shadow: rgb(2 0 35 / 80%) 0px 0px 0px 2px inset;
+        color: rgb(2, 0, 35);
+      }
+
+      .spacing {
+        flex: 1;
       }
 
       
@@ -79,13 +72,17 @@ export class TheAnswer extends LitElement {
 
 
         ${this.selected ? html`
-            <div class="answer-container"  @click="${this._selectAnswerEvent}">
-                <div class="check-mark-container white selected">&#10003;</div>
-                <div class="answer-label"><slot></slot></div>
+            <div class="answer-container selected"  @click="${this._selectAnswerEvent}">
+                <div class="answer-label">
+                  <slot></slot>
+                  <div class="spacing"></div>
+                  <span class="fill-white">
+                    <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
+                  </span>
+                </div>
             </div>
         ` : html`
             <div class="answer-container"  @click="${this._selectAnswerEvent}">
-                <div class="check-mark-container white">&#10003;</div>
                 <div class="answer-label"><slot></slot></div>
             </div>
         `}

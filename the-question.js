@@ -35,17 +35,38 @@ export class TheQuestion extends LitElement {
 
 
       .answers-container {
-        display: flex;
         padding: 30px;
-        flex-flow: wrap
       }
-      
+
+      .ok-next {
+        cursor: pointer;
+        outline: none;
+        border: 1px solid transparent;
+        margin: 0px;
+        box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+        padding: 6px 14px;
+        background-color: rgb(0, 175, 255);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+        width: 4em;
+        margin-left: 1em;
+      }
+
+      .ok-next:hover {
+        background-color: rgb(38, 187, 255);
+      }
+
+      .fill-white {
+        fill: white;
+        margin-left: .7em;
+      }
     `;
   }
 
   static get properties() {
     return {
-        item: Object
+        item: Object,
+        index: Number,
     };
   }
 
@@ -68,6 +89,17 @@ export class TheQuestion extends LitElement {
                         <the-answer uuid="${answer.uuid}" .item="${answer}">${answer.label}</the-answer>
                       
                       `)}
+                      
+
+                      <div>
+                        <div class="ok-next">
+                          Next
+                          <span class="fill-white">
+                            <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
+                          </span>
+                        </div>
+                      </div>
+                      
 
                      
 
