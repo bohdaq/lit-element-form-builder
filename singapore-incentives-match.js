@@ -409,6 +409,11 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.currentStepIndex = 0;
     this.currentStep = this.config.steps[this.currentStepIndex];
 
+    this.currentQuestionIndex = 0;
+    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+
+    this.addEventListener('next-question', this._nextQuestion);
+
   }
 
   render() {
@@ -420,13 +425,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         ${this.currentStep.type === 'QUESTIONNAIRE'  ?
                 html`
 
-
-            ${this.currentStep.questionList.map((item, index) => 
-              html`
-                  <the-question .index="${index}" .item="${item}"></the-question>
-              `)}
-               
-               
+                  <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}"></the-question>
                
                ` :
                 html``}
@@ -596,6 +595,12 @@ export class SingaporeIncentivesMatch extends LitElement {
 
     this.currentStepIndex = this.currentStepIndex - 1;
     this.currentStep = this.config.steps[this.currentStepIndex];
+    this.requestUpdate();
+  }
+
+  _nextQuestion() {
+    this.currentQuestionIndex = this.currentQuestionIndex + 1;
+    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
     this.requestUpdate();
   }
 

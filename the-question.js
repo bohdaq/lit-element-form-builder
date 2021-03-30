@@ -92,7 +92,7 @@ export class TheQuestion extends LitElement {
                       
 
                       <div>
-                        <div class="ok-next">
+                        <div class="ok-next" @click="${this._nextQuestionClicked}">
                           Next
                           <span class="fill-white">
                             <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
@@ -123,6 +123,15 @@ export class TheQuestion extends LitElement {
           }
         }
       });
+  }
+
+  _nextQuestionClicked(ev) {
+    let event = new CustomEvent('next-question', {
+      detail: this.item,
+      bubbles: true, 
+      composed: true
+    });
+    this.dispatchEvent(event);
   }
 
 
