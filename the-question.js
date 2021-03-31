@@ -109,12 +109,13 @@ export class TheQuestion extends LitElement {
   }
 
   _answerSelected(ev) {
-      console.log('answer-selected', ev.detail.uuid);
       this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
         if(item.item.uuid === ev.detail.uuid) {
           if(item.selected) {
+            console.log('answer-deselected', ev.detail.uuid);
             item.deselect();
           } else {
+            console.log('answer-selected', ev.detail.uuid);
             item.select();
           }
         } else {
@@ -123,6 +124,7 @@ export class TheQuestion extends LitElement {
           }
         }
       });
+      this._nextQuestionClicked();
   }
 
   _nextQuestionClicked(ev) {

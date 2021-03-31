@@ -63,6 +63,7 @@ export class TheAnswer extends LitElement {
 
   constructor() {
     super();
+    this.selected = false;
 
   }
 
@@ -90,21 +91,27 @@ export class TheAnswer extends LitElement {
   }
 
   _selectAnswerEvent() {
-      let event = new CustomEvent('answer-selected', {
-        detail: this.item,
-        bubbles: true, 
-        composed: true
-      });
-      this.dispatchEvent(event);
+    this.answerSelectedEvent();
+    this.deselect();
+  }
 
+  answerSelectedEvent() {
+    let event = new CustomEvent('answer-selected', {
+      detail: this.item,
+      bubbles: true, 
+      composed: true
+    });
+    this.dispatchEvent(event);
   }
 
   select() {
       this.selected = true;
+      this.requestUpdate();
   }
 
   deselect() {
       this.selected = false;
+      this.requestUpdate();
   }
 
 

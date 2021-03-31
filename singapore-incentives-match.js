@@ -261,6 +261,11 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.config = {
       steps: [
         {
+          number: 0,
+          name: 'Intro',
+          type: "INTRO"
+        },
+        {
           number: 1,
           name: 'Industry',
           type: 'QUESTIONNAIRE',
@@ -377,7 +382,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           ]
         },
         {
-          number: 3,
+          number: 2,
           name: 'Matches',
           type: 'MATCHES',
           heading: 'You may qualify for the following programs',
@@ -410,7 +415,9 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.currentStep = this.config.steps[this.currentStepIndex];
 
     this.currentQuestionIndex = 0;
-    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+    if(this.currentStep.questionList) {
+      this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+    }
 
     this.addEventListener('next-question', this._nextQuestion);
 
@@ -555,10 +562,10 @@ export class SingaporeIncentivesMatch extends LitElement {
                 ` :
                 html``}
 
-        ${this.currentStep.type === 'APPLICATIONS'  ?
+        ${this.currentStep.type === 'INTRO'  ?
                 html`
                 
-                
+                  INTRO
                 ` :
                 html``}
 
@@ -570,7 +577,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         <div class="buttons-container">
           ${this.currentStepIndex === 0 ? html`` : html`<div class="button" @click=${this.previousClicked}>< Previous</div>`}
           <div class="flex"></div>
-          ${this.currentStepIndex === this.config.steps.length - 1 ? html`` : html`<div class="button accent" @click=${this.nextClicked}>Next ></div>`}
+          ${this.currentStepIndex === this.config.steps.length - 1 ? html`` : html`<div class="button accent" @click=${this.nextStepClicked}>Next ></div>`}
           
 
 
@@ -581,11 +588,15 @@ export class SingaporeIncentivesMatch extends LitElement {
     `;
   }
 
-  nextClicked() {
-    console.log('nextClicked');
+  nextStepClicked() {
+    console.log('nextStepClicked');
 
     this.currentStepIndex = this.currentStepIndex + 1;
     this.currentStep = this.config.steps[this.currentStepIndex];
+
+    this.currentQuestionIndex = 0;
+    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+
     this.requestUpdate();
 
   }
@@ -598,11 +609,21 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.requestUpdate();
   }
 
-  _nextQuestion() {
+  _nextQuestion(ev) {
+    console.log('_nextQuestion', ev)
+    const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.questionList.length;
+    if(isLastQuestion) {
+      this.currentQuestionIndex = 0;
+      this.nextStepClicked();
+      return;
+    }
+
     this.currentQuestionIndex = this.currentQuestionIndex + 1;
     this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
     this.requestUpdate();
   }
+
+  
 
   
 
