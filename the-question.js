@@ -48,6 +48,7 @@ export class TheQuestion extends LitElement {
         color: rgb(255, 255, 255);
         border-radius: 4px;
         width: 4em;
+        margin-top: 1em;
       }
 
       .ok-next:hover {
@@ -57,6 +58,31 @@ export class TheQuestion extends LitElement {
       .fill-white {
         fill: white;
         margin-left: .7em;
+      }
+
+      /* iPhone X and Xs Max */
+      @media only screen 
+          and (min-device-width: 375px) 
+          and (min-device-height: 812px) 
+          and (-webkit-device-pixel-ratio: 3)
+          and (orientation: portrait) { 
+          /* styles */
+          .question-title {
+            font-size: 4em;
+          }
+
+          
+      }
+
+      /* iPhone XR */
+      @media only screen 
+          and (min-device-width: 414px) 
+          and (min-device-height: 896px) 
+          and (-webkit-device-pixel-ratio: 2) 
+          and (orientation: portrait) { 
+          /* styles */
+          
+
       }
     `;
   }

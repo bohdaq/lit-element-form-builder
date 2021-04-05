@@ -82,7 +82,6 @@ export class SingaporeIncentivesMatch extends LitElement {
       .content-container {
         padding: 1.5em 2em;
         background-color: rgb(255,255,255);
-        max-width: 720px;
 
         border-width: 1px;
         border-style: solid;
@@ -94,9 +93,6 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .buttons-container {
         display: flex;
-        padding: 10px 5px;
-        font-size: 14px;
-        border-top: 1px solid rgb(220,220,220);
       }
 
       .button {
@@ -264,8 +260,8 @@ export class SingaporeIncentivesMatch extends LitElement {
         background-color: rgb(0, 175, 255);
         color: rgb(255, 255, 255);
         border-radius: 4px;
-        width: 4em;
         margin-top: 1em;
+        min-width: 35px;
       }
 
       .ok-next:hover {
@@ -275,6 +271,61 @@ export class SingaporeIncentivesMatch extends LitElement {
       .fill-white {
         fill: white;
         margin-left: .7em;
+      }
+
+      h4 {
+        font-family: Poppins, sans-serif;
+        font-size: 1.2em;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.4;
+        letter-spacing: 0em;
+        margin-right: calc(0em);
+        text-transform: none;
+        color: rgb(0, 0, 0);
+      }
+
+      
+      @media all and (max-width: 768px) {
+          
+          .content-container {
+            max-width: 100%;
+          }
+      }
+
+      /* iPhone X and Xs Max */
+      @media only screen 
+          and (min-device-width: 375px) 
+          and (min-device-height: 812px) 
+          and (-webkit-device-pixel-ratio: 3)
+          and (orientation: portrait) { 
+          /* styles */
+          span.next {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            padding: 1em 2em;
+            border-radius: 14px;
+          }
+
+          h4 {
+            font-size: 4em;
+          }
+
+          
+      }
+
+      /* iPhone XR */
+      @media only screen 
+          and (min-device-width: 414px) 
+          and (min-device-height: 896px) 
+          and (-webkit-device-pixel-ratio: 2) 
+          and (orientation: portrait) { 
+          /* styles */
+          
+
       }
     `;
   }
@@ -601,12 +652,13 @@ export class SingaporeIncentivesMatch extends LitElement {
 
                   <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
 
-                  <div class="ok-next" @click="${this.nextStepClicked}">
-                    Next
-                    <span class="fill-white">
-                      <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
-                    </span>
+                  <div class="buttons-container">
+                    <div class="ok-next" @click="${this.nextStepClicked}">
+                      <span class="next">Next</span>
+                    </div>
+                    <div class="flex"></div>
                   </div>
+                  
                 ` :
                 html``}
 

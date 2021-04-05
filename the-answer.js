@@ -50,6 +50,40 @@ export class TheAnswer extends LitElement {
         flex: 1;
       }
 
+      /* iPhone X and Xs Max */
+      @media only screen 
+          and (min-device-width: 375px) 
+          and (min-device-height: 812px) 
+          and (-webkit-device-pixel-ratio: 3)
+          and (orientation: portrait) { 
+          /* styles */
+          .answer-container {
+            width: 80%;
+          }
+
+          .answer-label {
+            height: unset;
+            font-size: 3em;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+          }
+
+          
+      }
+
+      /* iPhone XR */
+      @media only screen 
+          and (min-device-width: 414px) 
+          and (min-device-height: 896px) 
+          and (-webkit-device-pixel-ratio: 2) 
+          and (orientation: portrait) { 
+          /* styles */
+          
+
+      }
+
       
     `;
   }
