@@ -47,7 +47,6 @@ export class TheQuestion extends LitElement {
         background-color: rgb(0, 175, 255);
         color: rgb(255, 255, 255);
         border-radius: 4px;
-        width: 4em;
         margin-top: 1em;
       }
 
@@ -60,6 +59,14 @@ export class TheQuestion extends LitElement {
         margin-left: .7em;
       }
 
+      .buttons-container {
+        display: flex;
+      }
+
+      .flex {
+        flex: 1;
+      }
+
       /* iPhone X and Xs Max */
       @media only screen 
           and (min-device-width: 375px) 
@@ -68,6 +75,13 @@ export class TheQuestion extends LitElement {
           and (orientation: portrait) { 
           /* styles */
           .question-title {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: .25em .5em;
+            border-radius: 14px;
             font-size: 4em;
           }
 
@@ -115,19 +129,15 @@ export class TheQuestion extends LitElement {
                       `)}
                       
 
-                      <div>
+                      <div class="buttons-container">
                         <div class="ok-next" @click="${this._nextQuestionClicked}">
-                          Next
-                          <span class="fill-white">
-                            <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
-                          </span>
+                          <span class="next">Next</span>
                         </div>
+                        <div class="flex"></div>
                       </div>
-                      
-
-                     
 
                     </div>
+
                   </div>
     `;
   }
