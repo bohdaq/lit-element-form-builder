@@ -95,7 +95,16 @@ export class TheQuestion extends LitElement {
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
-          
+          .question-title {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: .25em .5em;
+            border-radius: 14px;
+            font-size: 4em;
+          }
 
       }
     `;

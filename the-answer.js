@@ -80,7 +80,18 @@ export class TheAnswer extends LitElement {
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
-          
+          .answer-container {
+            width: 80%;
+          }
+
+          .answer-label {
+            height: unset;
+            font-size: 3em;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+          }
 
       }
 

@@ -339,7 +339,19 @@ export class SingaporeIncentivesMatch extends LitElement {
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
-          
+          span.next {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            padding: 1em 2em;
+            border-radius: 14px;
+          }
+
+          h4 {
+            font-size: 4em;
+          }
 
       }
     `;
