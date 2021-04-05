@@ -329,6 +329,10 @@ export class SingaporeIncentivesMatch extends LitElement {
             font-size: 4em;
           }
 
+          .intro-description {
+            font-size: 3em;
+          }
+
           
       }
 
@@ -351,6 +355,11 @@ export class SingaporeIncentivesMatch extends LitElement {
 
           h4 {
             font-size: 4em;
+          }
+
+
+          .intro-description {
+            font-size: 3em;
           }
 
       }

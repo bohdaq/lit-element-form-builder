@@ -85,6 +85,10 @@ export class TheQuestion extends LitElement {
             font-size: 4em;
           }
 
+          .question-description {
+            font-size: 3em;
+          }
+
           
       }
 
