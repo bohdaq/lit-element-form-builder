@@ -35,8 +35,6 @@ export class TheQuestion extends LitElement {
       }
 
 
-      .answers-container {
-      }
 
       .ok-next {
         cursor: pointer;

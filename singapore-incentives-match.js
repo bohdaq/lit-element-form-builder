@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit-element';
 import './the-checkbox';
 import './the-question';
 import './the-answer';
+import './the-results';
 
 
 /**
@@ -557,123 +558,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         ${this.currentStep.type === 'MATCHES'  ?
                 html`
                 
-                    <p class="matches-heading">${this.currentStep.heading}</p>
-
-                    <div class="blocks-container">
-                      
-                      <div class="tax-incentives block">
-                        <div class="title">Tax Incentives</div>
-
-                        <div class="numbers-block">
-                          <div class="numbers-block-left-part">
-                            <div class="numbers-block-heading">
-                              Number of tax incentives
-                            </div>
-                            <div class="number-of-tax-incentives">
-                              10
-                            </div>
-                          </div>
-                          <div class="numbers-block-right-part">
-                            <div class="numbers-block-heading">
-                            Total value of tax incentives available
-                              </div>
-                              <div class="total-value-of-tax-incentives">
-                                <div class="currency-container">S$</div>22k
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="tax-incentives block">
-                        <div class="title">Grants</div>
-
-                        <div class="numbers-block">
-                          <div class="numbers-block-left-part">
-                            <div class="numbers-block-heading">
-                              Number of grants available
-                            </div>
-                            <div class="number-of-tax-incentives">
-                              4
-                            </div>
-                          </div>
-                          <div class="numbers-block-right-part">
-                            <div class="numbers-block-heading">
-                              Total value of grants available
-                              </div>
-                              <div class="total-value-of-tax-incentives">
-                                <div class="currency-container">S$</div>37k
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="tax-incentives block">
-                        <div class="title">Funding Sources</div>
-
-                        <div class="numbers-block">
-                          <div class="numbers-block-left-part">
-                            <div class="numbers-block-heading">
-                              Equity programs
-                            </div>
-                            <div class="number-of-tax-incentives">
-                              4
-                            </div>
-                          </div>
-                          <div class="numbers-block-right-part">
-                            <div class="numbers-block-heading">
-                            Total value of equity programs available
-                              </div>
-                              <div class="total-value-of-tax-incentives">
-                                <div class="currency-container">S$</div>255k
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-
-                    <div class="description-label">Description of the 18 program found</div>
-
-                    <div class="program-row program-row-top-border">
-                      <div class="program-row-number">1</div>
-                      <div class="program-row-label">Enterprise Development Grant</div>
-                      <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                      <div class="flex"></div>
-                      <div class="program-row-see-details">See details</div>
-                      <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-                    </div>
-
-                    <div class="program-row">
-                      <div class="program-row-number">2</div>
-                      <div class="program-row-label">Double tax deduction for IP licensing costs</div>
-                      <div class="program-row-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
-                      <div class="flex"></div>
-                      <div class="program-row-see-details">See details</div>
-                      <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-                    </div>
-
-                    <div class="program-row">
-                      <div class="program-row-number">3</div>
-                      <div class="program-row-label">IRS Co-creation Grants</div>
-                      <div class="program-row-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
-                      <div class="flex"></div>
-                      <div class="program-row-see-details">See details</div>
-                      <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-                    </div>
-
-                    <div class="program-row">
-                      <div class="program-row-number">4</div>
-                      <div class="program-row-label">Financial Sector Technology Scheme</div>
-                      <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
-                      <div class="flex"></div>
-                      <div class="program-row-see-details">See details</div>
-                      <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-                    </div>
-
-                    <div class="explanation-text">
-                      We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. Check the programs you want to evaluate and click the button below.
-                    </div>
+                    <the-results></the-results>
                     
                 
                 ` :
