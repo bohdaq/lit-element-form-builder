@@ -12,17 +12,16 @@ export class SingaporeIncentivesMatch extends LitElement {
     return css`
       :host {
         display: flex;
+        justify-items: center;
+        align-items: center;
       }
 
       .main-container {
-
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(220,220,220);
-        border-radius: 10px;
         font-size: 1em;
-        background-color: rgb(255,255,255);
-        max-width: 880px;
+        
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
 
       .progress-bar-container {
@@ -81,8 +80,15 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
       .content-container {
-        margin: 1.5em 2em;
-        min-height: 786px;
+        padding: 1.5em 2em;
+        background-color: rgb(255,255,255);
+        max-width: 720px;
+
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(220,220,220);
+        border-radius: 10px;
+
       }
 
 
@@ -247,6 +253,29 @@ export class SingaporeIncentivesMatch extends LitElement {
 
         margin-top: 1em;
       }
+
+      .ok-next {
+        cursor: pointer;
+        outline: none;
+        border: 1px solid transparent;
+        margin: 0px;
+        box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+        padding: 6px 14px;
+        background-color: rgb(0, 175, 255);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+        width: 4em;
+        margin-top: 1em;
+      }
+
+      .ok-next:hover {
+        background-color: rgb(38, 187, 255);
+      }
+
+      .fill-white {
+        fill: white;
+        margin-left: .7em;
+      }
     `;
   }
 
@@ -263,7 +292,8 @@ export class SingaporeIncentivesMatch extends LitElement {
         {
           number: 0,
           name: 'Intro',
-          type: "INTRO"
+          type: "INTRO",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
         },
         {
           number: 1,
@@ -565,7 +595,18 @@ export class SingaporeIncentivesMatch extends LitElement {
         ${this.currentStep.type === 'INTRO'  ?
                 html`
                 
-                  INTRO
+                  <h4>${this.currentStep.name}</h4>
+
+                  ${this.currentStep.description}
+
+                  <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
+
+                  <div class="ok-next" @click="${this.nextStepClicked}">
+                    Next
+                    <span class="fill-white">
+                      <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
+                    </span>
+                  </div>
                 ` :
                 html``}
 
@@ -574,14 +615,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         </div>
 
 
-        <div class="buttons-container">
+        <!-- <div class="buttons-container">
           ${this.currentStepIndex === 0 ? html`` : html`<div class="button" @click=${this.previousClicked}>< Previous</div>`}
           <div class="flex"></div>
           ${this.currentStepIndex === this.config.steps.length - 1 ? html`` : html`<div class="button accent" @click=${this.nextStepClicked}>Next ></div>`}
           
 
 
-        </div>
+        </div> -->
 
 
       </div>
@@ -594,8 +635,12 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.currentStepIndex = this.currentStepIndex + 1;
     this.currentStep = this.config.steps[this.currentStepIndex];
 
-    this.currentQuestionIndex = 0;
-    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+
+    if(this.currentStep.type === 'QUESTIONNAIRE') {
+      this.currentQuestionIndex = 0;
+      this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+    }
+
 
     this.requestUpdate();
 

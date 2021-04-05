@@ -35,7 +35,6 @@ export class TheQuestion extends LitElement {
 
 
       .answers-container {
-        padding: 30px;
       }
 
       .ok-next {
@@ -49,7 +48,6 @@ export class TheQuestion extends LitElement {
         color: rgb(255, 255, 255);
         border-radius: 4px;
         width: 4em;
-        margin-left: 1em;
       }
 
       .ok-next:hover {
