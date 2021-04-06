@@ -813,6 +813,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
             .program-row-see-details {
               margin-left: 0;
+              font-size: 2em;
             }
 
             .description-label {
