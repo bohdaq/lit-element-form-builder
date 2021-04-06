@@ -144,6 +144,10 @@ export class TheResults extends LitElement {
         flex: 1;
       }
 
+      .inner-container {
+        display: flex;
+      }
+
       
 
 
@@ -189,6 +193,33 @@ export class TheResults extends LitElement {
 
             .numbers-block-right-part {
               display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
             }
           
       }
@@ -308,12 +339,20 @@ export class TheResults extends LitElement {
               <div class="description-label">Description of the 18 program found</div>
 
               <div class="program-row program-row-top-border">
-                <div class="program-row-number">1</div>
-                <div class="program-row-label">Enterprise Development Grant</div>
-                <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                <div class="flex"></div>
-                <div class="program-row-see-details">See details</div>
-                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
+                <div class="program-row-number">
+                  <span>1</span>
+                  <the-checkbox></the-checkbox>
+                </div>
+                <div class="inner-container">
+                  <div class="program-row-label">Enterprise Development Grant</div>
+                  <div class="program-row-description">
+                    Early-stage funding to fast-track commercialization of the technology solutions.
+                    <span class="program-row-see-details">See details</span>
+                  </div>
+                  
+                </div>
+                <div class="flex program-separator"></div>
+                <div class="program-row-checkbox"></div>
               </div>
 
               <div class="program-row">
