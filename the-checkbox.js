@@ -150,6 +150,55 @@ export class TheCheckbox extends LitElement {
           background-color: currentColor;
       }
 
+      /* iPhone X and Xs Max */
+      @media only screen 
+          and (min-device-width: 375px) 
+          and (min-device-height: 812px) 
+          and (-webkit-device-pixel-ratio: 3)
+          and (orientation: portrait) { 
+          /* styles */
+          .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
+
+          
+      }
+
+      /* iPhone XR */
+      @media only screen 
+          and (min-device-width: 414px) 
+          and (min-device-height: 896px) 
+          and (-webkit-device-pixel-ratio: 2) 
+          and (orientation: portrait) { 
+          /* styles */
+          
+
+      }
+
       
     `;
   }

@@ -148,6 +148,10 @@ export class TheResults extends LitElement {
         display: flex;
       }
 
+      .mobile-screen {
+        display: none;
+      }
+
       
 
 
@@ -220,6 +224,23 @@ export class TheResults extends LitElement {
             }
             .program-row {
               padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: 1em;
+            }
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
             }
           
       }
@@ -338,15 +359,15 @@ export class TheResults extends LitElement {
 
               <div class="description-label">Description of the 18 program found</div>
 
-              <div class="program-row program-row-top-border">
+              <div class="program-row program-row-top-border mobile-screen">
                 <div class="program-row-number">
-                  <span>1</span>
+                  <div class="mobile-screen-number">1</div>
                   <the-checkbox></the-checkbox>
                 </div>
                 <div class="inner-container">
                   <div class="program-row-label">Enterprise Development Grant</div>
                   <div class="program-row-description">
-                    Early-stage funding to fast-track commercialization of the technology solutions.
+                    <div class="program-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
                     <span class="program-row-see-details">See details</span>
                   </div>
                   
@@ -355,7 +376,16 @@ export class TheResults extends LitElement {
                 <div class="program-row-checkbox"></div>
               </div>
 
-              <div class="program-row">
+              <div class="program-row program-row-top-border desktop-screen">
+                <div class="program-row-number">1</div>
+                <div class="program-row-label">Enterprise Development Grant</div>
+                <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
+                <div class="flex"></div>
+                <div class="program-row-see-details">See details</div>
+                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
+              </div>
+
+              <div class="program-row desktop-screen">
                 <div class="program-row-number">2</div>
                 <div class="program-row-label">Double tax deduction for IP licensing costs</div>
                 <div class="program-row-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
@@ -364,7 +394,7 @@ export class TheResults extends LitElement {
                 <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
               </div>
 
-              <div class="program-row">
+              <div class="program-row desktop-screen">
                 <div class="program-row-number">3</div>
                 <div class="program-row-label">IRS Co-creation Grants</div>
                 <div class="program-row-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
@@ -373,7 +403,7 @@ export class TheResults extends LitElement {
                 <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
               </div>
 
-              <div class="program-row">
+              <div class="program-row desktop-screen">
                 <div class="program-row-number">4</div>
                 <div class="program-row-label">Financial Sector Technology Scheme</div>
                 <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
