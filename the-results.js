@@ -242,6 +242,18 @@ export class TheResults extends LitElement {
               font-size: 2.5em;
               padding: .5em 0;
             }
+
+            .matches-heading {
+              font-size: 3em;
+            }
+
+            .description-label {
+              font-size: 2em;
+            }
+
+            .explanation-text {
+              font-size: 2em;
+            }
           
       }
 
