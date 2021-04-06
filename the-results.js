@@ -359,6 +359,9 @@ export class TheResults extends LitElement {
 
               <div class="description-label">Description of the 18 program found</div>
 
+
+              <!-- mobile -->
+
               <div class="program-row program-row-top-border mobile-screen">
                 <div class="program-row-number">
                   <div class="mobile-screen-number">1</div>
@@ -375,6 +378,61 @@ export class TheResults extends LitElement {
                 <div class="flex program-separator"></div>
                 <div class="program-row-checkbox"></div>
               </div>
+
+              <div class="program-row program-row-top-border mobile-screen">
+                <div class="program-row-number">
+                  <div class="mobile-screen-number">2</div>
+                  <the-checkbox></the-checkbox>
+                </div>
+                <div class="inner-container">
+                  <div class="program-row-label">Double tax deduction for IP licensing costs</div>
+                  <div class="program-row-description">
+                    <div class="program-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
+                    <span class="program-row-see-details">See details</span>
+                  </div>
+                  
+                </div>
+                <div class="flex program-separator"></div>
+                <div class="program-row-checkbox"></div>
+              </div>
+
+              <div class="program-row program-row-top-border mobile-screen">
+                <div class="program-row-number">
+                  <div class="mobile-screen-number">3</div>
+                  <the-checkbox></the-checkbox>
+                </div>
+                <div class="inner-container">
+                  <div class="program-row-label">IRS Co-creation Grants</div>
+                  <div class="program-row-description">
+                    <div class="program-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
+                    <span class="program-row-see-details">See details</span>
+                  </div>
+                  
+                </div>
+                <div class="flex program-separator"></div>
+                <div class="program-row-checkbox"></div>
+              </div>
+
+
+              <div class="program-row program-row-top-border mobile-screen">
+                <div class="program-row-number">
+                  <div class="mobile-screen-number">4</div>
+                  <the-checkbox></the-checkbox>
+                </div>
+                <div class="inner-container">
+                  <div class="program-row-label">Financial Sector Technology Scheme</div>
+                  <div class="program-row-description">
+                    <div class="program-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
+                    <span class="program-row-see-details">See details</span>
+                  </div>
+                  
+                </div>
+                <div class="flex program-separator"></div>
+                <div class="program-row-checkbox"></div>
+              </div>
+
+
+              <!-- desktop -->
 
               <div class="program-row program-row-top-border desktop-screen">
                 <div class="program-row-number">1</div>
