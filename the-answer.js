@@ -20,7 +20,6 @@ export class TheAnswer extends LitElement {
       }
 
       .answer-container:hover {
-        background-color: rgba(2, 0, 35, 0.3)
       }
 
       .blink {
