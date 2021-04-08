@@ -16,9 +16,24 @@ export class TheAnswer extends LitElement {
         cursor: pointer;
         padding: .2em .5em;
         width: 10em;
+        border: 1px solid transparent;
       }
 
+      .answer-container:hover {
+        background-color: rgba(2, 0, 35, 0.3)
+      }
 
+      .blink {
+        background-color: rgba(2, 0, 35, 0.3);
+        border: 1px solid black;
+        animation: blinker 1s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: .6;
+        }
+      }
 
       .white {
         color: white;
@@ -136,8 +151,14 @@ export class TheAnswer extends LitElement {
   }
 
   _selectAnswerEvent() {
-    this.answerSelectedEvent();
-    this.deselect();
+    const that = this;
+    this.shadowRoot.querySelector('.answer-container').classList.add('blink');
+    setTimeout(() => {
+      that.shadowRoot.querySelector('.answer-container').classList.remove('blink');
+      that.answerSelectedEvent();
+      that.deselect();
+    }, 2000)
+    
   }
 
   answerSelectedEvent() {
