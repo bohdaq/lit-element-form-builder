@@ -364,6 +364,41 @@ export class SingaporeIncentivesMatch extends LitElement {
           }
 
       }
+
+
+      .animate {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+      @-webkit-keyframes fadeInDown {
+            0% {
+               opacity: 0;
+               -webkit-transform: translateY(-50px);
+            }
+            100% {
+               opacity: 1;
+               -webkit-transform: translateY(0);
+            }
+         }
+         
+         @keyframes fadeInDown {
+            0% {
+               opacity: 0;
+               transform: translateY(-50px);
+            }
+            100% {
+               opacity: 1;
+               transform: translateY(0);
+            }
+         }
+
+         .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+         }
     `;
   }
 
@@ -566,19 +601,23 @@ export class SingaporeIncentivesMatch extends LitElement {
 
         ${this.currentStep.type === 'INTRO'  ?
                 html`
-                
-                  <h4>${this.currentStep.name}</h4>
 
-                  <span class="intro-description">${this.currentStep.description}</span>
 
-                  <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
+                  <div class="intro-container animate fadeInDown">
+                      <h4>${this.currentStep.name}</h4>
 
-                  <div class="buttons-container">
-                    <div class="ok-next" @click="${this.nextStepClicked}">
-                      <span class="next">Next</span>
-                    </div>
-                    <div class="flex"></div>
+                      <span class="intro-description">${this.currentStep.description}</span>
+
+                      <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
+
+                      <div class="buttons-container">
+                        <div class="ok-next" @click="${this.nextStepClicked}">
+                          <span class="next">Next</span>
+                        </div>
+                        <div class="flex"></div>
+                      </div>
                   </div>
+
                   
                 ` :
                 html``}
