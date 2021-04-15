@@ -117,6 +117,7 @@ export class TheQuestion extends LitElement {
     return {
         item: Object,
         index: Number,
+        multipleSelection: Boolean
     };
   }
 
@@ -170,10 +171,17 @@ export class TheQuestion extends LitElement {
           }
         }
       });
-      this._nextQuestionClicked();
+      if(!this.multipleSelection) {
+        this._nextQuestionClicked();
+      }
   }
 
   _nextQuestionClicked(ev) {
+    this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
+      item.deselect();
+    });
+
+
     let event = new CustomEvent('next-question', {
       detail: this.item,
       bubbles: true, 

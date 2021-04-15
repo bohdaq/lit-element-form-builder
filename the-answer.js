@@ -25,7 +25,7 @@ export class TheAnswer extends LitElement {
       .blink {
         background-color: rgba(2, 0, 35, 0.3);
         border: 1px solid black;
-        animation: blinker 1s linear infinite;
+        animation: blinker .4s linear infinite;
       }
 
       @keyframes blinker {
@@ -123,7 +123,6 @@ export class TheAnswer extends LitElement {
   constructor() {
     super();
     this.selected = false;
-
   }
 
   render() {
@@ -136,9 +135,6 @@ export class TheAnswer extends LitElement {
                 <div class="answer-label">
                   <slot></slot>
                   <div class="spacing"></div>
-                  <span class="fill-white">
-                    <svg height="13" width="16"><path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path></svg>
-                  </span>
                 </div>
             </div>
         ` : html`
@@ -155,8 +151,7 @@ export class TheAnswer extends LitElement {
     setTimeout(() => {
       that.shadowRoot.querySelector('.answer-container').classList.remove('blink');
       that.answerSelectedEvent();
-      that.deselect();
-    }, 2000)
+    }, 400)
     
   }
 

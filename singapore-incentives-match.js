@@ -413,18 +413,17 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.config = {
       steps: [
         {
-          number: 0,
           name: 'Intro',
           type: "INTRO",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
         },
         {
-          number: 1,
           name: 'Industry',
           type: 'QUESTIONNAIRE',
           questionList: [
             {
               uuid: '7f655c89-99cb-4acd-8211-a77329483b30',
+              multipleSelection: true,
               question: 'How old is your company?',
               description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
               answerList: [
@@ -535,28 +534,11 @@ export class SingaporeIncentivesMatch extends LitElement {
           ]
         },
         {
-          number: 2,
           name: 'Matches',
           type: 'MATCHES',
           heading: 'You may qualify for the following programs',
-          matchList: [
-            {
-              label: 'Enterprise Development Grant',
-              description: 'Early-stage funding to fast-track commercialization of the technology solutions.',
-              link: 'https://google.com'
-            },
-            {
-              label: 'IRS Co-creation Grants',
-              description: 'Supports software developers in the development of innovative solutions for tax filing preparation or tax management.',
-              link: 'https://google.com'
-            },
-          ],
           description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
-        }
-
-
-       
-        
+        }  
       ]
     }
 
@@ -585,7 +567,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         ${this.currentStep.type === 'QUESTIONNAIRE'  ?
                 html`
 
-                  <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}"></the-question>
+                  <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .multipleSelection="${this.currentQuestion.multipleSelection}"></the-question>
                
                ` :
                 html``}
@@ -603,7 +585,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                 html`
 
 
-                  <div class="intro-container animate fadeInDown">
+                  <div class="intro-container">
                       <h4>${this.currentStep.name}</h4>
 
                       <span class="intro-description">${this.currentStep.description}</span>
