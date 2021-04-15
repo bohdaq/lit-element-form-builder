@@ -423,7 +423,6 @@ export class SingaporeIncentivesMatch extends LitElement {
           questionList: [
             {
               uuid: '7f655c89-99cb-4acd-8211-a77329483b30',
-              multipleSelection: true,
               question: 'How old is your company?',
               description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
               answerList: [
