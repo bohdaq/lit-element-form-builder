@@ -216,7 +216,8 @@ export class TheResults extends LitElement {
 
             .program-row-see-details {
               margin-left: 0;
-              font-size: 3em;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
             }
 
             .description-label {
@@ -243,7 +244,7 @@ export class TheResults extends LitElement {
             }
 
             .program-description {
-              font-size: 4.5em;
+              font-size: 2.5em;
               padding: .5em 0;
             }
 
@@ -269,7 +270,317 @@ export class TheResults extends LitElement {
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
+
+          .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
           
+      }
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+
+          .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+        /* styles */
+
+        .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
+
       }
 
       
@@ -388,7 +699,7 @@ export class TheResults extends LitElement {
                   <div class="program-row-label">Enterprise Development Grant</div>
                   <div class="program-row-description">
                     <div class="program-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -405,7 +716,7 @@ export class TheResults extends LitElement {
                   <div class="program-row-label">Double tax deduction for IP licensing costs</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -422,7 +733,7 @@ export class TheResults extends LitElement {
                   <div class="program-row-label">IRS Co-creation Grants</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -440,12 +751,18 @@ export class TheResults extends LitElement {
                   <div class="program-row-label">Financial Sector Technology Scheme</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
                 <div class="flex program-separator"></div>
                 <div class="program-row-checkbox"></div>
+              </div>
+
+              <div class="explanation-text mobile-screen">
+                We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process.
+                <br /> <br /> We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. 
+                <br /> <br /> Check the programs you want to evaluate and click the button below.
               </div>
 
 
@@ -487,7 +804,7 @@ export class TheResults extends LitElement {
                 <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
               </div>
 
-              <div class="explanation-text">
+              <div class="explanation-text desktop-screen">
                 We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. Check the programs you want to evaluate and click the button below.
               </div>
 
