@@ -1872,6 +1872,11 @@ const V="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           and (-webkit-device-pixel-ratio: 3)
           and (orientation: portrait) { 
           /* styles */
+
+          .content-container {
+            max-width: 100%;
+          }
+
           span.next {
             font-size: 4em;
           }
@@ -1900,6 +1905,11 @@ const V="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
             /* styles */
+
+            .content-container {
+              max-width: 100%;
+            }
+
             span.next {
               font-size: 4em;
             }
@@ -1925,6 +1935,11 @@ const V="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         and (min-device-width : 375px) 
         and (max-device-width : 667px) { 
           /* styles */
+
+          .content-container {
+            max-width: 100%;
+          }
+
           span.next {
             font-size: 4em;
           }
@@ -1950,6 +1965,11 @@ const V="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         and (min-device-width : 414px) 
         and (max-device-width : 736px) { 
           /* styles */
+
+          .content-container {
+            max-width: 100%;
+          }
+          
           span.next {
             font-size: 4em;
           }
