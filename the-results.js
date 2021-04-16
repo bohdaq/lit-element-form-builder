@@ -243,7 +243,7 @@ export class TheResults extends LitElement {
             }
 
             .program-description {
-              font-size: 2.5em;
+              font-size: 3.5em;
               padding: .5em 0;
             }
 
