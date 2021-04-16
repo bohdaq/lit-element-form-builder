@@ -258,7 +258,7 @@ export class TheResults extends LitElement {
             }
 
             .explanation-text {
-              font-size: 4em;
+              font-size: 3em;
             }
           
       }
@@ -366,7 +366,7 @@ export class TheResults extends LitElement {
             }
 
             .explanation-text {
-              font-size: 4em;
+              font-size: 3em;
             }
           
       }
@@ -472,7 +472,7 @@ export class TheResults extends LitElement {
             }
 
             .explanation-text {
-              font-size: 4em;
+              font-size: 3em;
             }
 
       }

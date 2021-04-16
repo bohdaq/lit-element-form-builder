@@ -172,7 +172,10 @@ export class TheQuestion extends LitElement {
         }
       });
       if(!this.multipleSelection) {
-        this._nextQuestionClicked();
+        const that = this;
+        setTimeout(() => {
+          that._nextQuestionClicked();
+        }, 400)
       }
   }
 

@@ -8,34 +8,16 @@ export class TheAnswer extends LitElement {
         display: flex;
       }
 
-
       .answer-container {
-        background-color: rgba(2, 0, 35, 0.1);
         color: rgb(2, 0, 35);
         margin: 1em 1em 1em 0;
         cursor: pointer;
         padding: .2em .5em;
         width: 10em;
-        border: 1px solid transparent;
+        border: 1px solid black;
       }
 
       .answer-container:hover {
-      }
-
-      .blink {
-        background-color: rgba(2, 0, 35, 0.3);
-        border: 1px solid black;
-        animation: blinker 1s linear infinite;
-      }
-
-      @keyframes blinker {
-        50% {
-          opacity: .6;
-        }
-      }
-
-      .white {
-        color: white;
       }
 
       .answer-label {
@@ -55,8 +37,7 @@ export class TheAnswer extends LitElement {
       }
 
       .selected {
-        background-color: rgba(2, 0, 35, 0.3);
-        box-shadow: rgb(2 0 35 / 80%) 0px 0px 0px 2px inset;
+        background-color: rgb(118 154 220 / 20%);
         color: rgb(2, 0, 35);
       }
 
@@ -146,13 +127,7 @@ export class TheAnswer extends LitElement {
   }
 
   _selectAnswerEvent() {
-    const that = this;
-    this.shadowRoot.querySelector('.answer-container').classList.add('blink');
-    setTimeout(() => {
-      that.shadowRoot.querySelector('.answer-container').classList.remove('blink');
-      that.answerSelectedEvent();
-    }, 400)
-    
+    this.answerSelectedEvent();
   }
 
   answerSelectedEvent() {
