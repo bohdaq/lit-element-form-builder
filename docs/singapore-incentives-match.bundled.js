@@ -851,7 +851,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             }
 
             .program-description {
-              font-size: 3.5em;
+              font-size: 4.5em;
               padding: .5em 0;
             }
 
@@ -860,7 +860,8 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             }
 
             .description-label {
-              font-size: 4em;
+              font-size: 3em;
+              font-weight: 100;
             }
 
             .explanation-text {
