@@ -342,6 +342,31 @@ export class SingaporeIncentivesMatch extends LitElement {
           and (min-device-height: 896px) 
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
+            /* styles */
+            span.next {
+              font-size: 4em;
+            }
+            .ok-next {
+              margin-top: 3em;
+              margin-bottom: 3em;
+              padding: 1em 2em;
+              border-radius: 14px;
+            }
+
+            h4 {
+              font-size: 4em;
+            }
+
+            .intro-description {
+              font-size: 3em;
+            }
+
+      }
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
           /* styles */
           span.next {
             font-size: 4em;
@@ -357,12 +382,37 @@ export class SingaporeIncentivesMatch extends LitElement {
             font-size: 4em;
           }
 
+          .intro-description {
+            font-size: 3em;
+          }
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+          /* styles */
+          span.next {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            padding: 1em 2em;
+            border-radius: 14px;
+          }
+
+          h4 {
+            font-size: 4em;
+          }
 
           .intro-description {
             font-size: 3em;
           }
 
       }
+      
 
 
       .animate {

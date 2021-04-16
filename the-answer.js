@@ -90,6 +90,47 @@ export class TheAnswer extends LitElement {
 
       }
 
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+          .answer-container {
+            width: 80%;
+          }
+
+          .answer-label {
+            height: unset;
+            font-size: 3em;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: .5em;
+            padding-bottom: .5em;
+          }
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+        /* styles */
+        .answer-container {
+          width: 80%;
+        }
+
+        .answer-label {
+          height: unset;
+          font-size: 3em;
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: .5em;
+          padding-bottom: .5em;
+        }
+
+      }
+
       
     `;
   }

@@ -109,6 +109,54 @@ export class TheQuestion extends LitElement {
             font-size: 4em;
           }
 
+          .question-description {
+            font-size: 3em;
+          }
+
+      }
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+          .question-title {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: .25em .5em;
+            border-radius: 14px;
+            font-size: 4em;
+          }
+
+          .question-description {
+            font-size: 3em;
+          }
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+          /* styles */
+          .question-title {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: .25em .5em;
+            border-radius: 14px;
+            font-size: 4em;
+          }
+
+          .question-description {
+            font-size: 3em;
+          }
+
       }
     `;
   }
