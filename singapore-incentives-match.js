@@ -412,7 +412,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           .content-container {
             max-width: 100%;
           }
-          
+
           span.next {
             font-size: 4em;
           }
@@ -431,6 +431,36 @@ export class SingaporeIncentivesMatch extends LitElement {
             font-size: 3em;
           }
 
+      }
+
+
+      /* iPhone 5 (portrait & landscape)----------- */
+      @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px) {
+        /* STYLES GO HERE */
+
+          .content-container {
+            max-width: 100%;
+          }
+
+          span.next {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            padding: 1em 2em;
+            border-radius: 14px;
+          }
+
+          h4 {
+            font-size: 4em;
+          }
+
+          .intro-description {
+            font-size: 3em;
+          }
       }
       
 

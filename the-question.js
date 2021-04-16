@@ -158,6 +158,27 @@ export class TheQuestion extends LitElement {
           }
 
       }
+
+      /* iPhone 5, SE (portrait & landscape)----------- */
+      @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px) {
+        /* STYLES GO HERE */
+        .question-title {
+            font-size: 4em;
+          }
+          .ok-next {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: .25em .5em;
+            border-radius: 14px;
+            font-size: 4em;
+          }
+
+          .question-description {
+            font-size: 3em;
+          }
+      }
     `;
   }
 

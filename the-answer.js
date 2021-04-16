@@ -131,6 +131,27 @@ export class TheAnswer extends LitElement {
 
       }
 
+      /* iPhone 5, SE (portrait & landscape)----------- */
+      @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px) {
+        /* STYLES GO HERE */
+
+        .answer-container {
+          width: 80%;
+        }
+
+        .answer-label {
+          height: unset;
+          font-size: 3em;
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: .5em;
+          padding-bottom: .5em;
+        }
+        
+      }
+
       
     `;
   }

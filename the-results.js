@@ -483,7 +483,7 @@ export class TheResults extends LitElement {
         and (max-device-width : 736px) { 
         /* styles */
 
-        .blocks-container {
+            .blocks-container {
               flex-direction: column;
             }
 
@@ -581,6 +581,112 @@ export class TheResults extends LitElement {
               font-size: 4em;
             }
 
+      }
+
+
+      /* iPhone 5, SE (portrait & landscape)----------- */
+      @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px) {
+        /* STYLES GO HERE */
+
+        .blocks-container {
+          flex-direction: column;
+        }
+
+        .block .title {
+          font-size: 3em;
+        }
+
+        .numbers-block-heading {
+          font-size: 3em;
+        }
+
+        .number-of-tax-incentives {
+          font-size: 3em;
+        }
+
+        .total-value-of-tax-incentives {
+          font-size: 3em;
+        }
+
+        .currency-container {
+          font-size: .5em;
+        }
+
+        .numbers-block {
+          flex-direction: column;
+        }
+
+        .numbers-block-left-part {
+          display: flex;
+        }
+
+        .numbers-block-right-part {
+          display: flex;
+        }
+
+        .inner-container {
+          display: block;
+          width: 100%;
+        }
+
+        .program-row-label {
+          max-width: unset;
+          min-width: unset;
+          font-size: 3em;
+        }
+
+        .program-separator {
+          display: none;
+        }
+
+        .program-row-see-details {
+          margin-left: 0;
+          font-size: 2.5em;
+          font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        .description-label {
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+        .program-row {
+          padding: 2em;
+        }
+
+        .mobile-screen-number {
+          margin-bottom: .3em;
+          font-size: 2em;
+          font-weight: 300;
+        }
+        
+
+        .mobile-screen {
+          display: flex;
+        }
+
+        .desktop-screen {
+          display: none;
+        }
+
+        .program-description {
+          font-size: 2.5em;
+          padding: .5em 0;
+        }
+
+        .matches-heading {
+          font-size: 5em;
+        }
+
+        .description-label {
+          font-size: 3em;
+          font-weight: 100;
+        }
+
+        .explanation-text {
+          font-size: 4em;
+        }
       }
 
       
