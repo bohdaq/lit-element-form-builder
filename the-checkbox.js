@@ -195,7 +195,105 @@ export class TheCheckbox extends LitElement {
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
-          
+          .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
+
+      }
+
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+          .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
+
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+        /* styles */
+        .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
 
       }
 

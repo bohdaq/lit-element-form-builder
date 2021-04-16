@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const e="undefined"!=typeof window&&null!=window.customElements&&void 0!==window.customElements.polyfillWrapFlushCallback,t=(e,t,i=null)=>{for(;t!==i;){const i=t.nextSibling;e.removeChild(t),t=i}},i=`{{lit-${String(Math.random()).slice(2)}}}`,s=`\x3c!--${i}--\x3e`,o=new RegExp(`${i}|${s}`);class n{constructor(e,t){this.parts=[],this.element=t;const s=[],n=[],a=document.createTreeWalker(t.content,133,null,!1);let d=0,p=-1,h=0;const{strings:m,values:{length:u}}=e;for(;h<u;){const e=a.nextNode();if(null!==e){if(p++,1===e.nodeType){if(e.hasAttributes()){const t=e.attributes,{length:i}=t;let s=0;for(let e=0;e<i;e++)r(t[e].name,"$lit$")&&s++;for(;s-- >0;){const t=m[h],i=c.exec(t)[2],s=i.toLowerCase()+"$lit$",n=e.getAttribute(s);e.removeAttribute(s);const r=n.split(o);this.parts.push({type:"attribute",index:p,name:i,strings:r}),h+=r.length-1}}"TEMPLATE"===e.tagName&&(n.push(e),a.currentNode=e.content)}else if(3===e.nodeType){const t=e.data;if(t.indexOf(i)>=0){const i=e.parentNode,n=t.split(o),a=n.length-1;for(let t=0;t<a;t++){let s,o=n[t];if(""===o)s=l();else{const e=c.exec(o);null!==e&&r(e[2],"$lit$")&&(o=o.slice(0,e.index)+e[1]+e[2].slice(0,-"$lit$".length)+e[3]),s=document.createTextNode(o)}i.insertBefore(s,e),this.parts.push({type:"node",index:++p})}""===n[a]?(i.insertBefore(l(),e),s.push(e)):e.data=n[a],h+=a}}else if(8===e.nodeType)if(e.data===i){const t=e.parentNode;null!==e.previousSibling&&p!==d||(p++,t.insertBefore(l(),e)),d=p,this.parts.push({type:"node",index:p}),null===e.nextSibling?e.data="":(s.push(e),p--),h++}else{let t=-1;for(;-1!==(t=e.data.indexOf(i,t+1));)this.parts.push({type:"node",index:-1}),h++}}else a.currentNode=n.pop()}for(const e of s)e.parentNode.removeChild(e)}}const r=(e,t)=>{const i=e.length-t.length;return i>=0&&e.slice(i)===t},a=e=>-1!==e.index,l=()=>document.createComment(""),c=/([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;function d(e,t){const{element:{content:i},parts:s}=e,o=document.createTreeWalker(i,133,null,!1);let n=h(s),r=s[n],a=-1,l=0;const c=[];let d=null;for(;o.nextNode();){a++;const e=o.currentNode;for(e.previousSibling===d&&(d=null),t.has(e)&&(c.push(e),null===d&&(d=e)),null!==d&&l++;void 0!==r&&r.index===a;)r.index=null!==d?-1:r.index-l,n=h(s,n),r=s[n]}c.forEach(e=>e.parentNode.removeChild(e))}const p=e=>{let t=11===e.nodeType?0:1;const i=document.createTreeWalker(e,133,null,!1);for(;i.nextNode();)t++;return t},h=(e,t=-1)=>{for(let i=t+1;i<e.length;i++){const t=e[i];if(a(t))return i}return-1};
+const e="undefined"!=typeof window&&null!=window.customElements&&void 0!==window.customElements.polyfillWrapFlushCallback,t=(e,t,i=null)=>{for(;t!==i;){const i=t.nextSibling;e.removeChild(t),t=i}},i=`{{lit-${String(Math.random()).slice(2)}}}`,o=`\x3c!--${i}--\x3e`,n=new RegExp(`${i}|${o}`);class s{constructor(e,t){this.parts=[],this.element=t;const o=[],s=[],a=document.createTreeWalker(t.content,133,null,!1);let d=0,p=-1,h=0;const{strings:m,values:{length:u}}=e;for(;h<u;){const e=a.nextNode();if(null!==e){if(p++,1===e.nodeType){if(e.hasAttributes()){const t=e.attributes,{length:i}=t;let o=0;for(let e=0;e<i;e++)r(t[e].name,"$lit$")&&o++;for(;o-- >0;){const t=m[h],i=c.exec(t)[2],o=i.toLowerCase()+"$lit$",s=e.getAttribute(o);e.removeAttribute(o);const r=s.split(n);this.parts.push({type:"attribute",index:p,name:i,strings:r}),h+=r.length-1}}"TEMPLATE"===e.tagName&&(s.push(e),a.currentNode=e.content)}else if(3===e.nodeType){const t=e.data;if(t.indexOf(i)>=0){const i=e.parentNode,s=t.split(n),a=s.length-1;for(let t=0;t<a;t++){let o,n=s[t];if(""===n)o=l();else{const e=c.exec(n);null!==e&&r(e[2],"$lit$")&&(n=n.slice(0,e.index)+e[1]+e[2].slice(0,-"$lit$".length)+e[3]),o=document.createTextNode(n)}i.insertBefore(o,e),this.parts.push({type:"node",index:++p})}""===s[a]?(i.insertBefore(l(),e),o.push(e)):e.data=s[a],h+=a}}else if(8===e.nodeType)if(e.data===i){const t=e.parentNode;null!==e.previousSibling&&p!==d||(p++,t.insertBefore(l(),e)),d=p,this.parts.push({type:"node",index:p}),null===e.nextSibling?e.data="":(o.push(e),p--),h++}else{let t=-1;for(;-1!==(t=e.data.indexOf(i,t+1));)this.parts.push({type:"node",index:-1}),h++}}else a.currentNode=s.pop()}for(const e of o)e.parentNode.removeChild(e)}}const r=(e,t)=>{const i=e.length-t.length;return i>=0&&e.slice(i)===t},a=e=>-1!==e.index,l=()=>document.createComment(""),c=/([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;function d(e,t){const{element:{content:i},parts:o}=e,n=document.createTreeWalker(i,133,null,!1);let s=h(o),r=o[s],a=-1,l=0;const c=[];let d=null;for(;n.nextNode();){a++;const e=n.currentNode;for(e.previousSibling===d&&(d=null),t.has(e)&&(c.push(e),null===d&&(d=e)),null!==d&&l++;void 0!==r&&r.index===a;)r.index=null!==d?-1:r.index-l,s=h(o,s),r=o[s]}c.forEach(e=>e.parentNode.removeChild(e))}const p=e=>{let t=11===e.nodeType?0:1;const i=document.createTreeWalker(e,133,null,!1);for(;i.nextNode();)t++;return t},h=(e,t=-1)=>{for(let i=t+1;i<e.length;i++){const t=e[i];if(a(t))return i}return-1};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -39,7 +39,7 @@ const m=new WeakMap,u=e=>"function"==typeof e&&m.has(e),b={},f={};
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.options=i}update(e){let t=0;for(const i of this.t)void 0!==i&&i.setValue(e[t]),t++;for(const e of this.t)void 0!==e&&e.commit()}_clone(){const t=e?this.template.element.content.cloneNode(!0):document.importNode(this.template.element.content,!0),i=[],s=this.template.parts,o=document.createTreeWalker(t,133,null,!1);let n,r=0,l=0,c=o.nextNode();for(;r<s.length;)if(n=s[r],a(n)){for(;l<n.index;)l++,"TEMPLATE"===c.nodeName&&(i.push(c),o.currentNode=c.content),null===(c=o.nextNode())&&(o.currentNode=i.pop(),c=o.nextNode());if("node"===n.type){const e=this.processor.handleTextExpression(this.options);e.insertAfterNode(c.previousSibling),this.t.push(e)}else this.t.push(...this.processor.handleAttributeExpressions(c,n.name,n.strings,this.options));r++}else this.t.push(void 0),r++;return e&&(document.adoptNode(t),customElements.upgrade(t)),t}}
+class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.options=i}update(e){let t=0;for(const i of this.t)void 0!==i&&i.setValue(e[t]),t++;for(const e of this.t)void 0!==e&&e.commit()}_clone(){const t=e?this.template.element.content.cloneNode(!0):document.importNode(this.template.element.content,!0),i=[],o=this.template.parts,n=document.createTreeWalker(t,133,null,!1);let s,r=0,l=0,c=n.nextNode();for(;r<o.length;)if(s=o[r],a(s)){for(;l<s.index;)l++,"TEMPLATE"===c.nodeName&&(i.push(c),n.currentNode=c.content),null===(c=n.nextNode())&&(n.currentNode=i.pop(),c=n.nextNode());if("node"===s.type){const e=this.processor.handleTextExpression(this.options);e.insertAfterNode(c.previousSibling),this.t.push(e)}else this.t.push(...this.processor.handleAttributeExpressions(c,s.name,s.strings,this.options));r++}else this.t.push(void 0),r++;return e&&(document.adoptNode(t),customElements.upgrade(t)),t}}
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -52,7 +52,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const v=` ${i} `;class x{constructor(e,t,i,s){this.strings=e,this.values=t,this.type=i,this.processor=s}getHTML(){const e=this.strings.length-1;let t="",o=!1;for(let n=0;n<e;n++){const e=this.strings[n],r=e.lastIndexOf("\x3c!--");o=(r>-1||o)&&-1===e.indexOf("--\x3e",r+1);const a=c.exec(e);t+=null===a?e+(o?v:s):e.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return t+=this.strings[e],t}getTemplateElement(){const e=document.createElement("template");return e.innerHTML=this.getHTML(),e}}
+ */const x=` ${i} `;class v{constructor(e,t,i,o){this.strings=e,this.values=t,this.type=i,this.processor=o}getHTML(){const e=this.strings.length-1;let t="",n=!1;for(let s=0;s<e;s++){const e=this.strings[s],r=e.lastIndexOf("\x3c!--");n=(r>-1||n)&&-1===e.indexOf("--\x3e",r+1);const a=c.exec(e);t+=null===a?e+(n?x:o):e.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return t+=this.strings[e],t}getTemplateElement(){const e=document.createElement("template");return e.innerHTML=this.getHTML(),e}}
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -65,7 +65,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const w=e=>null===e||!("object"==typeof e||"function"==typeof e),y=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class k{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new S(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let s=0;s<t;s++){i+=e[s];const t=this.parts[s];if(void 0!==t){const e=t.value;if(w(e)||!y(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class S{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===b||w(e)&&e===this.value||(this.value=e,u(e)||(this.committer.dirty=!0))}commit(){for(;u(this.value);){const e=this.value;this.value=b,e(this)}this.value!==b&&this.committer.commit()}}class z{constructor(e){this.value=void 0,this.i=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(l()),this.endNode=e.appendChild(l())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.s(this.startNode=l()),e.s(this.endNode=l())}insertAfterPart(e){e.s(this.startNode=l()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.i=e}commit(){if(null===this.startNode.parentNode)return;for(;u(this.i);){const e=this.i;this.i=b,e(this)}const e=this.i;e!==b&&(w(e)?e!==this.value&&this.o(e):e instanceof x?this.l(e):e instanceof Node?this.p(e):y(e)?this.h(e):e===f?(this.value=f,this.clear()):this.o(e))}s(e){this.endNode.parentNode.insertBefore(e,this.endNode)}p(e){this.value!==e&&(this.clear(),this.s(e),this.value=e)}o(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.p(document.createTextNode(i)),this.value=e}l(e){const t=this.options.templateFactory(e);if(this.value instanceof g&&this.value.template===t)this.value.update(e.values);else{const i=new g(t,e.processor,this.options),s=i._clone();i.update(e.values),this.p(s),this.value=i}}h(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,s=0;for(const o of e)i=t[s],void 0===i&&(i=new z(this.options),t.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(t[s-1])),i.setValue(o),i.commit(),s++;s<t.length&&(t.length=s,this.clear(i&&i.endNode))}clear(e=this.startNode){t(this.startNode.parentNode,e.nextSibling,this.endNode)}}class P{constructor(e,t,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=!!this.i;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.i=b}}class $ extends k{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new C(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class C extends S{}let _=!1;(()=>{try{const e={get capture(){return _=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}})();class I{constructor(e,t,i){this.value=void 0,this.i=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.m=e=>this.handleEvent(e)}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=this.i,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),s=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.m,this.u),s&&(this.u=E(e),this.element.addEventListener(this.eventName,this.m,this.u)),this.value=e,this.i=b}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const E=e=>e&&(_?{capture:e.capture,passive:e.passive,once:e.once}:e.capture)
+ */const w=e=>null===e||!("object"==typeof e||"function"==typeof e),y=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class k{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new z(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let o=0;o<t;o++){i+=e[o];const t=this.parts[o];if(void 0!==t){const e=t.value;if(w(e)||!y(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class z{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===b||w(e)&&e===this.value||(this.value=e,u(e)||(this.committer.dirty=!0))}commit(){for(;u(this.value);){const e=this.value;this.value=b,e(this)}this.value!==b&&this.committer.commit()}}class S{constructor(e){this.value=void 0,this.i=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(l()),this.endNode=e.appendChild(l())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.o(this.startNode=l()),e.o(this.endNode=l())}insertAfterPart(e){e.o(this.startNode=l()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.i=e}commit(){if(null===this.startNode.parentNode)return;for(;u(this.i);){const e=this.i;this.i=b,e(this)}const e=this.i;e!==b&&(w(e)?e!==this.value&&this.s(e):e instanceof v?this.l(e):e instanceof Node?this.p(e):y(e)?this.h(e):e===f?(this.value=f,this.clear()):this.s(e))}o(e){this.endNode.parentNode.insertBefore(e,this.endNode)}p(e){this.value!==e&&(this.clear(),this.o(e),this.value=e)}s(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.p(document.createTextNode(i)),this.value=e}l(e){const t=this.options.templateFactory(e);if(this.value instanceof g&&this.value.template===t)this.value.update(e.values);else{const i=new g(t,e.processor,this.options),o=i._clone();i.update(e.values),this.p(o),this.value=i}}h(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,o=0;for(const n of e)i=t[o],void 0===i&&(i=new S(this.options),t.push(i),0===o?i.appendIntoPart(this):i.insertAfterPart(t[o-1])),i.setValue(n),i.commit(),o++;o<t.length&&(t.length=o,this.clear(i&&i.endNode))}clear(e=this.startNode){t(this.startNode.parentNode,e.nextSibling,this.endNode)}}class P{constructor(e,t,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=!!this.i;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.i=b}}class C extends k{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new $(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class $ extends z{}let _=!1;(()=>{try{const e={get capture(){return _=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}})();class I{constructor(e,t,i){this.value=void 0,this.i=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.m=e=>this.handleEvent(e)}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=b,e(this)}if(this.i===b)return;const e=this.i,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),o=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.m,this.u),o&&(this.u=E(e),this.element.addEventListener(this.eventName,this.m,this.u)),this.value=e,this.i=b}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const E=e=>e&&(_?{capture:e.capture,passive:e.passive,once:e.once}:e.capture)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -78,7 +78,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */;function q(e){let t=M.get(e.type);void 0===t&&(t={stringsArray:new WeakMap,keyString:new Map},M.set(e.type,t));let s=t.stringsArray.get(e.strings);if(void 0!==s)return s;const o=e.strings.join(i);return s=t.keyString.get(o),void 0===s&&(s=new n(e,e.getTemplateElement()),t.keyString.set(o,s)),t.stringsArray.set(e.strings,s),s}const M=new Map,A=new WeakMap;
+ */;function q(e){let t=A.get(e.type);void 0===t&&(t={stringsArray:new WeakMap,keyString:new Map},A.set(e.type,t));let o=t.stringsArray.get(e.strings);if(void 0!==o)return o;const n=e.strings.join(i);return o=t.keyString.get(n),void 0===o&&(o=new s(e,e.getTemplateElement()),t.keyString.set(n,o)),t.stringsArray.set(e.strings,o),o}const A=new Map,M=new WeakMap;
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -105,7 +105,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class{handleAttributeExpressions(e,t,i,s){const o=t[0];if("."===o){return new $(e,t.slice(1),i).parts}return"@"===o?[new I(e,t.slice(1),s.eventContext)]:"?"===o?[new P(e,t.slice(1),i)]:new k(e,t,i).parts}handleTextExpression(e){return new z(e)}};
+class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new C(e,t.slice(1),i).parts}return"@"===n?[new I(e,t.slice(1),o.eventContext)]:"?"===n?[new P(e,t.slice(1),i)]:new k(e,t,i).parts}handleTextExpression(e){return new S(e)}};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -118,7 +118,7 @@ class{handleAttributeExpressions(e,t,i,s){const o=t[0];if("."===o){return new $(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const T=(e,...t)=>new x(e,t,"html",N)
+ */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const T=(e,...t)=>new v(e,t,"html",N)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -131,7 +131,7 @@ class{handleAttributeExpressions(e,t,i,s){const o=t[0];if("."===o){return new $(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */,R=(e,t)=>`${e}--${t}`;let O=!0;void 0===window.ShadyCSS?O=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),O=!1);const j=e=>t=>{const s=R(t.type,e);let o=M.get(s);void 0===o&&(o={stringsArray:new WeakMap,keyString:new Map},M.set(s,o));let r=o.stringsArray.get(t.strings);if(void 0!==r)return r;const a=t.strings.join(i);if(r=o.keyString.get(a),void 0===r){const i=t.getTemplateElement();O&&window.ShadyCSS.prepareTemplateDom(i,e),r=new n(t,i),o.keyString.set(a,r)}return o.stringsArray.set(t.strings,r),r},U=["html","svg"],F=new Set,X=(e,t,i)=>{F.add(e);const s=i?i.element:document.createElement("template"),o=t.querySelectorAll("style"),{length:n}=o;if(0===n)return void window.ShadyCSS.prepareTemplateStyles(s,e);const r=document.createElement("style");for(let e=0;e<n;e++){const t=o[e];t.parentNode.removeChild(t),r.textContent+=t.textContent}(e=>{U.forEach(t=>{const i=M.get(R(t,e));void 0!==i&&i.keyString.forEach(e=>{const{element:{content:t}}=e,i=new Set;Array.from(t.querySelectorAll("style")).forEach(e=>{i.add(e)}),d(e,i)})})})(e);const a=s.content;i?function(e,t,i=null){const{element:{content:s},parts:o}=e;if(null==i)return void s.appendChild(t);const n=document.createTreeWalker(s,133,null,!1);let r=h(o),a=0,l=-1;for(;n.nextNode();){for(l++,n.currentNode===i&&(a=p(t),i.parentNode.insertBefore(t,i));-1!==r&&o[r].index===l;){if(a>0){for(;-1!==r;)o[r].index+=a,r=h(o,r);return}r=h(o,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(s,e);const l=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==l)t.insertBefore(l.cloneNode(!0),t.firstChild);else if(i){a.insertBefore(r,a.firstChild);const e=new Set;e.add(r),d(i,e)}};window.JSCompiler_renameProperty=(e,t)=>e;const D={toAttribute(e,t){switch(t){case Boolean:return e?"":null;case Object:case Array:return null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){switch(t){case Boolean:return null!==e;case Number:return null===e?null:Number(e);case Object:case Array:return JSON.parse(e)}return e}},L=(e,t)=>t!==e&&(t==t||e==e),V={attribute:!0,type:String,converter:D,reflect:!1,hasChanged:L};class W extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(e=>this._enableUpdatingResolver=e),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const e=[];return this._classProperties.forEach((t,i)=>{const s=this._attributeNameForProperty(i,t);void 0!==s&&(this._attributeToPropertyMap.set(s,i),e.push(s))}),e}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const e=Object.getPrototypeOf(this)._classProperties;void 0!==e&&e.forEach((e,t)=>this._classProperties.set(t,e))}}static createProperty(e,t=V){if(this._ensureClassProperties(),this._classProperties.set(e,t),t.noAccessor||this.prototype.hasOwnProperty(e))return;const i="symbol"==typeof e?Symbol():"__"+e,s=this.getPropertyDescriptor(e,i,t);void 0!==s&&Object.defineProperty(this.prototype,e,s)}static getPropertyDescriptor(e,t,i){return{get(){return this[t]},set(i){const s=this[e];this[t]=i,this._requestUpdate(e,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this._classProperties&&this._classProperties.get(e)||V}static finalize(){const e=Object.getPrototypeOf(this);if(e.hasOwnProperty("finalized")||e.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const e=this.properties,t=[...Object.getOwnPropertyNames(e),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e):[]];for(const i of t)this.createProperty(i,e[i])}}static _attributeNameForProperty(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}static _valueHasChanged(e,t,i=L){return i(e,t)}static _propertyValueFromAttribute(e,t){const i=t.type,s=t.converter||D,o="function"==typeof s?s:s.fromAttribute;return o?o(e,i):e}static _propertyValueToAttribute(e,t){if(void 0===t.reflect)return;const i=t.type,s=t.converter;return(s&&s.toAttribute||D.toAttribute)(e,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((e,t)=>{if(this.hasOwnProperty(t)){const e=this[t];delete this[t],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(t,e)}})}_applyInstanceProperties(){this._instanceProperties.forEach((e,t)=>this[t]=e),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(e,t,i){t!==i&&this._attributeToProperty(e,i)}_propertyToAttribute(e,t,i=V){const s=this.constructor,o=s._attributeNameForProperty(e,i);if(void 0!==o){const e=s._propertyValueToAttribute(t,i);if(void 0===e)return;this._updateState=8|this._updateState,null==e?this.removeAttribute(o):this.setAttribute(o,e),this._updateState=-9&this._updateState}}_attributeToProperty(e,t){if(8&this._updateState)return;const i=this.constructor,s=i._attributeToPropertyMap.get(e);if(void 0!==s){const e=i.getPropertyOptions(s);this._updateState=16|this._updateState,this[s]=i._propertyValueFromAttribute(t,e),this._updateState=-17&this._updateState}}_requestUpdate(e,t){let i=!0;if(void 0!==e){const s=this.constructor,o=s.getPropertyOptions(e);s._valueHasChanged(this[e],t,o.hasChanged)?(this._changedProperties.has(e)||this._changedProperties.set(e,t),!0!==o.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(e,o))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(e,t){return this._requestUpdate(e,t),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(e){}const e=this.performUpdate();return null!=e&&await e,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let e=!1;const t=this._changedProperties;try{e=this.shouldUpdate(t),e?this.update(t):this._markUpdated()}catch(t){throw e=!1,this._markUpdated(),t}e&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(t)),this.updated(t))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(e){return!0}update(e){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((e,t)=>this._propertyToAttribute(t,this[t],e)),this._reflectingProperties=void 0),this._markUpdated()}updated(e){}firstUpdated(e){}}W.finalized=!0;
+ */,R=(e,t)=>`${e}--${t}`;let F=!0;void 0===window.ShadyCSS?F=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),F=!1);const O=e=>t=>{const o=R(t.type,e);let n=A.get(o);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},A.set(o,n));let r=n.stringsArray.get(t.strings);if(void 0!==r)return r;const a=t.strings.join(i);if(r=n.keyString.get(a),void 0===r){const i=t.getTemplateElement();F&&window.ShadyCSS.prepareTemplateDom(i,e),r=new s(t,i),n.keyString.set(a,r)}return n.stringsArray.set(t.strings,r),r},j=["html","svg"],U=new Set,X=(e,t,i)=>{U.add(e);const o=i?i.element:document.createElement("template"),n=t.querySelectorAll("style"),{length:s}=n;if(0===s)return void window.ShadyCSS.prepareTemplateStyles(o,e);const r=document.createElement("style");for(let e=0;e<s;e++){const t=n[e];t.parentNode.removeChild(t),r.textContent+=t.textContent}(e=>{j.forEach(t=>{const i=A.get(R(t,e));void 0!==i&&i.keyString.forEach(e=>{const{element:{content:t}}=e,i=new Set;Array.from(t.querySelectorAll("style")).forEach(e=>{i.add(e)}),d(e,i)})})})(e);const a=o.content;i?function(e,t,i=null){const{element:{content:o},parts:n}=e;if(null==i)return void o.appendChild(t);const s=document.createTreeWalker(o,133,null,!1);let r=h(n),a=0,l=-1;for(;s.nextNode();){for(l++,s.currentNode===i&&(a=p(t),i.parentNode.insertBefore(t,i));-1!==r&&n[r].index===l;){if(a>0){for(;-1!==r;)n[r].index+=a,r=h(n,r);return}r=h(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(o,e);const l=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==l)t.insertBefore(l.cloneNode(!0),t.firstChild);else if(i){a.insertBefore(r,a.firstChild);const e=new Set;e.add(r),d(i,e)}};window.JSCompiler_renameProperty=(e,t)=>e;const D={toAttribute(e,t){switch(t){case Boolean:return e?"":null;case Object:case Array:return null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){switch(t){case Boolean:return null!==e;case Number:return null===e?null:Number(e);case Object:case Array:return JSON.parse(e)}return e}},W=(e,t)=>t!==e&&(t==t||e==e),H={attribute:!0,type:String,converter:D,reflect:!1,hasChanged:W};class L extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(e=>this._enableUpdatingResolver=e),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const e=[];return this._classProperties.forEach((t,i)=>{const o=this._attributeNameForProperty(i,t);void 0!==o&&(this._attributeToPropertyMap.set(o,i),e.push(o))}),e}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const e=Object.getPrototypeOf(this)._classProperties;void 0!==e&&e.forEach((e,t)=>this._classProperties.set(t,e))}}static createProperty(e,t=H){if(this._ensureClassProperties(),this._classProperties.set(e,t),t.noAccessor||this.prototype.hasOwnProperty(e))return;const i="symbol"==typeof e?Symbol():"__"+e,o=this.getPropertyDescriptor(e,i,t);void 0!==o&&Object.defineProperty(this.prototype,e,o)}static getPropertyDescriptor(e,t,i){return{get(){return this[t]},set(i){const o=this[e];this[t]=i,this._requestUpdate(e,o)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this._classProperties&&this._classProperties.get(e)||H}static finalize(){const e=Object.getPrototypeOf(this);if(e.hasOwnProperty("finalized")||e.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const e=this.properties,t=[...Object.getOwnPropertyNames(e),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e):[]];for(const i of t)this.createProperty(i,e[i])}}static _attributeNameForProperty(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}static _valueHasChanged(e,t,i=W){return i(e,t)}static _propertyValueFromAttribute(e,t){const i=t.type,o=t.converter||D,n="function"==typeof o?o:o.fromAttribute;return n?n(e,i):e}static _propertyValueToAttribute(e,t){if(void 0===t.reflect)return;const i=t.type,o=t.converter;return(o&&o.toAttribute||D.toAttribute)(e,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((e,t)=>{if(this.hasOwnProperty(t)){const e=this[t];delete this[t],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(t,e)}})}_applyInstanceProperties(){this._instanceProperties.forEach((e,t)=>this[t]=e),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(e,t,i){t!==i&&this._attributeToProperty(e,i)}_propertyToAttribute(e,t,i=H){const o=this.constructor,n=o._attributeNameForProperty(e,i);if(void 0!==n){const e=o._propertyValueToAttribute(t,i);if(void 0===e)return;this._updateState=8|this._updateState,null==e?this.removeAttribute(n):this.setAttribute(n,e),this._updateState=-9&this._updateState}}_attributeToProperty(e,t){if(8&this._updateState)return;const i=this.constructor,o=i._attributeToPropertyMap.get(e);if(void 0!==o){const e=i.getPropertyOptions(o);this._updateState=16|this._updateState,this[o]=i._propertyValueFromAttribute(t,e),this._updateState=-17&this._updateState}}_requestUpdate(e,t){let i=!0;if(void 0!==e){const o=this.constructor,n=o.getPropertyOptions(e);o._valueHasChanged(this[e],t,n.hasChanged)?(this._changedProperties.has(e)||this._changedProperties.set(e,t),!0!==n.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(e,n))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(e,t){return this._requestUpdate(e,t),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(e){}const e=this.performUpdate();return null!=e&&await e,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let e=!1;const t=this._changedProperties;try{e=this.shouldUpdate(t),e?this.update(t):this._markUpdated()}catch(t){throw e=!1,this._markUpdated(),t}e&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(t)),this.updated(t))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(e){return!0}update(e){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((e,t)=>this._propertyToAttribute(t,this[t],e)),this._reflectingProperties=void 0),this._markUpdated()}updated(e){}firstUpdated(e){}}L.finalized=!0;
 /**
 @license
 Copyright (c) 2019 The Polymer Project Authors. All rights reserved.
@@ -142,7 +142,7 @@ found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by Google as
 part of the polymer project is also subject to an additional IP rights grant
 found at http://polymer.github.io/PATENTS.txt
 */
-const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,H=Symbol();class G{constructor(e,t){if(t!==H)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e}get styleSheet(){return void 0===this._styleSheet&&(B?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const Q=(e,...t)=>{const i=t.reduce((t,i,s)=>t+(e=>{if(e instanceof G)return e.cssText;if("number"==typeof e)return e;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${e}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+e[s+1],e[0]);return new G(i,H)};
+const V="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,B=Symbol();class G{constructor(e,t){if(t!==B)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e}get styleSheet(){return void 0===this._styleSheet&&(V?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const Q=(e,...t)=>{const i=t.reduce((t,i,o)=>t+(e=>{if(e instanceof G)return e.cssText;if("number"==typeof e)return e;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${e}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+e[o+1],e[0]);return new G(i,B)};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -156,7 +156,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const Y={};class J extends W{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const e=this.getStyles();if(void 0===e)this._styles=[];else if(Array.isArray(e)){const t=(e,i)=>e.reduceRight((e,i)=>Array.isArray(i)?t(i,e):(e.add(i),e),i),i=t(e,new Set),s=[];i.forEach(e=>s.unshift(e)),this._styles=s}else this._styles=[e]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const e=this.constructor._styles;0!==e.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?B?this.renderRoot.adoptedStyleSheets=e.map(e=>e.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(e.map(e=>e.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(e){const t=this.render();super.update(e),t!==Y&&this.constructor.render(t,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(e=>{const t=document.createElement("style");t.textContent=e.cssText,this.renderRoot.appendChild(t)}))}render(){return Y}}J.finalized=!0,J.render=(e,i,s)=>{if(!s||"object"!=typeof s||!s.scopeName)throw new Error("The `scopeName` option is required.");const o=s.scopeName,n=A.has(i),r=O&&11===i.nodeType&&!!i.host,a=r&&!F.has(o),l=a?document.createDocumentFragment():i;if(((e,i,s)=>{let o=A.get(i);void 0===o&&(t(i,i.firstChild),A.set(i,o=new z(Object.assign({templateFactory:q},s))),o.appendInto(i)),o.setValue(e),o.commit()})(e,l,Object.assign({templateFactory:j(o)},s)),a){const e=A.get(l);A.delete(l);const s=e.value instanceof g?e.value.template:void 0;X(o,l,s),t(i,i.firstChild),i.appendChild(l),A.set(i,e)}!n&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends J{static get styles(){return Q`
+(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const Y={};class J extends L{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const e=this.getStyles();if(void 0===e)this._styles=[];else if(Array.isArray(e)){const t=(e,i)=>e.reduceRight((e,i)=>Array.isArray(i)?t(i,e):(e.add(i),e),i),i=t(e,new Set),o=[];i.forEach(e=>o.unshift(e)),this._styles=o}else this._styles=[e]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const e=this.constructor._styles;0!==e.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?V?this.renderRoot.adoptedStyleSheets=e.map(e=>e.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(e.map(e=>e.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(e){const t=this.render();super.update(e),t!==Y&&this.constructor.render(t,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(e=>{const t=document.createElement("style");t.textContent=e.cssText,this.renderRoot.appendChild(t)}))}render(){return Y}}J.finalized=!0,J.render=(e,i,o)=>{if(!o||"object"!=typeof o||!o.scopeName)throw new Error("The `scopeName` option is required.");const n=o.scopeName,s=M.has(i),r=F&&11===i.nodeType&&!!i.host,a=r&&!U.has(n),l=a?document.createDocumentFragment():i;if(((e,i,o)=>{let n=M.get(i);void 0===n&&(t(i,i.firstChild),M.set(i,n=new S(Object.assign({templateFactory:q},o))),n.appendInto(i)),n.setValue(e),n.commit()})(e,l,Object.assign({templateFactory:O(n)},o)),a){const e=M.get(l);M.delete(l);const o=e.value instanceof g?e.value.template:void 0;X(n,l,o),t(i,i.firstChild),i.appendChild(l),M.set(i,e)}!s&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends J{static get styles(){return Q`
       :host {
         display: flex;
       }
@@ -348,7 +348,105 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
-          
+          .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
+
+      }
+
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+          .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
+
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+        /* styles */
+        .pure-material-checkbox > span::before {
+          content: "";
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Checkmark */
+        .pure-material-checkbox > span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 20px;
+            border: solid 5px transparent;
+            border-right: none;
+            border-top: none;
+            transform: translate(3px, 4px) rotate(-45deg);
+        }
+
+        .pure-material-checkbox > input {
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 50px;
+        }
 
       }
 
@@ -824,7 +922,8 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
             .program-row-see-details {
               margin-left: 0;
-              font-size: 3em;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
             }
 
             .description-label {
@@ -851,7 +950,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             }
 
             .program-description {
-              font-size: 4.5em;
+              font-size: 2.5em;
               padding: .5em 0;
             }
 
@@ -877,7 +976,317 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           and (-webkit-device-pixel-ratio: 2) 
           and (orientation: portrait) { 
           /* styles */
+
+          .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
           
+      }
+
+      /* iPhone 6,7 */
+      @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 667px) { 
+          /* styles */
+
+          .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
+
+      }
+
+      /* iPhone 6+,7+ */
+      @media only screen 
+        and (min-device-width : 414px) 
+        and (max-device-width : 736px) { 
+        /* styles */
+
+        .blocks-container {
+              flex-direction: column;
+            }
+
+            .block .title {
+              font-size: 3em;
+            }
+
+            .numbers-block-heading {
+              font-size: 3em;
+            }
+
+            .number-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .total-value-of-tax-incentives {
+              font-size: 3em;
+            }
+
+            .currency-container {
+              font-size: .5em;
+            }
+
+            .numbers-block {
+              flex-direction: column;
+            }
+
+            .numbers-block-left-part {
+              display: flex;
+            }
+
+            .numbers-block-right-part {
+              display: flex;
+            }
+
+            .inner-container {
+              display: block;
+              width: 100%;
+            }
+
+            .program-row-label {
+              max-width: unset;
+              min-width: unset;
+              font-size: 3em;
+            }
+
+            .program-separator {
+              display: none;
+            }
+
+            .program-row-see-details {
+              margin-left: 0;
+              font-size: 2.5em;
+              font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+
+            .description-label {
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+            .program-row {
+              padding: 2em;
+            }
+
+            .mobile-screen-number {
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
+            }
+            
+
+            .mobile-screen {
+              display: flex;
+            }
+
+            .desktop-screen {
+              display: none;
+            }
+
+            .program-description {
+              font-size: 2.5em;
+              padding: .5em 0;
+            }
+
+            .matches-heading {
+              font-size: 5em;
+            }
+
+            .description-label {
+              font-size: 3em;
+              font-weight: 100;
+            }
+
+            .explanation-text {
+              font-size: 4em;
+            }
+
       }
 
       
@@ -979,7 +1388,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="program-row-label">Enterprise Development Grant</div>
                   <div class="program-row-description">
                     <div class="program-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -996,7 +1405,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="program-row-label">Double tax deduction for IP licensing costs</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -1013,7 +1422,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="program-row-label">IRS Co-creation Grants</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
@@ -1031,12 +1440,18 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="program-row-label">Financial Sector Technology Scheme</div>
                   <div class="program-row-description">
                     <div class="program-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
-                    <span class="program-row-see-details">See details</span>
+                    <span class="program-row-see-details">See details &#x1F517;</span>
                   </div>
                   
                 </div>
                 <div class="flex program-separator"></div>
                 <div class="program-row-checkbox"></div>
+              </div>
+
+              <div class="explanation-text mobile-screen">
+                We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process.
+                <br /> <br /> We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. 
+                <br /> <br /> Check the programs you want to evaluate and click the button below.
               </div>
 
 
@@ -1078,7 +1493,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                 <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
               </div>
 
-              <div class="explanation-text">
+              <div class="explanation-text desktop-screen">
                 We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. Check the programs you want to evaluate and click the button below.
               </div>
 
@@ -1470,7 +1885,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
          }
-    `}static get properties(){return{}}constructor(){super(),this.config={steps:[{name:"Matches",type:"MATCHES",heading:"You may qualify for the following programs",description:'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'},{name:"Intro",type:"INTRO",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut."},{name:"Industry",type:"QUESTIONNAIRE",questionList:[{uuid:"7f655c89-99cb-4acd-8211-a77329483b30",question:"How old is your company?",description:"Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.",answerList:[{uuid:"d0792019-d321-4aa6-82e6-9fda0bd4014f",label:"Not yet incorporated"},{uuid:"313c0c71-cb1b-4f2d-9cfe-5691df666d3d",label:"0 - 2 years"},{uuid:"b35d0885-427f-4408-9823-7e19f8c777d3",label:"More than 2 years"}]},{uuid:"ed552cf1-0be8-46f2-8efd-5f009f2f61aa",question:"What percentage of your company is owned by Singapore residents?",description:"Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.",answerList:[{uuid:"71bab4c1-8190-4efd-b819-79de3b489695",label:"0%"},{uuid:"742f6e85-9985-465d-91c1-38408804df02",label:"Less than 30%"},{uuid:"7a487b63-0563-4f1e-9274-7d60a1831207",label:"30 to 50%"},{uuid:"c06f0d5e-7cf3-45fd-ab04-e2fb87f3722e",label:"More than 50%"}]},{uuid:"6e7f42a7-66f1-4e9b-8e94-b6947d4cad58",question:"How many employees do you have in Singapore?",description:"Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.",answerList:[{uuid:"fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2",label:"0 - 10"},{uuid:"e63daf39-64fb-4008-9d03-48107e923ca5",label:"11 - 50"},{uuid:"b33be8f8-7783-41ed-bc5e-b1a9f4a3e154",label:"51 - 200"},{uuid:"740fdeae-f298-4f4e-80ac-64f08e5a5a32",label:"More than 200"}]},{uuid:"0199247e-43c7-4d7f-b04f-31920ea8f4cb",multipleSelection:!0,question:"Select the attributes applicable to your company?",description:"Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.",answerList:[{uuid:"ded67768-42c9-4b2e-80bd-c76268905ee0",label:"Low use of energy"},{uuid:"cc26b090-9650-49b6-a376-b04b9ecc9465",label:"Foreign exports"},{uuid:"dda467d5-f947-4789-9aea-034bd4f85a06",label:"Trade financing"},{uuid:"b7a31474-1e5f-429d-830d-18a14ee56521",label:"IP rights licensing"},{uuid:"e055fa05-7fb0-4f9b-b2b3-9294fbe56e43",label:"Innovative technology"},{uuid:"0d64e546-2fb1-41f4-8218-4ee539cea053",label:"Hiring local staff"},{uuid:"05432a32-c78d-4f23-a698-fb2f14c8a037",label:"Patents owned"},{uuid:"bbfaf14c-1b85-4ba9-b631-ee6e58aa09e9",label:"New product"},{uuid:"42697e39-a6be-46d4-81f6-c7885c877f59",label:"Innovative Technology"}]}]}]},this.currentStepIndex=0,this.currentStep=this.config.steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.questionList&&(this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion)}render(){return T`
+    `}static get properties(){return{}}constructor(){super(),this.config={steps:[{name:"Intro",type:"INTRO",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut."},{name:"Industry",type:"QUESTIONNAIRE",questionList:[{uuid:"7f655c89-99cb-4acd-8211-a77329483b30",question:"How old is your company?",description:"Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.",answerList:[{uuid:"d0792019-d321-4aa6-82e6-9fda0bd4014f",label:"Not yet incorporated"},{uuid:"313c0c71-cb1b-4f2d-9cfe-5691df666d3d",label:"0 - 2 years"},{uuid:"b35d0885-427f-4408-9823-7e19f8c777d3",label:"More than 2 years"}]},{uuid:"ed552cf1-0be8-46f2-8efd-5f009f2f61aa",question:"What percentage of your company is owned by Singapore residents?",description:"Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.",answerList:[{uuid:"71bab4c1-8190-4efd-b819-79de3b489695",label:"0%"},{uuid:"742f6e85-9985-465d-91c1-38408804df02",label:"Less than 30%"},{uuid:"7a487b63-0563-4f1e-9274-7d60a1831207",label:"30 to 50%"},{uuid:"c06f0d5e-7cf3-45fd-ab04-e2fb87f3722e",label:"More than 50%"}]},{uuid:"6e7f42a7-66f1-4e9b-8e94-b6947d4cad58",question:"How many employees do you have in Singapore?",description:"Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.",answerList:[{uuid:"fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2",label:"0 - 10"},{uuid:"e63daf39-64fb-4008-9d03-48107e923ca5",label:"11 - 50"},{uuid:"b33be8f8-7783-41ed-bc5e-b1a9f4a3e154",label:"51 - 200"},{uuid:"740fdeae-f298-4f4e-80ac-64f08e5a5a32",label:"More than 200"}]},{uuid:"0199247e-43c7-4d7f-b04f-31920ea8f4cb",multipleSelection:!0,question:"Select the attributes applicable to your company?",description:"Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.",answerList:[{uuid:"ded67768-42c9-4b2e-80bd-c76268905ee0",label:"Low use of energy"},{uuid:"cc26b090-9650-49b6-a376-b04b9ecc9465",label:"Foreign exports"},{uuid:"dda467d5-f947-4789-9aea-034bd4f85a06",label:"Trade financing"},{uuid:"b7a31474-1e5f-429d-830d-18a14ee56521",label:"IP rights licensing"},{uuid:"e055fa05-7fb0-4f9b-b2b3-9294fbe56e43",label:"Innovative technology"},{uuid:"0d64e546-2fb1-41f4-8218-4ee539cea053",label:"Hiring local staff"},{uuid:"05432a32-c78d-4f23-a698-fb2f14c8a037",label:"Patents owned"},{uuid:"bbfaf14c-1b85-4ba9-b631-ee6e58aa09e9",label:"New product"},{uuid:"42697e39-a6be-46d4-81f6-c7885c877f59",label:"Innovative Technology"}]}]},{name:"Matches",type:"MATCHES",heading:"You may qualify for the following programs",description:'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'}]},this.currentStepIndex=0,this.currentStep=this.config.steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.questionList&&(this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion)}render(){return T`
       <div class="main-container">
         
         <div class="content-container">
