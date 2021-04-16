@@ -228,8 +228,11 @@ export class TheResults extends LitElement {
             }
 
             .mobile-screen-number {
-              margin-bottom: 1em;
+              margin-bottom: .3em;
+              font-size: 2em;
+              font-weight: 300;
             }
+            
 
             .mobile-screen {
               display: flex;

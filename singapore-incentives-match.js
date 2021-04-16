@@ -199,7 +199,6 @@ export class SingaporeIncentivesMatch extends LitElement {
         font-family: "Roboto",sans-serif;
         font-size: 30px;
         font-style: normal;
-        font-weight: 700;
         line-height: 1;
         letter-spacing: 0em;
         text-transform: none;
@@ -413,6 +412,12 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.config = {
       steps: [
         {
+          name: 'Matches',
+          type: 'MATCHES',
+          heading: 'You may qualify for the following programs',
+          description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
+        },
+        {
           name: 'Intro',
           type: "INTRO",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
@@ -531,13 +536,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               ]
             }
           ]
-        },
-        {
-          name: 'Matches',
-          type: 'MATCHES',
-          heading: 'You may qualify for the following programs',
-          description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
-        }  
+        }
       ]
     }
 
