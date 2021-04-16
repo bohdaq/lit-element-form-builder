@@ -510,7 +510,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       .blink {
         background-color: rgba(2, 0, 35, 0.3);
         border: 1px solid black;
-        animation: blinker .4s linear infinite;
+        animation: blinker 1s linear infinite;
       }
 
       @keyframes blinker {
@@ -856,15 +856,15 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             }
 
             .matches-heading {
-              font-size: 3em;
+              font-size: 5em;
             }
 
             .description-label {
-              font-size: 3em;
+              font-size: 4em;
             }
 
             .explanation-text {
-              font-size: 2em;
+              font-size: 4em;
             }
           
       }

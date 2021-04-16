@@ -25,7 +25,7 @@ export class TheAnswer extends LitElement {
       .blink {
         background-color: rgba(2, 0, 35, 0.3);
         border: 1px solid black;
-        animation: blinker .4s linear infinite;
+        animation: blinker 1s linear infinite;
       }
 
       @keyframes blinker {

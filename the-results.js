@@ -248,15 +248,15 @@ export class TheResults extends LitElement {
             }
 
             .matches-heading {
-              font-size: 3em;
+              font-size: 5em;
             }
 
             .description-label {
-              font-size: 3em;
+              font-size: 4em;
             }
 
             .explanation-text {
-              font-size: 2em;
+              font-size: 4em;
             }
           
       }
