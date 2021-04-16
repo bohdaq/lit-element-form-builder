@@ -216,7 +216,7 @@ export class TheResults extends LitElement {
 
             .program-row-see-details {
               margin-left: 0;
-              font-size: 2em;
+              font-size: 3em;
             }
 
             .description-label {
@@ -252,7 +252,7 @@ export class TheResults extends LitElement {
             }
 
             .description-label {
-              font-size: 2em;
+              font-size: 3em;
             }
 
             .explanation-text {

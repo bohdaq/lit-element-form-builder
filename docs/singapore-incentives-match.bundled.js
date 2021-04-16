@@ -824,7 +824,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
             .program-row-see-details {
               margin-left: 0;
-              font-size: 2em;
+              font-size: 3em;
             }
 
             .description-label {
@@ -860,7 +860,7 @@ const B="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             }
 
             .description-label {
-              font-size: 2em;
+              font-size: 3em;
             }
 
             .explanation-text {
