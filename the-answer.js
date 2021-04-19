@@ -10,7 +10,7 @@ export class TheAnswer extends LitElement {
 
       .answer-container {
         color: rgb(2, 0, 35);
-        margin: 1em 1em 1em 0;
+        margin: 1.2em 1.2em 1.2em 0;
         cursor: pointer;
         padding: .2em .5em;
         width: 10em;
