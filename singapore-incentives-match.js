@@ -665,7 +665,8 @@ export class SingaporeIncentivesMatch extends LitElement {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
       <div class="main-container">
         
-        <div class="content-container">
+        <div class="content-container animate__animated" id="animate-container">
+          <div>
 
         ${this.currentStep.type === 'QUESTIONNAIRE'  ?
                 html`
@@ -689,7 +690,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
 <!-- animate__fadeOutDown -->
-                  <div class="intro-container animate__animated animate__bounce" id="animate-container">
+                  <div class="intro-container">
                       <h4>${this.currentStep.name}</h4>
 
                       <span class="intro-description">${this.currentStep.description}</span>
@@ -709,20 +710,8 @@ export class SingaporeIncentivesMatch extends LitElement {
                 html``}
 
 
-
+          </div>
         </div>
-
-
-        <!-- <div class="buttons-container">
-          ${this.currentStepIndex === 0 ? html`` : html`<div class="button" @click=${this.previousClicked}>< Previous</div>`}
-          <div class="flex"></div>
-          ${this.currentStepIndex === this.config.steps.length - 1 ? html`` : html`<div class="button accent" @click=${this.nextStepClicked}>Next ></div>`}
-          
-
-
-        </div> -->
-
-
       </div>
     `;
   }
@@ -737,17 +726,18 @@ export class SingaporeIncentivesMatch extends LitElement {
     if(this.currentStep.type === 'QUESTIONNAIRE') {
       this.currentQuestionIndex = 0;
       this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+
+      
     }
 
-
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
-    animationContainer.classList.remove('animate__bounce');
     animationContainer.classList.add('animate__fadeOutDown');
-
 
     const that = this;
     setTimeout(() => {
+      animationContainer.classList.remove('animate__fadeOutDown');
       that.requestUpdate();
+      animationContainer.classList.add('animate__fadeInDown');
     }, 1000)
 
 
@@ -774,7 +764,16 @@ export class SingaporeIncentivesMatch extends LitElement {
 
     this.currentQuestionIndex = this.currentQuestionIndex + 1;
     this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
-    this.requestUpdate();
+
+
+    const animationContainer = this.shadowRoot.querySelector('#animate-container');
+    animationContainer.classList.add('animate__fadeOutDown');
+    const that = this;
+    setTimeout(() => {
+      animationContainer.classList.remove('animate__fadeOutDown');
+      that.requestUpdate();
+      animationContainer.classList.add('animate__fadeInDown');
+    }, 1000)
   }
 
   
