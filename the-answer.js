@@ -149,7 +149,7 @@ export class TheAnswer extends LitElement {
           padding-top: .5em;
           padding-bottom: .5em;
         }
-        
+
       }
 
       
@@ -170,11 +170,11 @@ export class TheAnswer extends LitElement {
 
   render() {
     return html`
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 
         ${this.selected ? html`
-            <div class="answer-container selected"  @click="${this._selectAnswerEvent}">
+            <div class="answer-container selected animate__animated animate__bounce"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label">
                   <slot></slot>
                   <div class="spacing"></div>

@@ -47,6 +47,7 @@ export class TheQuestion extends LitElement {
         color: rgb(255, 255, 255);
         border-radius: 4px;
         margin-top: 1em;
+        font-family: "Poppins",sans-serif
       }
 
       .ok-next:hover {
@@ -244,7 +245,7 @@ export class TheQuestion extends LitElement {
         const that = this;
         setTimeout(() => {
           that._nextQuestionClicked();
-        }, 400)
+        }, 1000)
       }
   }
 

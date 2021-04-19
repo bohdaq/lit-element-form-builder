@@ -262,6 +262,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         border-radius: 4px;
         margin-top: 1em;
         min-width: 35px;
+        font-family: "Poppins",sans-serif
       }
 
       .ok-next:hover {
@@ -298,6 +299,9 @@ export class SingaporeIncentivesMatch extends LitElement {
         margin-right: calc(0em);
         text-transform: none;
         color: rgb(117, 117, 117);
+
+        animation: bounce; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 2s; /* don't forget to set a duration! */
       }
 
       
@@ -658,6 +662,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   render() {
     return html`
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
       <div class="main-container">
         
         <div class="content-container">
@@ -683,7 +688,8 @@ export class SingaporeIncentivesMatch extends LitElement {
                 html`
 
 
-                  <div class="intro-container">
+<!-- animate__fadeOutDown -->
+                  <div class="intro-container animate__animated animate__bounce" id="animate-container">
                       <h4>${this.currentStep.name}</h4>
 
                       <span class="intro-description">${this.currentStep.description}</span>
@@ -734,7 +740,18 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
 
-    this.requestUpdate();
+    const animationContainer = this.shadowRoot.querySelector('#animate-container');
+    animationContainer.classList.remove('animate__bounce');
+    animationContainer.classList.add('animate__fadeOutDown');
+
+
+    const that = this;
+    setTimeout(() => {
+      that.requestUpdate();
+    }, 1000)
+
+
+    
 
   }
 
