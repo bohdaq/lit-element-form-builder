@@ -698,7 +698,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
       .answer-container {
         color: rgb(2, 0, 35);
-        margin: 30px 30px 30px 0;
+        margin: 1em 1em 1em 0;
         cursor: pointer;
         padding: .2em .5em;
         width: 10em;
@@ -742,6 +742,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -765,6 +766,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -786,6 +788,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -806,6 +809,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         /* styles */
         .answer-container {
           width: 80%;
+          margin: 30px 30px 30px 0;
         }
 
         .answer-label {
@@ -827,6 +831,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
         .answer-container {
           width: 80%;
+          margin: 30px 30px 30px 0;
         }
 
         .answer-label {
@@ -2289,4 +2294,4 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           </div>
         </div>
       </div>
-    `}nextStepClicked(){console.log("nextStepClicked"),this.currentStepIndex=this.currentStepIndex+1,this.currentStep=this.config.steps[this.currentStepIndex],"QUESTIONNAIRE"===this.currentStep.type&&(this.currentQuestionIndex=0,this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex]);const e=this.shadowRoot.querySelector("#animate-container");e.classList.add("animate__fadeOutDown");const t=this;setTimeout(()=>{e.classList.remove("animate__fadeOutDown"),t.requestUpdate(),e.classList.add("animate__fadeInDown")},1e3)}previousClicked(){console.log("previousClicked"),this.currentStepIndex=this.currentStepIndex-1,this.currentStep=this.config.steps[this.currentStepIndex],this.requestUpdate()}_nextQuestion(e){if(console.log("_nextQuestion",e),this.currentQuestionIndex+1===this.currentStep.questionList.length)return this.currentQuestionIndex=0,void this.nextStepClicked();this.currentQuestionIndex=this.currentQuestionIndex+1,this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex];const t=this.shadowRoot.querySelector("#animate-container");t.classList.add("animate__fadeOutDown");const i=this;setTimeout(()=>{t.classList.remove("animate__fadeOutDown"),i.requestUpdate(),t.classList.add("animate__fadeInDown")},1e3)}}window.customElements.define("singapore-incentives-match",K);export{K as SingaporeIncentivesMatch};
+    `}nextStepClicked(){console.log("nextStepClicked"),this.currentStepIndex=this.currentStepIndex+1,this.currentStep=this.config.steps[this.currentStepIndex],"QUESTIONNAIRE"===this.currentStep.type&&(this.currentQuestionIndex=0,this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex]);const e=this.shadowRoot.querySelector("#animate-container");e.classList.add("animate__fadeOutDown");const t=this;setTimeout(()=>{e.classList.remove("animate__fadeOutDown"),t.requestUpdate(),e.classList.add("animate__fadeInDown")},1e3)}previousClicked(){console.log("previousClicked"),this.currentStepIndex=this.currentStepIndex-1,this.currentStep=this.config.steps[this.currentStepIndex],this.requestUpdate()}_nextQuestion(e){if(console.log("_nextQuestion",e),this.currentQuestionIndex+1===this.currentStep.questionList.length)return this.currentQuestionIndex=0,void this.nextStepClicked();this.currentQuestionIndex=this.currentQuestionIndex+1,this.currentQuestion=this.currentStep.questionList[this.currentQuestionIndex];const t=this.shadowRoot.querySelector("#animate-container");t.classList.add("animate__fadeOutDown");const i=this;setTimeout(()=>{t.classList.remove("animate__fadeOutDown"),i.requestUpdate(),t.classList.add("animate__fadeInDown"),i.scrollTo({top:0,behavior:"smooth"})},1e3)}}window.customElements.define("singapore-incentives-match",K);export{K as SingaporeIncentivesMatch};

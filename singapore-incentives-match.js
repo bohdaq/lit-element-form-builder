@@ -773,6 +773,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       animationContainer.classList.remove('animate__fadeOutDown');
       that.requestUpdate();
       animationContainer.classList.add('animate__fadeInDown');
+      that.scrollTo({top: 0, behavior: 'smooth'});
     }, 1000)
   }
 

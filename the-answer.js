@@ -10,7 +10,7 @@ export class TheAnswer extends LitElement {
 
       .answer-container {
         color: rgb(2, 0, 35);
-        margin: 30px 30px 30px 0;
+        margin: 1em 1em 1em 0;
         cursor: pointer;
         padding: .2em .5em;
         width: 10em;
@@ -54,6 +54,7 @@ export class TheAnswer extends LitElement {
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -77,6 +78,7 @@ export class TheAnswer extends LitElement {
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -98,6 +100,7 @@ export class TheAnswer extends LitElement {
           /* styles */
           .answer-container {
             width: 80%;
+            margin: 30px 30px 30px 0;
           }
 
           .answer-label {
@@ -118,6 +121,7 @@ export class TheAnswer extends LitElement {
         /* styles */
         .answer-container {
           width: 80%;
+          margin: 30px 30px 30px 0;
         }
 
         .answer-label {
@@ -139,6 +143,7 @@ export class TheAnswer extends LitElement {
 
         .answer-container {
           width: 80%;
+          margin: 30px 30px 30px 0;
         }
 
         .answer-label {
