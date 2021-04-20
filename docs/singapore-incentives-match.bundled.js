@@ -693,7 +693,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   </div>
     `}_answerSelected(e){if(this.shadowRoot.querySelectorAll("the-answer").forEach(t=>{t.item.uuid===e.detail.uuid?t.selected?(console.log("answer-deselected",e.detail.uuid),t.deselect()):(console.log("answer-selected",e.detail.uuid),t.select()):this.item.multipleSelection||t.deselect()}),!this.multipleSelection){const e=this;setTimeout(()=>{e._nextQuestionClicked()},1e3)}}_nextQuestionClicked(e){this.shadowRoot.querySelectorAll("the-answer").forEach(e=>{e.deselect()});let t=new CustomEvent("next-question",{detail:this.item,bubbles:!0,composed:!0});this.dispatchEvent(t)}});window.customElements.define("the-answer",class extends J{static get styles(){return B`
       :host {
-        display: flex;
+        display: inline-block;
       }
 
       .answer-container {
@@ -703,6 +703,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         padding: .2em .5em;
         width: 10em;
         border: 1px solid black;
+        border-radius: 30px;
       }
 
       .answer-container:hover {
@@ -754,7 +755,9 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             padding-bottom: .5em;
           }
 
-          
+          :host {
+            width: 100%;
+          }
       }
 
       /* iPhone XR */
@@ -776,6 +779,10 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             padding-right: 1em;
             padding-top: .5em;
             padding-bottom: .5em;
+          }
+
+          :host {
+            width: 100%;
           }
 
       }
@@ -800,6 +807,10 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             padding-bottom: .5em;
           }
 
+          :host {
+            width: 100%;
+          }
+
       }
 
       /* iPhone 6+,7+ */
@@ -819,6 +830,10 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           padding-right: 1em;
           padding-top: .5em;
           padding-bottom: .5em;
+        }
+
+        :host {
+          width: 100%;
         }
 
       }
@@ -841,6 +856,10 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
           padding-right: 1em;
           padding-top: .5em;
           padding-bottom: .5em;
+        }
+
+        :host {
+          width: 100%;
         }
 
       }

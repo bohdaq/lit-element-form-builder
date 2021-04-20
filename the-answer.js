@@ -5,7 +5,7 @@ export class TheAnswer extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: flex;
+        display: inline-block;
       }
 
       .answer-container {
@@ -15,6 +15,7 @@ export class TheAnswer extends LitElement {
         padding: .2em .5em;
         width: 10em;
         border: 1px solid black;
+        border-radius: 30px;
       }
 
       .answer-container:hover {
@@ -66,7 +67,9 @@ export class TheAnswer extends LitElement {
             padding-bottom: .5em;
           }
 
-          
+          :host {
+            width: 100%;
+          }
       }
 
       /* iPhone XR */
@@ -88,6 +91,10 @@ export class TheAnswer extends LitElement {
             padding-right: 1em;
             padding-top: .5em;
             padding-bottom: .5em;
+          }
+
+          :host {
+            width: 100%;
           }
 
       }
@@ -112,6 +119,10 @@ export class TheAnswer extends LitElement {
             padding-bottom: .5em;
           }
 
+          :host {
+            width: 100%;
+          }
+
       }
 
       /* iPhone 6+,7+ */
@@ -131,6 +142,10 @@ export class TheAnswer extends LitElement {
           padding-right: 1em;
           padding-top: .5em;
           padding-bottom: .5em;
+        }
+
+        :host {
+          width: 100%;
         }
 
       }
@@ -153,6 +168,10 @@ export class TheAnswer extends LitElement {
           padding-right: 1em;
           padding-top: .5em;
           padding-bottom: .5em;
+        }
+
+        :host {
+          width: 100%;
         }
 
       }
