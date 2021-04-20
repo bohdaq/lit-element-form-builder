@@ -179,7 +179,7 @@ export class TheAnswer extends LitElement {
 
 
         ${this.selected ? html`
-            <div class="answer-container selected animate__animated animate__bounce"  @click="${this._selectAnswerEvent}">
+            <div class="answer-container selected animate__animated animate__pulse"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label">
                   <slot></slot>
                   <div class="spacing"></div>
