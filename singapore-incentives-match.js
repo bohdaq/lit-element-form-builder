@@ -731,11 +731,11 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
-    animationContainer.classList.add('animate__fadeOutDown');
+    animationContainer.classList.add('animate__fadeOutUp');
 
     const that = this;
     setTimeout(() => {
-      animationContainer.classList.remove('animate__fadeOutDown');
+      animationContainer.classList.remove('animate__fadeOutUp');
       that.requestUpdate();
       animationContainer.classList.add('animate__fadeInDown');
     }, 1000)
@@ -767,10 +767,10 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
-    animationContainer.classList.add('animate__fadeOutDown');
+    animationContainer.classList.add('animate__fadeOutUp');
     const that = this;
     setTimeout(() => {
-      animationContainer.classList.remove('animate__fadeOutDown');
+      animationContainer.classList.remove('animate__fadeOutUp');
       that.requestUpdate();
       animationContainer.classList.add('animate__fadeInDown');
       that.scrollTo({top: 0, behavior: 'smooth'});
