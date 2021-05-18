@@ -523,12 +523,12 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.config = {
       Steps: [
         {
-          name: 'Intro',
+          Name: 'Intro',
           type: "INTRO",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
         },
         {
-          name: 'Industry',
+          Name: 'Industry',
           type: 'QUESTIONNAIRE',
           questionList: [
             {
@@ -643,7 +643,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           ]
         },
         {
-          name: 'Matches',
+          Name: 'Matches',
           type: 'MATCHES',
           heading: 'You may qualify for the following programs',
           description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
@@ -698,7 +698,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 <!-- animate__fadeOutDown -->
                   <div class="intro-container">
-                      <h4>${this.currentStep.name}</h4>
+                      <h4>${this.currentStep.Name}</h4>
 
                       <span class="intro-description">${this.currentStep.description}</span>
 
