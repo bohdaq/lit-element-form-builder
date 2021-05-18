@@ -207,7 +207,7 @@ export class TheQuestion extends LitElement {
 
                     ${this.item.answerList.map((answer, index) => 
                       html`
-                        <the-answer uuid="${answer.uuid}" .item="${answer}">${answer.label}</the-answer>
+                        <the-answer Code="${answer.Code}" .item="${answer}">${answer.AnswerText}</the-answer>
                       
                       `)}
                       
@@ -227,12 +227,12 @@ export class TheQuestion extends LitElement {
 
   _answerSelected(ev) {
       this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
-        if(item.item.uuid === ev.detail.uuid) {
+        if(item.item.Code === ev.detail.Code) {
           if(item.selected) {
-            console.log('answer-deselected', ev.detail.uuid);
+            console.log('answer-deselected', ev.detail.Code);
             item.deselect();
           } else {
-            console.log('answer-selected', ev.detail.uuid);
+            console.log('answer-selected', ev.detail.Code);
             item.select();
           }
         } else {
