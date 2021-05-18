@@ -524,17 +524,17 @@ export class SingaporeIncentivesMatch extends LitElement {
       Steps: [
         {
           Name: 'Intro',
-          type: "INTRO",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
+          Type: "INTRO",
+          Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
         },
         {
           Name: 'Industry',
-          type: 'QUESTIONNAIRE',
-          questionList: [
+          Type: 'QUESTIONNAIRE',
+          Questions: [
             {
               uuid: '7f655c89-99cb-4acd-8211-a77329483b30',
               question: 'How old is your company?',
-              description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
+              Description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
               answerList: [
                 {
                   uuid: 'd0792019-d321-4aa6-82e6-9fda0bd4014f',
@@ -553,7 +553,7 @@ export class SingaporeIncentivesMatch extends LitElement {
             {
               uuid: 'ed552cf1-0be8-46f2-8efd-5f009f2f61aa',
               question: 'What percentage of your company is owned by Singapore residents?',
-              description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
+              Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
               answerList: [
                 {
                   uuid: '71bab4c1-8190-4efd-b819-79de3b489695',
@@ -576,7 +576,7 @@ export class SingaporeIncentivesMatch extends LitElement {
             {
               uuid: '6e7f42a7-66f1-4e9b-8e94-b6947d4cad58',
               question: 'How many employees do you have in Singapore?',
-              description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
+              Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
               answerList: [
                 {
                   uuid: 'fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2',
@@ -600,7 +600,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               uuid: '0199247e-43c7-4d7f-b04f-31920ea8f4cb',
               multipleSelection: true,
               question: 'Select the attributes applicable to your company?',
-              description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
+              Description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
               answerList: [
                 {
                   uuid: 'ded67768-42c9-4b2e-80bd-c76268905ee0',
@@ -644,9 +644,9 @@ export class SingaporeIncentivesMatch extends LitElement {
         },
         {
           Name: 'Matches',
-          type: 'MATCHES',
+          Type: 'MATCHES',
           heading: 'You may qualify for the following programs',
-          description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
+          Description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
         }
       ]
     }
@@ -659,8 +659,8 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.currentStep = this.config.Steps[this.currentStepIndex];
 
     this.currentQuestionIndex = 0;
-    if(this.currentStep.questionList) {
-      this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+    if(this.currentStep.Questions) {
+      this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
     }
 
     this.addEventListener('next-question', this._nextQuestion);
@@ -675,7 +675,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         <div class="content-container animate__animated" id="animate-container">
           <div>
 
-        ${this.currentStep.type === 'QUESTIONNAIRE'  ?
+        ${this.currentStep.Type === 'QUESTIONNAIRE'  ?
                 html`
 
                   <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .multipleSelection="${this.currentQuestion.multipleSelection}"></the-question>
@@ -683,7 +683,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                ` :
                 html``}
 
-        ${this.currentStep.type === 'MATCHES'  ?
+        ${this.currentStep.Type === 'MATCHES'  ?
                 html`
                 
                     <the-results></the-results>
@@ -692,7 +692,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                 ` :
                 html``}
 
-        ${this.currentStep.type === 'INTRO'  ?
+        ${this.currentStep.Type === 'INTRO'  ?
                 html`
 
 
@@ -700,7 +700,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                   <div class="intro-container">
                       <h4>${this.currentStep.Name}</h4>
 
-                      <span class="intro-description">${this.currentStep.description}</span>
+                      <span class="intro-description">${this.currentStep.Description}</span>
 
                       <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
 
@@ -731,9 +731,9 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.currentStep = this.config.Steps[this.currentStepIndex];
 
 
-    if(this.currentStep.type === 'QUESTIONNAIRE') {
+    if(this.currentStep.Type === 'QUESTIONNAIRE') {
       this.currentQuestionIndex = 0;
-      this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+      this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
 
       
     }
@@ -763,7 +763,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   _nextQuestion(ev) {
     console.log('_nextQuestion', ev)
-    const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.questionList.length;
+    const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.Questions.length;
     if(isLastQuestion) {
       this.currentQuestionIndex = 0;
       this.nextStepClicked();
@@ -771,7 +771,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     this.currentQuestionIndex = this.currentQuestionIndex + 1;
-    this.currentQuestion = this.currentStep.questionList[this.currentQuestionIndex];
+    this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
 
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
