@@ -535,7 +535,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               Code: '7f655c89-99cb-4acd-8211-a77329483b30',
               question: 'How old is your company?',
               Description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
-              answerList: [
+              AnswerOptions: [
                 {
                   Code: 'd0792019-d321-4aa6-82e6-9fda0bd4014f',
                   AnswerText: 'Not yet incorporated'
@@ -554,7 +554,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               Code: 'ed552cf1-0be8-46f2-8efd-5f009f2f61aa',
               question: 'What percentage of your company is owned by Singapore residents?',
               Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
-              answerList: [
+              AnswerOptions: [
                 {
                   Code: '71bab4c1-8190-4efd-b819-79de3b489695',
                   AnswerText: '0%'
@@ -577,7 +577,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               Code: '6e7f42a7-66f1-4e9b-8e94-b6947d4cad58',
               question: 'How many employees do you have in Singapore?',
               Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
-              answerList: [
+              AnswerOptions: [
                 {
                   Code: 'fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2',
                   AnswerText: '0 - 10'
@@ -601,7 +601,7 @@ export class SingaporeIncentivesMatch extends LitElement {
               multipleSelection: true,
               question: 'Select the attributes applicable to your company?',
               Description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
-              answerList: [
+              AnswerOptions: [
                 {
                   Code: 'ded67768-42c9-4b2e-80bd-c76268905ee0',
                   AnswerText: 'Low use of energy'
