@@ -94,6 +94,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .buttons-container {
         display: flex;
+        margin-top: 1em;
       }
 
       .button {
@@ -260,7 +261,6 @@ export class SingaporeIncentivesMatch extends LitElement {
         background-color: rgb(0, 175, 255);
         color: rgb(255, 255, 255);
         border-radius: 4px;
-        margin-top: 1em;
         min-width: 35px;
         font-family: "Poppins",sans-serif
       }
@@ -302,6 +302,13 @@ export class SingaporeIncentivesMatch extends LitElement {
 
         animation: bounce; /* referring directly to the animation's @keyframe declaration */
         animation-duration: 2s; /* don't forget to set a duration! */
+      }
+
+      .progress-bar {
+        display: block;
+        width: 100px;
+        height: 20px;
+        background-color: blue;
       }
 
       
@@ -514,7 +521,7 @@ export class SingaporeIncentivesMatch extends LitElement {
   constructor() {
     super();
     this.config = {
-      steps: [
+      Steps: [
         {
           name: 'Intro',
           type: "INTRO",
@@ -649,7 +656,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
     this.currentStepIndex = 0;
-    this.currentStep = this.config.steps[this.currentStepIndex];
+    this.currentStep = this.config.Steps[this.currentStepIndex];
 
     this.currentQuestionIndex = 0;
     if(this.currentStep.questionList) {
@@ -702,6 +709,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                           <span class="next">Next</span>
                         </div>
                         <div class="flex"></div>
+                        <!-- <div class="progress-bar"></div> -->
                       </div>
                   </div>
 
@@ -720,7 +728,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     console.log('nextStepClicked');
 
     this.currentStepIndex = this.currentStepIndex + 1;
-    this.currentStep = this.config.steps[this.currentStepIndex];
+    this.currentStep = this.config.Steps[this.currentStepIndex];
 
 
     if(this.currentStep.type === 'QUESTIONNAIRE') {
@@ -749,7 +757,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     console.log('previousClicked');
 
     this.currentStepIndex = this.currentStepIndex - 1;
-    this.currentStep = this.config.steps[this.currentStepIndex];
+    this.currentStep = this.config.Steps[this.currentStepIndex];
     this.requestUpdate();
   }
 
