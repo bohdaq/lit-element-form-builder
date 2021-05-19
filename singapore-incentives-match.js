@@ -12,6 +12,16 @@ export class SingaporeIncentivesMatch extends LitElement {
   static get styles() {
     return css`
       :host {
+        font-size: 17px;
+      }
+      @media (max-width: 900px) {
+        :host { font-size: 15px; }
+      }
+      @media (max-width: 400px) {
+        :host { font-size: 13px; }
+      }
+
+      :host {
         display: flex;
         justify-items: center;
         align-items: center;
@@ -95,6 +105,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       .buttons-container {
         display: flex;
         margin-top: 1em;
+        font-size: 2rem;
       }
 
       .button {
@@ -257,13 +268,32 @@ export class SingaporeIncentivesMatch extends LitElement {
         border: 1px solid transparent;
         margin: 0px;
         box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
-        padding: 6px 14px;
+        padding: .6rem 1rem;
         background-color: rgb(0, 175, 255);
         color: rgb(255, 255, 255);
         border-radius: 4px;
         min-width: 35px;
         font-family: "Poppins",sans-serif
       }
+
+      @media only screen 
+        and (max-device-width : 1080px) { 
+          /* styles */
+          .ok-next {
+            font-size: 2rem;
+          }
+      }
+
+
+      @media only screen 
+        and (max-device-width : 667px) { 
+          /* styles */
+          .ok-next {
+            font-size: 1.2em;
+            padding: 8px 15px;
+          }
+      }
+
 
       .ok-next:hover {
         background-color: rgb(38, 187, 255);
@@ -276,7 +306,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       h4 {
         font-family: Poppins, sans-serif;
-        font-size: 1.2em;
+        font-size: 2em;
         font-style: normal;
         font-weight: 400;
         line-height: 1.4;
@@ -288,10 +318,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         margin-bottom: .2em;
       }
 
+      .intro-container {
+        font-size: 1.2rem;
+      }
+
       .intro-description {
         margin-top: 0.35em;
         font-family: Poppins, sans-serif;
-        font-size: 1em;
+        font-size: .8em;
         font-style: normal;
         font-weight: 400;
         line-height: 1.4;
@@ -319,160 +353,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           }
       }
 
-      /* iPhone X and Xs Max */
-      @media only screen 
-          and (min-device-width: 375px) 
-          and (min-device-height: 812px) 
-          and (-webkit-device-pixel-ratio: 3)
-          and (orientation: portrait) { 
-          /* styles */
 
-          .content-container {
-            max-width: 100%;
-          }
-
-          span.next {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 3em;
-            margin-bottom: 3em;
-            padding: 1em 2em;
-            border-radius: 14px;
-          }
-
-          h4 {
-            font-size: 4em;
-          }
-
-          .intro-description {
-            font-size: 3em;
-          }
-
-          
-      }
-
-      /* iPhone XR */
-      @media only screen 
-          and (min-device-width: 414px) 
-          and (min-device-height: 896px) 
-          and (-webkit-device-pixel-ratio: 2) 
-          and (orientation: portrait) { 
-            /* styles */
-
-            .content-container {
-              max-width: 100%;
-            }
-
-            span.next {
-              font-size: 4em;
-            }
-            .ok-next {
-              margin-top: 3em;
-              margin-bottom: 3em;
-              padding: 1em 2em;
-              border-radius: 14px;
-            }
-
-            h4 {
-              font-size: 4em;
-            }
-
-            .intro-description {
-              font-size: 3em;
-            }
-
-      }
-
-      /* iPhone 6,7 */
-      @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 667px) { 
-          /* styles */
-
-          .content-container {
-            max-width: 100%;
-          }
-
-          span.next {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 3em;
-            margin-bottom: 3em;
-            padding: 1em 2em;
-            border-radius: 14px;
-          }
-
-          h4 {
-            font-size: 4em;
-          }
-
-          .intro-description {
-            font-size: 3em;
-          }
-
-      }
-
-      /* iPhone 6+,7+ */
-      @media only screen 
-        and (min-device-width : 414px) 
-        and (max-device-width : 736px) { 
-          /* styles */
-
-          .content-container {
-            max-width: 100%;
-          }
-
-          span.next {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 3em;
-            margin-bottom: 3em;
-            padding: 1em 2em;
-            border-radius: 14px;
-          }
-
-          h4 {
-            font-size: 4em;
-          }
-
-          .intro-description {
-            font-size: 3em;
-          }
-
-      }
-
-
-      /* iPhone 5 (portrait & landscape)----------- */
-      @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px) {
-        /* STYLES GO HERE */
-
-          .content-container {
-            max-width: 100%;
-          }
-
-          span.next {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 3em;
-            margin-bottom: 3em;
-            padding: 1em 2em;
-            border-radius: 14px;
-          }
-
-          h4 {
-            font-size: 4em;
-          }
-
-          .intro-description {
-            font-size: 3em;
-          }
-      }
       
 
 
@@ -745,7 +626,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     setTimeout(() => {
       animationContainer.classList.remove('animate__fadeOutUp');
       that.requestUpdate();
-      animationContainer.classList.add('animate__fadeInDown');
+      animationContainer.classList.add('animate__fadeInUp');
     }, 1000)
 
 
@@ -780,7 +661,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     setTimeout(() => {
       animationContainer.classList.remove('animate__fadeOutUp');
       that.requestUpdate();
-      animationContainer.classList.add('animate__fadeInDown');
+      animationContainer.classList.add('animate__fadeInUp');
       that.scrollTo({top: 0, behavior: 'smooth'});
     }, 1000)
   }

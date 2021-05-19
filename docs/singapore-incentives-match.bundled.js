@@ -1859,6 +1859,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
       .buttons-container {
         display: flex;
+        margin-top: 1em;
       }
 
       .button {
@@ -2025,7 +2026,6 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         background-color: rgb(0, 175, 255);
         color: rgb(255, 255, 255);
         border-radius: 4px;
-        margin-top: 1em;
         min-width: 35px;
         font-family: "Poppins",sans-serif
       }
@@ -2067,6 +2067,13 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
         animation: bounce; /* referring directly to the animation's @keyframe declaration */
         animation-duration: 2s; /* don't forget to set a duration! */
+      }
+
+      .progress-bar {
+        display: block;
+        width: 100px;
+        height: 20px;
+        background-color: blue;
       }
 
       
@@ -2303,6 +2310,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                           <span class="next">Next</span>
                         </div>
                         <div class="flex"></div>
+                        <div class="progress-bar"></div>
                       </div>
                   </div>
 
