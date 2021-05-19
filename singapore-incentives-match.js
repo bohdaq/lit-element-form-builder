@@ -407,139 +407,23 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   constructor() {
     super();
-    this.config = {
-      Steps: [
-        {
-          Name: 'Intro',
-          Type: "INFORMATION",
-          Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna vitae arcu feugiat pulvinar vitae eget magna. Nulla lobortis nulla ut fringilla eleifend. Vestibulum vel pretium ex. Curabitur a erat in enim sollicitudin aliquam. In hac habitasse platea dictumst. Cras diam dolor, venenatis sit amet turpis sed, pharetra viverra odio. Cras euismod ac libero sit amet sagittis. Nulla id placerat libero. Curabitur aliquet fringilla aliquet. Vivamus ac dolor pharetra, semper dui ac, malesuada mi. Duis pellentesque arcu sed libero ullamcorper, et vulputate ipsum accumsan. Mauris a nibh nec magna convallis mollis. Ut porttitor justo arcu, posuere interdum sapien dapibus ut.",
-        },
-        {
-          Name: 'Industry',
-          Type: 'QUESTION_ANSWER',
-          Questions: [
-            {
-              Code: '7f655c89-99cb-4acd-8211-a77329483b30',
-              Name: 'How old is your company?',
-              Description: 'Many incentive programs are available only to startups or companies in their first two years. Please select the option that best describes the age of your company.',
-              AnswerOptions: [
-                {
-                  Code: 'd0792019-d321-4aa6-82e6-9fda0bd4014f',
-                  AnswerText: 'Not yet incorporated'
-                },
-                {
-                  Code: '313c0c71-cb1b-4f2d-9cfe-5691df666d3d',
-                  AnswerText: '0 - 2 years'
-                },
-                {
-                  Code: 'b35d0885-427f-4408-9823-7e19f8c777d3',
-                  AnswerText: 'More than 2 years'
-                }
-              ]
-            },
-            {
-              Code: 'ed552cf1-0be8-46f2-8efd-5f009f2f61aa',
-              Name: 'What percentage of your company is owned by Singapore residents?',
-              Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
-              AnswerOptions: [
-                {
-                  Code: '71bab4c1-8190-4efd-b819-79de3b489695',
-                  AnswerText: '0%'
-                },
-                {
-                  Code: '742f6e85-9985-465d-91c1-38408804df02',
-                  AnswerText: 'Less than 30%'
-                },
-                {
-                  Code: '7a487b63-0563-4f1e-9274-7d60a1831207',
-                  AnswerText: '30 to 50%'
-                },
-                {
-                  Code: 'c06f0d5e-7cf3-45fd-ab04-e2fb87f3722e',
-                  AnswerText: 'More than 50%'
-                }
-              ]
-            },
-            {
-              Code: '6e7f42a7-66f1-4e9b-8e94-b6947d4cad58',
-              Name: 'How many employees do you have in Singapore?',
-              Description: 'Some programs require a minimum level of shareholding by Singapore residents. Please select the option that best describes the percentage held of your company owned by Singapore residents.',
-              AnswerOptions: [
-                {
-                  Code: 'fc3b6091-ea4c-4b1b-b3af-4ab9442d13f2',
-                  AnswerText: '0 - 10'
-                },
-                {
-                  Code: 'e63daf39-64fb-4008-9d03-48107e923ca5',
-                  AnswerText: '11 - 50'
-                },
-                {
-                  Code: 'b33be8f8-7783-41ed-bc5e-b1a9f4a3e154',
-                  AnswerText: '51 - 200'
-                },
-                {
-                  Code: '740fdeae-f298-4f4e-80ac-64f08e5a5a32',
-                  AnswerText: 'More than 200'
-                }
-              ]
-            },
-            {
-              Code: '0199247e-43c7-4d7f-b04f-31920ea8f4cb',
-              multipleSelection: true,
-              Name: 'Select the attributes applicable to your company?',
-              Description: 'Many programs are available only to companies that demonstrate specific attributes (such as use of novel innovative technology, hiring of local staff, etc.). To see a description of each attribute hover the mouse over it.',
-              AnswerOptions: [
-                {
-                  Code: 'ded67768-42c9-4b2e-80bd-c76268905ee0',
-                  AnswerText: 'Low use of energy'
-                },
-                {
-                  Code: 'cc26b090-9650-49b6-a376-b04b9ecc9465',
-                  AnswerText: 'Foreign exports'
-                },
-                {
-                  Code: 'dda467d5-f947-4789-9aea-034bd4f85a06',
-                  AnswerText: 'Trade financing'
-                },
-                {
-                  Code: 'b7a31474-1e5f-429d-830d-18a14ee56521',
-                  AnswerText: 'IP rights licensing'
-                },
-                {
-                  Code: 'e055fa05-7fb0-4f9b-b2b3-9294fbe56e43',
-                  AnswerText: 'Innovative technology'
-                },
-                {
-                  Code: '0d64e546-2fb1-41f4-8218-4ee539cea053',
-                  AnswerText: 'Hiring local staff'
-                },
-                {
-                  Code: '05432a32-c78d-4f23-a698-fb2f14c8a037',
-                  AnswerText: 'Patents owned'
-                },
-                {
-                  Code: 'bbfaf14c-1b85-4ba9-b631-ee6e58aa09e9',
-                  AnswerText: 'New product'
-                },
-                {
-                  Code: '42697e39-a6be-46d4-81f6-c7885c877f59',
-                  AnswerText: 'Innovative Technology'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          Name: 'Matches',
-          Type: 'RESULTS',
-          Heading: 'You may qualify for the following programs',
-          Description: 'We can conduct a preliminary evaluation of your company\'s suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation.'
-        }
-      ]
-    }
 
+    this._configResponseRetrieved = false;
 
+    fetch('https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES')
+    .then(response => response.json())
+    .then(data => this._parseResponse(data));
+  }
 
+  _parseResponse(data) {
+    
+    this._configResponseRetrieved = true;
+    this.config = data;
+    this.config.Steps.sort( (a, b) => {
+      return a.SortOrder - b.SortOrder;
+    });
+    
+    this.requestUpdate();
 
 
     this.currentStepIndex = 0;
@@ -551,62 +435,73 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     this.addEventListener('next-question', this._nextQuestion);
-
   }
 
   render() {
-    return html`
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-      <div class="main-container">
-        
-        <div class="content-container animate__animated" id="animate-container">
-          <div>
-
-        ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
-                html`
-
-                  <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .multipleSelection="${this.currentQuestion.multipleSelection}"></the-question>
-               
-               ` :
-                html``}
-
-        ${this.currentStep.Type === 'RESULTS'  ?
-                html`
-                
-                    <the-results></the-results>
-                    
-                
-                ` :
-                html``}
-
-        ${this.currentStep.Type === 'INFORMATION'  ?
-                html`
-
-
-<!-- animate__fadeOutDown -->
-                  <div class="intro-container">
-                      <h4>${this.currentStep.Name}</h4>
-
-                      <span class="intro-description">${this.currentStep.Description}</span>
-
-                      <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
-
-                      <div class="buttons-container">
-                        <the-button @click="${this.nextStepClicked}">Next</the-button>
-                        <div class="flex"></div>
-                        <!-- <div class="progress-bar"></div> -->
-                      </div>
-                  </div>
-
+    return html` 
+    
+    ${this._configResponseRetrieved ?
+      html`
+      
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+                <div class="main-container">
                   
-                ` :
-                html``}
+                  <div class="content-container animate__animated" id="animate-container">
+                    <div>
+
+                  ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
+                          html`
+
+                            <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .multipleSelection="${this.currentQuestion.multipleSelection}"></the-question>
+                        
+                        ` :
+                          html``}
+
+                  ${this.currentStep.Type === 'RESULTS'  ?
+                          html`
+                          
+                              <the-results></the-results>
+                              
+                          
+                          ` :
+                          html``}
+
+                  ${this.currentStep.Type === 'INFORMATION'  ?
+                          html`
 
 
-          </div>
-        </div>
-      </div>
+              <!-- animate__fadeOutDown -->
+                            <div class="intro-container">
+                                <h4>${this.currentStep.Name}</h4>
+
+                                <span class="intro-description">${this.currentStep.Description}</span>
+
+                                <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
+
+                                <div class="buttons-container">
+                                  <the-button @click="${this.nextStepClicked}">Next</the-button>
+                                  <div class="flex"></div>
+                                  <!-- <div class="progress-bar"></div> -->
+                                </div>
+                            </div>
+
+                            
+                          ` :
+                          html``}
+
+
+                    </div>
+                  </div>
+                </div>
+      ` :
+      html``}
+
     `;
+    
+
+    
+    
+    
   }
 
   nextStepClicked() {
