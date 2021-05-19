@@ -3,6 +3,7 @@ import './the-checkbox';
 import './the-question';
 import './the-answer';
 import './the-results';
+import './the-button';
 
 
 /**
@@ -16,9 +17,15 @@ export class SingaporeIncentivesMatch extends LitElement {
       }
       @media (max-width: 900px) {
         :host { font-size: 15px; }
+        .buttons-container {
+          font-size: 1.2rem;
+        }
       }
       @media (max-width: 400px) {
         :host { font-size: 13px; }
+        .buttons-container {
+          font-size: 5rem;
+        }
       }
 
       :host {
@@ -105,7 +112,6 @@ export class SingaporeIncentivesMatch extends LitElement {
       .buttons-container {
         display: flex;
         margin-top: 1em;
-        font-size: 2rem;
       }
 
       .button {
@@ -586,9 +592,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
 
                       <div class="buttons-container">
-                        <div class="ok-next" @click="${this.nextStepClicked}">
-                          <span class="next">Next</span>
-                        </div>
+                        <the-button @click="${this.nextStepClicked}">Next</the-button>
                         <div class="flex"></div>
                         <!-- <div class="progress-bar"></div> -->
                       </div>

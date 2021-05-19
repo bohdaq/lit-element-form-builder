@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-
+import './the-button';
 
 export class TheQuestion extends LitElement {
   static get styles() {
@@ -8,9 +8,13 @@ export class TheQuestion extends LitElement {
         display: flex;
       }
 
+      .question-container {
+        font-size: 1.2rem;
+      }
+
       .question-title {
         font-family: "Poppins",sans-serif;
-        font-size: 1.2em;
+        font-size: 2em;
         font-style: normal;
         font-weight: 400;
         line-height: 1.4;
@@ -35,25 +39,6 @@ export class TheQuestion extends LitElement {
       }
 
 
-
-      .ok-next {
-        cursor: pointer;
-        outline: none;
-        border: 1px solid transparent;
-        margin: 0px;
-        box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
-        padding: 6px 14px;
-        background-color: rgb(0, 175, 255);
-        color: rgb(255, 255, 255);
-        border-radius: 4px;
-        margin-top: 1em;
-        font-family: "Poppins",sans-serif
-      }
-
-      .ok-next:hover {
-        background-color: rgb(38, 187, 255);
-      }
-
       .fill-white {
         fill: white;
         margin-left: .7em;
@@ -67,119 +52,6 @@ export class TheQuestion extends LitElement {
         flex: 1;
       }
 
-      /* iPhone X and Xs Max */
-      @media only screen 
-          and (min-device-width: 375px) 
-          and (min-device-height: 812px) 
-          and (-webkit-device-pixel-ratio: 3)
-          and (orientation: portrait) { 
-          /* styles */
-          .question-title {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding: .25em .5em;
-            border-radius: 14px;
-            font-size: 4em;
-          }
-
-          .question-description {
-            font-size: 3em;
-          }
-
-          
-      }
-
-      /* iPhone XR */
-      @media only screen 
-          and (min-device-width: 414px) 
-          and (min-device-height: 896px) 
-          and (-webkit-device-pixel-ratio: 2) 
-          and (orientation: portrait) { 
-          /* styles */
-          .question-title {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding: .25em .5em;
-            border-radius: 14px;
-            font-size: 4em;
-          }
-
-          .question-description {
-            font-size: 3em;
-          }
-
-      }
-
-      /* iPhone 6,7 */
-      @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 667px) { 
-          /* styles */
-          .question-title {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding: .25em .5em;
-            border-radius: 14px;
-            font-size: 4em;
-          }
-
-          .question-description {
-            font-size: 3em;
-          }
-
-      }
-
-      /* iPhone 6+,7+ */
-      @media only screen 
-        and (min-device-width : 414px) 
-        and (max-device-width : 736px) { 
-          /* styles */
-          .question-title {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding: .25em .5em;
-            border-radius: 14px;
-            font-size: 4em;
-          }
-
-          .question-description {
-            font-size: 3em;
-          }
-
-      }
-
-      /* iPhone 5, SE (portrait & landscape)----------- */
-      @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px) {
-        /* STYLES GO HERE */
-        .question-title {
-            font-size: 4em;
-          }
-          .ok-next {
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding: .25em .5em;
-            border-radius: 14px;
-            font-size: 4em;
-          }
-
-          .question-description {
-            font-size: 3em;
-          }
-      }
     `;
   }
 
@@ -213,9 +85,7 @@ export class TheQuestion extends LitElement {
                       
 
                       <div class="buttons-container">
-                        <div class="ok-next" @click="${this._nextQuestionClicked}">
-                          <span class="next">Next</span>
-                        </div>
+                        <the-button @click="${this._nextQuestionClicked}">Next</the-button>
                         <div class="flex"></div>
                       </div>
 
