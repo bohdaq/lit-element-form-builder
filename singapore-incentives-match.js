@@ -452,7 +452,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                   ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                           html`
 
-                            <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .multipleSelection="${this.currentQuestion.multipleSelection}"></the-question>
+                            <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
                         
                         ` :
                           html``}

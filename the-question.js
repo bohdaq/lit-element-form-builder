@@ -59,7 +59,7 @@ export class TheQuestion extends LitElement {
     return {
         item: Object,
         index: Number,
-        multipleSelection: Boolean
+        allowMultipleAnswers: Boolean
     };
   }
 
@@ -106,12 +106,12 @@ export class TheQuestion extends LitElement {
             item.select();
           }
         } else {
-          if(!this.item.multipleSelection) {
+          if(!this.item.AllowMultipleAnswers) {
             item.deselect();
           }
         }
       });
-      if(!this.multipleSelection) {
+      if(!this.AllowMultipleAnswers) {
         const that = this;
         setTimeout(() => {
           that._nextQuestionClicked();
