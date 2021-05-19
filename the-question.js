@@ -72,8 +72,8 @@ export class TheQuestion extends LitElement {
   render() {
     return html`
                   <div class="question-container">
-                    <div class="question-title">${this.item.question}</div>
-                    <div class="question-description">${this.item.description}</div>
+                    <div class="question-title">${this.item.Name}</div>
+                    <div class="question-description">${this.item.Description}</div>
                     <div class="answers-container">
 
 
