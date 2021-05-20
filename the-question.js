@@ -73,7 +73,7 @@ export class TheQuestion extends LitElement {
     return html`
                   <div class="question-container">
                     <div class="question-title">${this.item.Name}</div>
-                    <div class="question-description">${this.item.Description}</div>
+                    <div id="information-description" class="question-description"></div>
                     <div class="answers-container">
 
 
@@ -131,6 +131,13 @@ export class TheQuestion extends LitElement {
       composed: true
     });
     this.dispatchEvent(event);
+  }
+
+  _updateDescription(description){
+    let that = this;
+    setTimeout(()=> {
+      that.shadowRoot.querySelector('#information-description').innerHTML = description;
+    });
   }
 
 

@@ -435,6 +435,13 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     this.addEventListener('next-question', this._nextQuestion);
+
+
+    let that = this;
+    setTimeout(()=> {
+      that.shadowRoot.querySelector('#information-description').innerHTML = this.currentStep.Description;
+    });
+
   }
 
   render() {
@@ -474,14 +481,11 @@ export class SingaporeIncentivesMatch extends LitElement {
                             <div class="intro-container">
                                 <h4>${this.currentStep.Name}</h4>
 
-                                <span class="intro-description">${this.currentStep.Description}</span>
-
-                                <!-- <div class="button accent" @click=${this.nextStepClicked}>Next ></div> -->
+                                <span id="information-description" class="intro-description"></span>
 
                                 <div class="buttons-container">
                                   <the-button @click="${this.nextStepClicked}">Next</the-button>
                                   <div class="flex"></div>
-                                  <!-- <div class="progress-bar"></div> -->
                                 </div>
                             </div>
 
@@ -514,8 +518,6 @@ export class SingaporeIncentivesMatch extends LitElement {
     if(this.currentStep.Type === 'QUESTION_ANSWER') {
       this.currentQuestionIndex = 0;
       this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
-
-      
     }
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
@@ -526,19 +528,20 @@ export class SingaporeIncentivesMatch extends LitElement {
       animationContainer.classList.remove('animate__fadeOutUp');
       that.requestUpdate();
       animationContainer.classList.add('animate__fadeInUp');
+
+
+      if(this.currentStep.Type === 'QUESTION_ANSWER') {
+        that._updateDescription(that.currentStep.Description);
+      }
     }, 1000)
-
-
     
-
   }
 
-  previousClicked() {
-    console.log('previousClicked');
-
-    this.currentStepIndex = this.currentStepIndex - 1;
-    this.currentStep = this.config.Steps[this.currentStepIndex];
-    this.requestUpdate();
+  _updateDescription(description){
+    let that = this;
+    setTimeout(()=> {
+      that.shadowRoot.querySelector('the-question')._updateDescription(description);
+    });
   }
 
   _nextQuestion(ev) {
