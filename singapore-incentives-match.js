@@ -554,7 +554,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
       if(this.currentStep.Type === 'QUESTION_ANSWER') {
-        that._updateDescription(that.currentStep.Description);
+        that._updateDescription();
       }
     }, 1000)
     
@@ -563,7 +563,7 @@ export class SingaporeIncentivesMatch extends LitElement {
   _updateDescription(description){
     let that = this;
     setTimeout(()=> {
-      that.shadowRoot.querySelector('the-question')._updateDescription(description);
+      that.shadowRoot.querySelector('the-question')._updateDescription();
     });
   }
 
@@ -589,6 +589,10 @@ export class SingaporeIncentivesMatch extends LitElement {
       that.requestUpdate();
       animationContainer.classList.add('animate__fadeInUp');
       that.scrollTo({top: 0, behavior: 'smooth'});
+
+      if(this.currentStep.Type === 'QUESTION_ANSWER') {
+        that._updateDescription();
+      }
     }, 1000)
   }
 

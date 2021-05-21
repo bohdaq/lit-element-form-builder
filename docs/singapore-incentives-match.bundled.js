@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const e="undefined"!=typeof window&&null!=window.customElements&&void 0!==window.customElements.polyfillWrapFlushCallback,t=(e,t,i=null)=>{for(;t!==i;){const i=t.nextSibling;e.removeChild(t),t=i}},i=`{{lit-${String(Math.random()).slice(2)}}}`,o=`\x3c!--${i}--\x3e`,n=new RegExp(`${i}|${o}`);class s{constructor(e,t){this.parts=[],this.element=t;const o=[],s=[],a=document.createTreeWalker(t.content,133,null,!1);let d=0,p=-1,h=0;const{strings:m,values:{length:u}}=e;for(;h<u;){const e=a.nextNode();if(null!==e){if(p++,1===e.nodeType){if(e.hasAttributes()){const t=e.attributes,{length:i}=t;let o=0;for(let e=0;e<i;e++)r(t[e].name,"$lit$")&&o++;for(;o-- >0;){const t=m[h],i=c.exec(t)[2],o=i.toLowerCase()+"$lit$",s=e.getAttribute(o);e.removeAttribute(o);const r=s.split(n);this.parts.push({type:"attribute",index:p,name:i,strings:r}),h+=r.length-1}}"TEMPLATE"===e.tagName&&(s.push(e),a.currentNode=e.content)}else if(3===e.nodeType){const t=e.data;if(t.indexOf(i)>=0){const i=e.parentNode,s=t.split(n),a=s.length-1;for(let t=0;t<a;t++){let o,n=s[t];if(""===n)o=l();else{const e=c.exec(n);null!==e&&r(e[2],"$lit$")&&(n=n.slice(0,e.index)+e[1]+e[2].slice(0,-"$lit$".length)+e[3]),o=document.createTextNode(n)}i.insertBefore(o,e),this.parts.push({type:"node",index:++p})}""===s[a]?(i.insertBefore(l(),e),o.push(e)):e.data=s[a],h+=a}}else if(8===e.nodeType)if(e.data===i){const t=e.parentNode;null!==e.previousSibling&&p!==d||(p++,t.insertBefore(l(),e)),d=p,this.parts.push({type:"node",index:p}),null===e.nextSibling?e.data="":(o.push(e),p--),h++}else{let t=-1;for(;-1!==(t=e.data.indexOf(i,t+1));)this.parts.push({type:"node",index:-1}),h++}}else a.currentNode=s.pop()}for(const e of o)e.parentNode.removeChild(e)}}const r=(e,t)=>{const i=e.length-t.length;return i>=0&&e.slice(i)===t},a=e=>-1!==e.index,l=()=>document.createComment(""),c=/([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;function d(e,t){const{element:{content:i},parts:o}=e,n=document.createTreeWalker(i,133,null,!1);let s=h(o),r=o[s],a=-1,l=0;const c=[];let d=null;for(;n.nextNode();){a++;const e=n.currentNode;for(e.previousSibling===d&&(d=null),t.has(e)&&(c.push(e),null===d&&(d=e)),null!==d&&l++;void 0!==r&&r.index===a;)r.index=null!==d?-1:r.index-l,s=h(o,s),r=o[s]}c.forEach(e=>e.parentNode.removeChild(e))}const p=e=>{let t=11===e.nodeType?0:1;const i=document.createTreeWalker(e,133,null,!1);for(;i.nextNode();)t++;return t},h=(e,t=-1)=>{for(let i=t+1;i<e.length;i++){const t=e[i];if(a(t))return i}return-1};
+const t="undefined"!=typeof window&&null!=window.customElements&&void 0!==window.customElements.polyfillWrapFlushCallback,e=(t,e,i=null)=>{for(;e!==i;){const i=e.nextSibling;t.removeChild(e),e=i}},i=`{{lit-${String(Math.random()).slice(2)}}}`,s=`\x3c!--${i}--\x3e`,n=new RegExp(`${i}|${s}`);class o{constructor(t,e){this.parts=[],this.element=e;const s=[],o=[],a=document.createTreeWalker(e.content,133,null,!1);let h=0,p=-1,d=0;const{strings:u,values:{length:m}}=t;for(;d<m;){const t=a.nextNode();if(null!==t){if(p++,1===t.nodeType){if(t.hasAttributes()){const e=t.attributes,{length:i}=e;let s=0;for(let t=0;t<i;t++)r(e[t].name,"$lit$")&&s++;for(;s-- >0;){const e=u[d],i=l.exec(e)[2],s=i.toLowerCase()+"$lit$",o=t.getAttribute(s);t.removeAttribute(s);const r=o.split(n);this.parts.push({type:"attribute",index:p,name:i,strings:r}),d+=r.length-1}}"TEMPLATE"===t.tagName&&(o.push(t),a.currentNode=t.content)}else if(3===t.nodeType){const e=t.data;if(e.indexOf(i)>=0){const i=t.parentNode,o=e.split(n),a=o.length-1;for(let e=0;e<a;e++){let s,n=o[e];if(""===n)s=c();else{const t=l.exec(n);null!==t&&r(t[2],"$lit$")&&(n=n.slice(0,t.index)+t[1]+t[2].slice(0,-"$lit$".length)+t[3]),s=document.createTextNode(n)}i.insertBefore(s,t),this.parts.push({type:"node",index:++p})}""===o[a]?(i.insertBefore(c(),t),s.push(t)):t.data=o[a],d+=a}}else if(8===t.nodeType)if(t.data===i){const e=t.parentNode;null!==t.previousSibling&&p!==h||(p++,e.insertBefore(c(),t)),h=p,this.parts.push({type:"node",index:p}),null===t.nextSibling?t.data="":(s.push(t),p--),d++}else{let e=-1;for(;-1!==(e=t.data.indexOf(i,e+1));)this.parts.push({type:"node",index:-1}),d++}}else a.currentNode=o.pop()}for(const t of s)t.parentNode.removeChild(t)}}const r=(t,e)=>{const i=t.length-e.length;return i>=0&&t.slice(i)===e},a=t=>-1!==t.index,c=()=>document.createComment(""),l=/([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;function h(t,e){const{element:{content:i},parts:s}=t,n=document.createTreeWalker(i,133,null,!1);let o=d(s),r=s[o],a=-1,c=0;const l=[];let h=null;for(;n.nextNode();){a++;const t=n.currentNode;for(t.previousSibling===h&&(h=null),e.has(t)&&(l.push(t),null===h&&(h=t)),null!==h&&c++;void 0!==r&&r.index===a;)r.index=null!==h?-1:r.index-c,o=d(s,o),r=s[o]}l.forEach(t=>t.parentNode.removeChild(t))}const p=t=>{let e=11===t.nodeType?0:1;const i=document.createTreeWalker(t,133,null,!1);for(;i.nextNode();)e++;return e},d=(t,e=-1)=>{for(let i=e+1;i<t.length;i++){const e=t[i];if(a(e))return i}return-1};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -25,7 +25,7 @@ const e="undefined"!=typeof window&&null!=window.customElements&&void 0!==window
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const m=new WeakMap,u=e=>"function"==typeof e&&m.has(e),f={},b={};
+const u=new WeakMap,m=t=>"function"==typeof t&&u.has(t),f={},b={};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -39,7 +39,7 @@ const m=new WeakMap,u=e=>"function"==typeof e&&m.has(e),f={},b={};
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.options=i}update(e){let t=0;for(const i of this.t)void 0!==i&&i.setValue(e[t]),t++;for(const e of this.t)void 0!==e&&e.commit()}_clone(){const t=e?this.template.element.content.cloneNode(!0):document.importNode(this.template.element.content,!0),i=[],o=this.template.parts,n=document.createTreeWalker(t,133,null,!1);let s,r=0,l=0,c=n.nextNode();for(;r<o.length;)if(s=o[r],a(s)){for(;l<s.index;)l++,"TEMPLATE"===c.nodeName&&(i.push(c),n.currentNode=c.content),null===(c=n.nextNode())&&(n.currentNode=i.pop(),c=n.nextNode());if("node"===s.type){const e=this.processor.handleTextExpression(this.options);e.insertAfterNode(c.previousSibling),this.t.push(e)}else this.t.push(...this.processor.handleAttributeExpressions(c,s.name,s.strings,this.options));r++}else this.t.push(void 0),r++;return e&&(document.adoptNode(t),customElements.upgrade(t)),t}}
+class x{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.options=i}update(t){let e=0;for(const i of this.t)void 0!==i&&i.setValue(t[e]),e++;for(const t of this.t)void 0!==t&&t.commit()}_clone(){const e=t?this.template.element.content.cloneNode(!0):document.importNode(this.template.element.content,!0),i=[],s=this.template.parts,n=document.createTreeWalker(e,133,null,!1);let o,r=0,c=0,l=n.nextNode();for(;r<s.length;)if(o=s[r],a(o)){for(;c<o.index;)c++,"TEMPLATE"===l.nodeName&&(i.push(l),n.currentNode=l.content),null===(l=n.nextNode())&&(n.currentNode=i.pop(),l=n.nextNode());if("node"===o.type){const t=this.processor.handleTextExpression(this.options);t.insertAfterNode(l.previousSibling),this.t.push(t)}else this.t.push(...this.processor.handleAttributeExpressions(l,o.name,o.strings,this.options));r++}else this.t.push(void 0),r++;return t&&(document.adoptNode(e),customElements.upgrade(e)),e}}
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -52,7 +52,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const x=` ${i} `;class v{constructor(e,t,i,o){this.strings=e,this.values=t,this.type=i,this.processor=o}getHTML(){const e=this.strings.length-1;let t="",n=!1;for(let s=0;s<e;s++){const e=this.strings[s],r=e.lastIndexOf("\x3c!--");n=(r>-1||n)&&-1===e.indexOf("--\x3e",r+1);const a=c.exec(e);t+=null===a?e+(n?x:o):e.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return t+=this.strings[e],t}getTemplateElement(){const e=document.createElement("template");return e.innerHTML=this.getHTML(),e}}
+ */const g=` ${i} `;class w{constructor(t,e,i,s){this.strings=t,this.values=e,this.type=i,this.processor=s}getHTML(){const t=this.strings.length-1;let e="",n=!1;for(let o=0;o<t;o++){const t=this.strings[o],r=t.lastIndexOf("\x3c!--");n=(r>-1||n)&&-1===t.indexOf("--\x3e",r+1);const a=l.exec(t);e+=null===a?t+(n?g:s):t.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+i}return e+=this.strings[t],e}getTemplateElement(){const t=document.createElement("template");return t.innerHTML=this.getHTML(),t}}
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -65,7 +65,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const w=e=>null===e||!("object"==typeof e||"function"==typeof e),y=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class k{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new z(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let o=0;o<t;o++){i+=e[o];const t=this.parts[o];if(void 0!==t){const e=t.value;if(w(e)||!y(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class z{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===f||w(e)&&e===this.value||(this.value=e,u(e)||(this.committer.dirty=!0))}commit(){for(;u(this.value);){const e=this.value;this.value=f,e(this)}this.value!==f&&this.committer.commit()}}class S{constructor(e){this.value=void 0,this.i=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(l()),this.endNode=e.appendChild(l())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.o(this.startNode=l()),e.o(this.endNode=l())}insertAfterPart(e){e.o(this.startNode=l()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.i=e}commit(){if(null===this.startNode.parentNode)return;for(;u(this.i);){const e=this.i;this.i=f,e(this)}const e=this.i;e!==f&&(w(e)?e!==this.value&&this.s(e):e instanceof v?this.l(e):e instanceof Node?this.p(e):y(e)?this.h(e):e===b?(this.value=b,this.clear()):this.s(e))}o(e){this.endNode.parentNode.insertBefore(e,this.endNode)}p(e){this.value!==e&&(this.clear(),this.o(e),this.value=e)}s(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.p(document.createTextNode(i)),this.value=e}l(e){const t=this.options.templateFactory(e);if(this.value instanceof g&&this.value.template===t)this.value.update(e.values);else{const i=new g(t,e.processor,this.options),o=i._clone();i.update(e.values),this.p(o),this.value=i}}h(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,o=0;for(const n of e)i=t[o],void 0===i&&(i=new S(this.options),t.push(i),0===o?i.appendIntoPart(this):i.insertAfterPart(t[o-1])),i.setValue(n),i.commit(),o++;o<t.length&&(t.length=o,this.clear(i&&i.endNode))}clear(e=this.startNode){t(this.startNode.parentNode,e.nextSibling,this.endNode)}}class _{constructor(e,t,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=f,e(this)}if(this.i===f)return;const e=!!this.i;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.i=f}}class E extends k{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new C(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class C extends z{}let P=!1;(()=>{try{const e={get capture(){return P=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}})();class ${constructor(e,t,i){this.value=void 0,this.i=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.m=e=>this.handleEvent(e)}setValue(e){this.i=e}commit(){for(;u(this.i);){const e=this.i;this.i=f,e(this)}if(this.i===f)return;const e=this.i,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),o=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.m,this.u),o&&(this.u=A(e),this.element.addEventListener(this.eventName,this.m,this.u)),this.value=e,this.i=f}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const A=e=>e&&(P?{capture:e.capture,passive:e.passive,once:e.once}:e.capture)
+ */const y=t=>null===t||!("object"==typeof t||"function"==typeof t),v=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class k{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new S(this)}_getValue(){const t=this.strings,e=t.length-1;let i="";for(let s=0;s<e;s++){i+=t[s];const e=this.parts[s];if(void 0!==e){const t=e.value;if(y(t)||!v(t))i+="string"==typeof t?t:String(t);else for(const e of t)i+="string"==typeof e?e:String(e)}}return i+=t[e],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class S{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===f||y(t)&&t===this.value||(this.value=t,m(t)||(this.committer.dirty=!0))}commit(){for(;m(this.value);){const t=this.value;this.value=f,t(this)}this.value!==f&&this.committer.commit()}}class _{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(c()),this.endNode=t.appendChild(c())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=c()),t.s(this.endNode=c())}insertAfterPart(t){t.s(this.startNode=c()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;m(this.i);){const t=this.i;this.i=f,t(this)}const t=this.i;t!==f&&(y(t)?t!==this.value&&this.o(t):t instanceof w?this.l(t):t instanceof Node?this.h(t):v(t)?this.p(t):t===b?(this.value=b,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof x&&this.value.template===e)this.value.update(t.values);else{const i=new x(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}p(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new _(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){e(this.startNode.parentNode,t.nextSibling,this.endNode)}}class z{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;m(this.i);){const t=this.i;this.i=f,t(this)}if(this.i===f)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=f}}class C extends k{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new E(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class E extends S{}let $=!1;(()=>{try{const t={get capture(){return $=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class P{constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.u=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;m(this.i);){const t=this.i;this.i=f,t(this)}if(this.i===f)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.u,this.m),s&&(this.m=T(t),this.element.addEventListener(this.eventName,this.u,this.m)),this.value=t,this.i=f}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const T=t=>t&&($?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -78,7 +78,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */;function I(e){let t=T.get(e.type);void 0===t&&(t={stringsArray:new WeakMap,keyString:new Map},T.set(e.type,t));let o=t.stringsArray.get(e.strings);if(void 0!==o)return o;const n=e.strings.join(i);return o=t.keyString.get(n),void 0===o&&(o=new s(e,e.getTemplateElement()),t.keyString.set(n,o)),t.stringsArray.set(e.strings,o),o}const T=new Map,O=new WeakMap;
+ */;function A(t){let e=O.get(t.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},O.set(t.type,e));let s=e.stringsArray.get(t.strings);if(void 0!==s)return s;const n=t.strings.join(i);return s=e.keyString.get(n),void 0===s&&(s=new o(t,t.getTemplateElement()),e.keyString.set(n,s)),e.stringsArray.set(t.strings,s),s}const O=new Map,N=new WeakMap;
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -91,7 +91,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const R=new
+ */const U=new
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -105,7 +105,7 @@ class g{constructor(e,t,i){this.t=[],this.template=e,this.processor=t,this.optio
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new E(e,t.slice(1),i).parts}return"@"===n?[new $(e,t.slice(1),o.eventContext)]:"?"===n?[new _(e,t.slice(1),i)]:new k(e,t,i).parts}handleTextExpression(e){return new S(e)}};
+class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new C(t,e.slice(1),i).parts}return"@"===n?[new P(t,e.slice(1),s.eventContext)]:"?"===n?[new z(t,e.slice(1),i)]:new k(t,e,i).parts}handleTextExpression(t){return new _(t)}};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -118,7 +118,7 @@ class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new E(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const F=(e,...t)=>new v(e,t,"html",R)
+ */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const j=(t,...e)=>new w(t,e,"html",U)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -131,7 +131,7 @@ class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new E(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */,N=(e,t)=>`${e}--${t}`;let U=!0;void 0===window.ShadyCSS?U=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),U=!1);const M=e=>t=>{const o=N(t.type,e);let n=T.get(o);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},T.set(o,n));let r=n.stringsArray.get(t.strings);if(void 0!==r)return r;const a=t.strings.join(i);if(r=n.keyString.get(a),void 0===r){const i=t.getTemplateElement();U&&window.ShadyCSS.prepareTemplateDom(i,e),r=new s(t,i),n.keyString.set(a,r)}return n.stringsArray.set(t.strings,r),r},j=["html","svg"],q=new Set,D=(e,t,i)=>{q.add(e);const o=i?i.element:document.createElement("template"),n=t.querySelectorAll("style"),{length:s}=n;if(0===s)return void window.ShadyCSS.prepareTemplateStyles(o,e);const r=document.createElement("style");for(let e=0;e<s;e++){const t=n[e];t.parentNode.removeChild(t),r.textContent+=t.textContent}(e=>{j.forEach(t=>{const i=T.get(N(t,e));void 0!==i&&i.keyString.forEach(e=>{const{element:{content:t}}=e,i=new Set;Array.from(t.querySelectorAll("style")).forEach(e=>{i.add(e)}),d(e,i)})})})(e);const a=o.content;i?function(e,t,i=null){const{element:{content:o},parts:n}=e;if(null==i)return void o.appendChild(t);const s=document.createTreeWalker(o,133,null,!1);let r=h(n),a=0,l=-1;for(;s.nextNode();){for(l++,s.currentNode===i&&(a=p(t),i.parentNode.insertBefore(t,i));-1!==r&&n[r].index===l;){if(a>0){for(;-1!==r;)n[r].index+=a,r=h(n,r);return}r=h(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(o,e);const l=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==l)t.insertBefore(l.cloneNode(!0),t.firstChild);else if(i){a.insertBefore(r,a.firstChild);const e=new Set;e.add(r),d(i,e)}};window.JSCompiler_renameProperty=(e,t)=>e;const W={toAttribute(e,t){switch(t){case Boolean:return e?"":null;case Object:case Array:return null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){switch(t){case Boolean:return null!==e;case Number:return null===e?null:Number(e);case Object:case Array:return JSON.parse(e)}return e}},H=(e,t)=>t!==e&&(t==t||e==e),B={attribute:!0,type:String,converter:W,reflect:!1,hasChanged:H};class V extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(e=>this._enableUpdatingResolver=e),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const e=[];return this._classProperties.forEach((t,i)=>{const o=this._attributeNameForProperty(i,t);void 0!==o&&(this._attributeToPropertyMap.set(o,i),e.push(o))}),e}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const e=Object.getPrototypeOf(this)._classProperties;void 0!==e&&e.forEach((e,t)=>this._classProperties.set(t,e))}}static createProperty(e,t=B){if(this._ensureClassProperties(),this._classProperties.set(e,t),t.noAccessor||this.prototype.hasOwnProperty(e))return;const i="symbol"==typeof e?Symbol():"__"+e,o=this.getPropertyDescriptor(e,i,t);void 0!==o&&Object.defineProperty(this.prototype,e,o)}static getPropertyDescriptor(e,t,i){return{get(){return this[t]},set(i){const o=this[e];this[t]=i,this._requestUpdate(e,o)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this._classProperties&&this._classProperties.get(e)||B}static finalize(){const e=Object.getPrototypeOf(this);if(e.hasOwnProperty("finalized")||e.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const e=this.properties,t=[...Object.getOwnPropertyNames(e),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e):[]];for(const i of t)this.createProperty(i,e[i])}}static _attributeNameForProperty(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}static _valueHasChanged(e,t,i=H){return i(e,t)}static _propertyValueFromAttribute(e,t){const i=t.type,o=t.converter||W,n="function"==typeof o?o:o.fromAttribute;return n?n(e,i):e}static _propertyValueToAttribute(e,t){if(void 0===t.reflect)return;const i=t.type,o=t.converter;return(o&&o.toAttribute||W.toAttribute)(e,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((e,t)=>{if(this.hasOwnProperty(t)){const e=this[t];delete this[t],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(t,e)}})}_applyInstanceProperties(){this._instanceProperties.forEach((e,t)=>this[t]=e),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(e,t,i){t!==i&&this._attributeToProperty(e,i)}_propertyToAttribute(e,t,i=B){const o=this.constructor,n=o._attributeNameForProperty(e,i);if(void 0!==n){const e=o._propertyValueToAttribute(t,i);if(void 0===e)return;this._updateState=8|this._updateState,null==e?this.removeAttribute(n):this.setAttribute(n,e),this._updateState=-9&this._updateState}}_attributeToProperty(e,t){if(8&this._updateState)return;const i=this.constructor,o=i._attributeToPropertyMap.get(e);if(void 0!==o){const e=i.getPropertyOptions(o);this._updateState=16|this._updateState,this[o]=i._propertyValueFromAttribute(t,e),this._updateState=-17&this._updateState}}_requestUpdate(e,t){let i=!0;if(void 0!==e){const o=this.constructor,n=o.getPropertyOptions(e);o._valueHasChanged(this[e],t,n.hasChanged)?(this._changedProperties.has(e)||this._changedProperties.set(e,t),!0!==n.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(e,n))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(e,t){return this._requestUpdate(e,t),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(e){}const e=this.performUpdate();return null!=e&&await e,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let e=!1;const t=this._changedProperties;try{e=this.shouldUpdate(t),e?this.update(t):this._markUpdated()}catch(t){throw e=!1,this._markUpdated(),t}e&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(t)),this.updated(t))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(e){return!0}update(e){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((e,t)=>this._propertyToAttribute(t,this[t],e)),this._reflectingProperties=void 0),this._markUpdated()}updated(e){}firstUpdated(e){}}V.finalized=!0;
+ */,I=(t,e)=>`${t}--${e}`;let R=!0;void 0===window.ShadyCSS?R=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),R=!1);const M=t=>e=>{const s=I(e.type,t);let n=O.get(s);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},O.set(s,n));let r=n.stringsArray.get(e.strings);if(void 0!==r)return r;const a=e.strings.join(i);if(r=n.keyString.get(a),void 0===r){const i=e.getTemplateElement();R&&window.ShadyCSS.prepareTemplateDom(i,t),r=new o(e,i),n.keyString.set(a,r)}return n.stringsArray.set(e.strings,r),r},q=["html","svg"],F=new Set,D=(t,e,i)=>{F.add(t);const s=i?i.element:document.createElement("template"),n=e.querySelectorAll("style"),{length:o}=n;if(0===o)return void window.ShadyCSS.prepareTemplateStyles(s,t);const r=document.createElement("style");for(let t=0;t<o;t++){const e=n[t];e.parentNode.removeChild(e),r.textContent+=e.textContent}(t=>{q.forEach(e=>{const i=O.get(I(e,t));void 0!==i&&i.keyString.forEach(t=>{const{element:{content:e}}=t,i=new Set;Array.from(e.querySelectorAll("style")).forEach(t=>{i.add(t)}),h(t,i)})})})(t);const a=s.content;i?function(t,e,i=null){const{element:{content:s},parts:n}=t;if(null==i)return void s.appendChild(e);const o=document.createTreeWalker(s,133,null,!1);let r=d(n),a=0,c=-1;for(;o.nextNode();){for(c++,o.currentNode===i&&(a=p(e),i.parentNode.insertBefore(e,i));-1!==r&&n[r].index===c;){if(a>0){for(;-1!==r;)n[r].index+=a,r=d(n,r);return}r=d(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(s,t);const c=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==c)e.insertBefore(c.cloneNode(!0),e.firstChild);else if(i){a.insertBefore(r,a.firstChild);const t=new Set;t.add(r),h(i,t)}};window.JSCompiler_renameProperty=(t,e)=>t;const V={toAttribute(t,e){switch(e){case Boolean:return t?"":null;case Object:case Array:return null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){switch(e){case Boolean:return null!==t;case Number:return null===t?null:Number(t);case Object:case Array:return JSON.parse(t)}return t}},B=(t,e)=>e!==t&&(e==e||t==t),W={attribute:!0,type:String,converter:V,reflect:!1,hasChanged:B};class L extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(t=>this._enableUpdatingResolver=t),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const t=[];return this._classProperties.forEach((e,i)=>{const s=this._attributeNameForProperty(i,e);void 0!==s&&(this._attributeToPropertyMap.set(s,i),t.push(s))}),t}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const t=Object.getPrototypeOf(this)._classProperties;void 0!==t&&t.forEach((t,e)=>this._classProperties.set(e,t))}}static createProperty(t,e=W){if(this._ensureClassProperties(),this._classProperties.set(t,e),e.noAccessor||this.prototype.hasOwnProperty(t))return;const i="symbol"==typeof t?Symbol():"__"+t,s=this.getPropertyDescriptor(t,i,e);void 0!==s&&Object.defineProperty(this.prototype,t,s)}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(i){const s=this[t];this[e]=i,this._requestUpdate(t,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this._classProperties&&this._classProperties.get(t)||W}static finalize(){const t=Object.getPrototypeOf(this);if(t.hasOwnProperty("finalized")||t.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const t=this.properties,e=[...Object.getOwnPropertyNames(t),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(t):[]];for(const i of e)this.createProperty(i,t[i])}}static _attributeNameForProperty(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}static _valueHasChanged(t,e,i=B){return i(t,e)}static _propertyValueFromAttribute(t,e){const i=e.type,s=e.converter||V,n="function"==typeof s?s:s.fromAttribute;return n?n(t,i):t}static _propertyValueToAttribute(t,e){if(void 0===e.reflect)return;const i=e.type,s=e.converter;return(s&&s.toAttribute||V.toAttribute)(t,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((t,e)=>{if(this.hasOwnProperty(e)){const t=this[e];delete this[e],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(e,t)}})}_applyInstanceProperties(){this._instanceProperties.forEach((t,e)=>this[e]=t),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(t,e,i){e!==i&&this._attributeToProperty(t,i)}_propertyToAttribute(t,e,i=W){const s=this.constructor,n=s._attributeNameForProperty(t,i);if(void 0!==n){const t=s._propertyValueToAttribute(e,i);if(void 0===t)return;this._updateState=8|this._updateState,null==t?this.removeAttribute(n):this.setAttribute(n,t),this._updateState=-9&this._updateState}}_attributeToProperty(t,e){if(8&this._updateState)return;const i=this.constructor,s=i._attributeToPropertyMap.get(t);if(void 0!==s){const t=i.getPropertyOptions(s);this._updateState=16|this._updateState,this[s]=i._propertyValueFromAttribute(e,t),this._updateState=-17&this._updateState}}_requestUpdate(t,e){let i=!0;if(void 0!==t){const s=this.constructor,n=s.getPropertyOptions(t);s._valueHasChanged(this[t],e,n.hasChanged)?(this._changedProperties.has(t)||this._changedProperties.set(t,e),!0!==n.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(t,n))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(t,e){return this._requestUpdate(t,e),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(t){}const t=this.performUpdate();return null!=t&&await t,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let t=!1;const e=this._changedProperties;try{t=this.shouldUpdate(e),t?this.update(e):this._markUpdated()}catch(e){throw t=!1,this._markUpdated(),e}t&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(e)),this.updated(e))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(t){return!0}update(t){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((t,e)=>this._propertyToAttribute(e,this[e],t)),this._reflectingProperties=void 0),this._markUpdated()}updated(t){}firstUpdated(t){}}L.finalized=!0;
 /**
 @license
 Copyright (c) 2019 The Polymer Project Authors. All rights reserved.
@@ -142,7 +142,7 @@ found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by Google as
 part of the polymer project is also subject to an additional IP rights grant
 found at http://polymer.github.io/PATENTS.txt
 */
-const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,L=Symbol();class Y{constructor(e,t){if(t!==L)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e}get styleSheet(){return void 0===this._styleSheet&&(G?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const Q=(e,...t)=>{const i=t.reduce((t,i,o)=>t+(e=>{if(e instanceof Y)return e.cssText;if("number"==typeof e)return e;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${e}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+e[o+1],e[0]);return new Y(i,L)};
+const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,J=Symbol();class H{constructor(t,e){if(e!==J)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){return void 0===this._styleSheet&&(Q?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const Y=(t,...e)=>{const i=e.reduce((e,i,s)=>e+(t=>{if(t instanceof H)return t.cssText;if("number"==typeof t)return t;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${t}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+t[s+1],t[0]);return new H(i,J)};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -156,7 +156,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const X={};class J extends V{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const e=this.getStyles();if(void 0===e)this._styles=[];else if(Array.isArray(e)){const t=(e,i)=>e.reduceRight((e,i)=>Array.isArray(i)?t(i,e):(e.add(i),e),i),i=t(e,new Set),o=[];i.forEach(e=>o.unshift(e)),this._styles=o}else this._styles=[e]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const e=this.constructor._styles;0!==e.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?G?this.renderRoot.adoptedStyleSheets=e.map(e=>e.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(e.map(e=>e.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(e){const t=this.render();super.update(e),t!==X&&this.constructor.render(t,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(e=>{const t=document.createElement("style");t.textContent=e.cssText,this.renderRoot.appendChild(t)}))}render(){return X}}J.finalized=!0,J.render=(e,i,o)=>{if(!o||"object"!=typeof o||!o.scopeName)throw new Error("The `scopeName` option is required.");const n=o.scopeName,s=O.has(i),r=U&&11===i.nodeType&&!!i.host,a=r&&!q.has(n),l=a?document.createDocumentFragment():i;if(((e,i,o)=>{let n=O.get(i);void 0===n&&(t(i,i.firstChild),O.set(i,n=new S(Object.assign({templateFactory:I},o))),n.appendInto(i)),n.setValue(e),n.commit()})(e,l,Object.assign({templateFactory:M(n)},o)),a){const e=O.get(l);O.delete(l);const o=e.value instanceof g?e.value.template:void 0;D(n,l,o),t(i,i.firstChild),i.appendChild(l),O.set(i,e)}!s&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends J{static get styles(){return Q`
+(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const X={};class G extends L{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const t=this.getStyles();if(void 0===t)this._styles=[];else if(Array.isArray(t)){const e=(t,i)=>t.reduceRight((t,i)=>Array.isArray(i)?e(i,t):(t.add(i),t),i),i=e(t,new Set),s=[];i.forEach(t=>s.unshift(t)),this._styles=s}else this._styles=[t]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const t=this.constructor._styles;0!==t.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?Q?this.renderRoot.adoptedStyleSheets=t.map(t=>t.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(t.map(t=>t.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(t){const e=this.render();super.update(t),e!==X&&this.constructor.render(e,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(t=>{const e=document.createElement("style");e.textContent=t.cssText,this.renderRoot.appendChild(e)}))}render(){return X}}G.finalized=!0,G.render=(t,i,s)=>{if(!s||"object"!=typeof s||!s.scopeName)throw new Error("The `scopeName` option is required.");const n=s.scopeName,o=N.has(i),r=R&&11===i.nodeType&&!!i.host,a=r&&!F.has(n),c=a?document.createDocumentFragment():i;if(((t,i,s)=>{let n=N.get(i);void 0===n&&(e(i,i.firstChild),N.set(i,n=new _(Object.assign({templateFactory:A},s))),n.appendInto(i)),n.setValue(t),n.commit()})(t,c,Object.assign({templateFactory:M(n)},s)),a){const t=N.get(c);N.delete(c);const s=t.value instanceof x?t.value.template:void 0;D(n,c,s),e(i,i.firstChild),i.appendChild(c),N.set(i,t)}!o&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends G{static get styles(){return Y`
       :host {
         display: flex;
       }
@@ -486,12 +486,12 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       }
 
       
-    `}static get properties(){return{}}constructor(){super()}render(){return F`
+    `}static get properties(){return{}}constructor(){super()}render(){return j`
       <label class="pure-material-checkbox">
         <input type="checkbox">
         <span></span>
       </label>
-    `}});window.customElements.define("the-button",class extends J{static get styles(){return Q`
+    `}});window.customElements.define("the-button",class extends G{static get styles(){return Y`
       :host {
         display: inline-block;
       }
@@ -519,9 +519,9 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         display: block;
         margin: 0.2em auto;
       }
-    `}static get properties(){return{}}constructor(){super()}render(){return F`
+    `}static get properties(){return{}}constructor(){super()}render(){return j`
       <a href="#" class="button"><slot></slot></a>
-    `}});window.customElements.define("the-question",class extends J{static get styles(){return Q`
+    `}});window.customElements.define("the-question",class extends G{static get styles(){return Y`
       :host {
         display: flex;
       }
@@ -570,15 +570,14 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         flex: 1;
       }
 
-    `}static get properties(){return{item:Object,index:Number,allowMultipleAnswers:Boolean}}constructor(){super(),this.addEventListener("answer-selected",this._answerSelected)}render(){return F`
+    `}static get properties(){return{item:Object,index:Number,allowMultipleAnswers:Boolean}}constructor(){super(),this.answers=new Set,this.addEventListener("answer-selected",this._answerSelected)}render(){return j`
                   <div class="question-container">
-                    <div class="question-title">${this.item.Name}</div>
                     <div id="information-description" class="question-description"></div>
                     <div class="answers-container">
 
 
-                    ${this.item.AnswerOptions.map((e,t)=>F`
-                        <the-answer Code="${e.Code}" .item="${e}">${e.AnswerText}</the-answer>
+                    ${this.item.AnswerOptions.map((t,e)=>j`
+                        <the-answer Code="${t.Code}" .item="${t}">${t.AnswerText}</the-answer>
                       
                       `)}
                       
@@ -591,7 +590,7 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                     </div>
 
                   </div>
-    `}_answerSelected(e){if(this.shadowRoot.querySelectorAll("the-answer").forEach(t=>{t.item.Code===e.detail.Code?t.selected?(console.log("answer-deselected",e.detail.Code),t.deselect()):(console.log("answer-selected",e.detail.Code),t.select()):this.item.AllowMultipleAnswers||t.deselect()}),!this.AllowMultipleAnswers){const e=this;setTimeout(()=>{e._nextQuestionClicked()},1e3)}}_nextQuestionClicked(e){this.shadowRoot.querySelectorAll("the-answer").forEach(e=>{e.deselect()});let t=new CustomEvent("next-question",{detail:this.item,bubbles:!0,composed:!0});this.dispatchEvent(t)}_updateDescription(e){let t=this;setTimeout(()=>{t.shadowRoot.querySelector("#information-description").innerHTML=e})}});window.customElements.define("the-answer",class extends J{static get styles(){return Q`
+    `}_answerSelected(t){if(this.shadowRoot.querySelectorAll("the-answer").forEach(e=>{e.item.Code===t.detail.Code?e.selected?(console.log("answer-deselected",t.detail.Value),this.answers.delete(t.detail.Value),e.deselect()):(console.log("answer-selected",t.detail.Value),this.answers.add(t.detail.Value),e.select()):this.item.AllowMultipleAnswers||e.deselect()}),!this.AllowMultipleAnswers){const t=this;setTimeout(()=>{t._nextQuestionClicked()},1e3)}}_nextQuestionClicked(t){this.shadowRoot.querySelectorAll("the-answer").forEach(t=>{t.deselect()});const e={questionKey:this.item._Key,answers:[...this.answers]};let i=new CustomEvent("next-question",{detail:e,bubbles:!0,composed:!0});this.answers=new Set,this.dispatchEvent(i)}_updateDescription(){let t=this;setTimeout(()=>{t.shadowRoot.querySelector("#information-description").innerHTML=this.item.Description})}});window.customElements.define("the-answer",class extends G{static get styles(){return Y`
       :host {
         display: inline-block;
       }
@@ -633,23 +632,23 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       }
 
       
-    `}static get properties(){return{selected:Boolean,item:Boolean}}constructor(){super(),this.selected=!1}render(){return F`
+    `}static get properties(){return{selected:Boolean,item:Boolean}}constructor(){super(),this.selected=!1}render(){return j`
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 
-        ${this.selected?F`
+        ${this.selected?j`
             <div class="answer-container selected animate__animated animate__pulse"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label">
                   <slot></slot>
                   <div class="spacing"></div>
                 </div>
             </div>
-        `:F`
+        `:j`
             <div class="answer-container"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label"><slot></slot></div>
             </div>
         `}
-    `}_selectAnswerEvent(){this.answerSelectedEvent()}answerSelectedEvent(){let e=new CustomEvent("answer-selected",{detail:this.item,bubbles:!0,composed:!0});this.dispatchEvent(e)}select(){this.selected=!0,this.requestUpdate()}deselect(){this.selected=!1,this.requestUpdate()}});window.customElements.define("the-results",class extends J{static get styles(){return Q`
+    `}_selectAnswerEvent(){this.answerSelectedEvent()}answerSelectedEvent(){let t=new CustomEvent("answer-selected",{detail:this.item,bubbles:!0,composed:!0});this.dispatchEvent(t)}select(){this.selected=!0,this.requestUpdate()}deselect(){this.selected=!1,this.requestUpdate()}});window.customElements.define("the-results",class extends G{static get styles(){return Y`
       :host {
         display: block;
       }
@@ -661,889 +660,19 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         font-family: "Poppins",sans-serif;
       }
 
-      .blocks-container {
+      .button-container {
         display: flex;
-      }
-
-      .block {
-        flex: 1;
-        background-color: rgb(41,152,244);
-        margin: 1em;
-        padding: 2em;
-      }
-
-      .block .title {
-        color: rgb(255,188,0);
-        text-transform: uppercase;
-        font-size: .7em;
-      }
-
-      .numbers-block {
-        margin-top: 3em;
-        display: flex;
-      }
-
-      .numbers-block-heading {
-        font-size: .65em;
-        color: white;
-      }
-
-      .numbers-block-left-part {
-        margin-right: .7em;
-      }
-
-      .number-of-tax-incentives, .total-value-of-tax-incentives {
-        color: white;
-        font-size: 1.5em;
-        display: flex;
-      }
-
-      .currency-container {
-        font-size: .7em;
-      }
-
-      .description-label {
-        font-family: "Roboto",sans-serif;
-        font-size: 25px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        text-transform: none;
-        color: rgb(66,66,66);
-      }
-
-      .selected-step {
-        color: black; 
-      }
-
-
-      .program-row {
-        display: flex;
-
-        border-bottom: 1px solid lightgrey;
-
-        padding: .7em;
-      }
-
-      .program-row-top-border {
-        border-top: 1px solid lightgrey;
-      }
-
-      .program-row-number {
-        font-family: "Roboto",sans-serif;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: 0em;
-        text-transform: none;
-        color: #000;
-        padding-right: 16px;
-      }
-
-      .program-row-label {
-        font-family: "Roboto",sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1;
-        letter-spacing: 0em;
-        text-transform: none;
-        color: #000;
-        background-color: transparent;
-        min-width: 240px;
-        max-width: 240px;
-      }
-
-
-      .program-row-see-details {
-        white-space: nowrap;
-        color: rgb(77,161,255);
-        margin-left: 1em;
-      }
-      
-      .program-row-see-details:hover {
-        color: rgb(245,147,54);
-        cursor: pointer;
-      }
-
-      .program-row-checkbox {
-        margin-left: 1em;
-      }
-
-      .explanation-text {
-        font-family: "Roboto",sans-serif;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        text-align: left;
-        text-transform: none;
-        color: rgb(66,66,66);
-
-        margin-top: 1em;
-      }
-
-      .flex {
-        flex: 1;
-      }
-
-      .inner-container {
-        display: flex;
-      }
-
-      .mobile-screen {
-        display: none;
+        justify-content: center;
       }
 
       
-
-
-      /* iPhone X and Xs Max */
-      @media only screen 
-          and (min-device-width: 375px) 
-          and (min-device-height: 812px) 
-          and (-webkit-device-pixel-ratio: 3)
-          and (orientation: portrait) { 
-          /* styles */
-      
-            .blocks-container {
-              flex-direction: column;
-            }
-
-            .block .title {
-              font-size: 3em;
-            }
-
-            .numbers-block-heading {
-              font-size: 3em;
-            }
-
-            .number-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .total-value-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .currency-container {
-              font-size: .5em;
-            }
-
-            .numbers-block {
-              flex-direction: column;
-            }
-
-            .numbers-block-left-part {
-              display: flex;
-            }
-
-            .numbers-block-right-part {
-              display: flex;
-            }
-
-            .inner-container {
-              display: block;
-              width: 100%;
-            }
-
-            .program-row-label {
-              max-width: unset;
-              min-width: unset;
-              font-size: 3em;
-            }
-
-            .program-separator {
-              display: none;
-            }
-
-            .program-row-see-details {
-              margin-left: 0;
-              font-size: 2.5em;
-              font-family: 'Helvetica', 'Arial', sans-serif;
-            }
-
-            .description-label {
-              margin-top: 1em;
-              margin-bottom: 1em;
-            }
-            .program-row {
-              padding: 2em;
-            }
-
-            .mobile-screen-number {
-              margin-bottom: .3em;
-              font-size: 2em;
-              font-weight: 300;
-            }
-            
-
-            .mobile-screen {
-              display: flex;
-            }
-
-            .desktop-screen {
-              display: none;
-            }
-
-            .program-description {
-              font-size: 2.5em;
-              padding: .5em 0;
-            }
-
-            .matches-heading {
-              font-size: 5em;
-            }
-
-            .description-label {
-              font-size: 3em;
-              font-weight: 100;
-            }
-
-            .explanation-text {
-              font-size: 3em;
-            }
-          
-      }
-
-      /* iPhone XR */
-      @media only screen 
-          and (min-device-width: 414px) 
-          and (min-device-height: 896px) 
-          and (-webkit-device-pixel-ratio: 2) 
-          and (orientation: portrait) { 
-          /* styles */
-
-          .blocks-container {
-              flex-direction: column;
-            }
-
-            .block .title {
-              font-size: 3em;
-            }
-
-            .numbers-block-heading {
-              font-size: 3em;
-            }
-
-            .number-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .total-value-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .currency-container {
-              font-size: .5em;
-            }
-
-            .numbers-block {
-              flex-direction: column;
-            }
-
-            .numbers-block-left-part {
-              display: flex;
-            }
-
-            .numbers-block-right-part {
-              display: flex;
-            }
-
-            .inner-container {
-              display: block;
-              width: 100%;
-            }
-
-            .program-row-label {
-              max-width: unset;
-              min-width: unset;
-              font-size: 3em;
-            }
-
-            .program-separator {
-              display: none;
-            }
-
-            .program-row-see-details {
-              margin-left: 0;
-              font-size: 2.5em;
-              font-family: 'Helvetica', 'Arial', sans-serif;
-            }
-
-            .description-label {
-              margin-top: 1em;
-              margin-bottom: 1em;
-            }
-            .program-row {
-              padding: 2em;
-            }
-
-            .mobile-screen-number {
-              margin-bottom: .3em;
-              font-size: 2em;
-              font-weight: 300;
-            }
-            
-
-            .mobile-screen {
-              display: flex;
-            }
-
-            .desktop-screen {
-              display: none;
-            }
-
-            .program-description {
-              font-size: 2.5em;
-              padding: .5em 0;
-            }
-
-            .matches-heading {
-              font-size: 5em;
-            }
-
-            .description-label {
-              font-size: 3em;
-              font-weight: 100;
-            }
-
-            .explanation-text {
-              font-size: 3em;
-            }
-          
-      }
-
-      /* iPhone 6,7 */
-      @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 667px) { 
-          /* styles */
-
-          .blocks-container {
-              flex-direction: column;
-            }
-
-            .block .title {
-              font-size: 3em;
-            }
-
-            .numbers-block-heading {
-              font-size: 3em;
-            }
-
-            .number-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .total-value-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .currency-container {
-              font-size: .5em;
-            }
-
-            .numbers-block {
-              flex-direction: column;
-            }
-
-            .numbers-block-left-part {
-              display: flex;
-            }
-
-            .numbers-block-right-part {
-              display: flex;
-            }
-
-            .inner-container {
-              display: block;
-              width: 100%;
-            }
-
-            .program-row-label {
-              max-width: unset;
-              min-width: unset;
-              font-size: 3em;
-            }
-
-            .program-separator {
-              display: none;
-            }
-
-            .program-row-see-details {
-              margin-left: 0;
-              font-size: 2.5em;
-              font-family: 'Helvetica', 'Arial', sans-serif;
-            }
-
-            .description-label {
-              margin-top: 1em;
-              margin-bottom: 1em;
-            }
-            .program-row {
-              padding: 2em;
-            }
-
-            .mobile-screen-number {
-              margin-bottom: .3em;
-              font-size: 2em;
-              font-weight: 300;
-            }
-            
-
-            .mobile-screen {
-              display: flex;
-            }
-
-            .desktop-screen {
-              display: none;
-            }
-
-            .program-description {
-              font-size: 2.5em;
-              padding: .5em 0;
-            }
-
-            .matches-heading {
-              font-size: 5em;
-            }
-
-            .description-label {
-              font-size: 3em;
-              font-weight: 100;
-            }
-
-            .explanation-text {
-              font-size: 3em;
-            }
-
-      }
-
-      /* iPhone 6+,7+ */
-      @media only screen 
-        and (min-device-width : 414px) 
-        and (max-device-width : 736px) { 
-        /* styles */
-
-            .blocks-container {
-              flex-direction: column;
-            }
-
-            .block .title {
-              font-size: 3em;
-            }
-
-            .numbers-block-heading {
-              font-size: 3em;
-            }
-
-            .number-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .total-value-of-tax-incentives {
-              font-size: 3em;
-            }
-
-            .currency-container {
-              font-size: .5em;
-            }
-
-            .numbers-block {
-              flex-direction: column;
-            }
-
-            .numbers-block-left-part {
-              display: flex;
-            }
-
-            .numbers-block-right-part {
-              display: flex;
-            }
-
-            .inner-container {
-              display: block;
-              width: 100%;
-            }
-
-            .program-row-label {
-              max-width: unset;
-              min-width: unset;
-              font-size: 3em;
-            }
-
-            .program-separator {
-              display: none;
-            }
-
-            .program-row-see-details {
-              margin-left: 0;
-              font-size: 2.5em;
-              font-family: 'Helvetica', 'Arial', sans-serif;
-            }
-
-            .description-label {
-              margin-top: 1em;
-              margin-bottom: 1em;
-            }
-            .program-row {
-              padding: 2em;
-            }
-
-            .mobile-screen-number {
-              margin-bottom: .3em;
-              font-size: 2em;
-              font-weight: 300;
-            }
-            
-
-            .mobile-screen {
-              display: flex;
-            }
-
-            .desktop-screen {
-              display: none;
-            }
-
-            .program-description {
-              font-size: 2.5em;
-              padding: .5em 0;
-            }
-
-            .matches-heading {
-              font-size: 5em;
-            }
-
-            .description-label {
-              font-size: 3em;
-              font-weight: 100;
-            }
-
-            .explanation-text {
-              font-size: 4em;
-            }
-
-      }
-
-
-      /* iPhone 5, SE (portrait & landscape)----------- */
-      @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px) {
-        /* STYLES GO HERE */
-
-        .blocks-container {
-          flex-direction: column;
-        }
-
-        .block .title {
-          font-size: 3em;
-        }
-
-        .numbers-block-heading {
-          font-size: 3em;
-        }
-
-        .number-of-tax-incentives {
-          font-size: 3em;
-        }
-
-        .total-value-of-tax-incentives {
-          font-size: 3em;
-        }
-
-        .currency-container {
-          font-size: .5em;
-        }
-
-        .numbers-block {
-          flex-direction: column;
-        }
-
-        .numbers-block-left-part {
-          display: flex;
-        }
-
-        .numbers-block-right-part {
-          display: flex;
-        }
-
-        .inner-container {
-          display: block;
-          width: 100%;
-        }
-
-        .program-row-label {
-          max-width: unset;
-          min-width: unset;
-          font-size: 3em;
-        }
-
-        .program-separator {
-          display: none;
-        }
-
-        .program-row-see-details {
-          margin-left: 0;
-          font-size: 2.5em;
-          font-family: 'Helvetica', 'Arial', sans-serif;
-        }
-
-        .description-label {
-          margin-top: 1em;
-          margin-bottom: 1em;
-        }
-        .program-row {
-          padding: 2em;
-        }
-
-        .mobile-screen-number {
-          margin-bottom: .3em;
-          font-size: 2em;
-          font-weight: 300;
-        }
-        
-
-        .mobile-screen {
-          display: flex;
-        }
-
-        .desktop-screen {
-          display: none;
-        }
-
-        .program-description {
-          font-size: 2.5em;
-          padding: .5em 0;
-        }
-
-        .matches-heading {
-          font-size: 5em;
-        }
-
-        .description-label {
-          font-size: 3em;
-          font-weight: 100;
-        }
-
-        .explanation-text {
-          font-size: 4em;
-        }
-      }
-
-      
-    `}static get properties(){return{selected:Boolean,item:Boolean}}constructor(){super(),this.selected=!1}render(){return F`
-
-              <p class="matches-heading">You may qualify for the following programs</p>
-
-              <div class="blocks-container">
-                
-                <div class="tax-incentives block">
-                  <div class="title">Tax Incentives</div>
-
-                  <div class="numbers-block">
-                    <div class="numbers-block-left-part">
-                      <div class="numbers-block-heading">
-                        Number of tax incentives
-                      </div>
-                      <div class="flex"></div>
-                      <div class="number-of-tax-incentives">
-                        10
-                      </div>
-                    </div>
-                    <div class="numbers-block-right-part">
-                      <div class="numbers-block-heading">
-                        Tax incentives available
-                      </div>
-                      <div class="flex"></div>
-                      <div class="total-value-of-tax-incentives">
-                        <div class="currency-container">S$</div>22k
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tax-incentives block">
-                  <div class="title">Grants</div>
-
-                  <div class="numbers-block">
-                    <div class="numbers-block-left-part">
-                      <div class="numbers-block-heading">
-                        Number of grants available
-                      </div>
-                      <div class="flex"></div>
-                      <div class="number-of-tax-incentives">
-                        4
-                      </div>
-                    </div>
-                    <div class="numbers-block-right-part">
-                      <div class="numbers-block-heading">
-                          Grants available
-                        </div>
-                        <div class="flex"></div>
-                        <div class="total-value-of-tax-incentives">
-                          <div class="currency-container">S$</div>37k
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="tax-incentives block">
-                  <div class="title">Funding Sources</div>
-
-                  <div class="numbers-block">
-                    <div class="numbers-block-left-part">
-                      <div class="numbers-block-heading">
-                        Equity programs
-                      </div>
-                      <div class="flex"></div>
-                      <div class="number-of-tax-incentives">
-                        4
-                      </div>
-                    </div>
-                    <div class="numbers-block-right-part">
-                      <div class="numbers-block-heading">
-                          Equity programs available
-                        </div>
-                        <div class="flex"></div>
-                        <div class="total-value-of-tax-incentives">
-                          <div class="currency-container">S$</div>255k
-                        </div>
-                    </div>
-                  </div>
-                </div>
-
+    `}static get properties(){return{selected:Boolean,item:Boolean,teaserSearchResponse:Object}}constructor(){super(),this.selected=!1,this.teaserSearchResponse={Result:""}}render(){return j`
+
+              <p class="matches-heading">${this.teaserSearchResponse.Result}</p>
+              <div class="button-container">
+                <the-button>Sign Up</the-button>
               </div>
-
-
-              <div class="description-label">Description of the 18 program found</div>
-
-
-              <!-- mobile -->
-
-              <div class="program-row program-row-top-border mobile-screen">
-                <div class="program-row-number">
-                  <div class="mobile-screen-number">1</div>
-                  <the-checkbox></the-checkbox>
-                </div>
-                <div class="inner-container">
-                  <div class="program-row-label">Enterprise Development Grant</div>
-                  <div class="program-row-description">
-                    <div class="program-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                    <span class="program-row-see-details">See details &#x1F517;</span>
-                  </div>
-                  
-                </div>
-                <div class="flex program-separator"></div>
-                <div class="program-row-checkbox"></div>
-              </div>
-
-              <div class="program-row program-row-top-border mobile-screen">
-                <div class="program-row-number">
-                  <div class="mobile-screen-number">2</div>
-                  <the-checkbox></the-checkbox>
-                </div>
-                <div class="inner-container">
-                  <div class="program-row-label">Double tax deduction for IP licensing costs</div>
-                  <div class="program-row-description">
-                    <div class="program-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
-                    <span class="program-row-see-details">See details &#x1F517;</span>
-                  </div>
-                  
-                </div>
-                <div class="flex program-separator"></div>
-                <div class="program-row-checkbox"></div>
-              </div>
-
-              <div class="program-row program-row-top-border mobile-screen">
-                <div class="program-row-number">
-                  <div class="mobile-screen-number">3</div>
-                  <the-checkbox></the-checkbox>
-                </div>
-                <div class="inner-container">
-                  <div class="program-row-label">IRS Co-creation Grants</div>
-                  <div class="program-row-description">
-                    <div class="program-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
-                    <span class="program-row-see-details">See details &#x1F517;</span>
-                  </div>
-                  
-                </div>
-                <div class="flex program-separator"></div>
-                <div class="program-row-checkbox"></div>
-              </div>
-
-
-              <div class="program-row program-row-top-border mobile-screen">
-                <div class="program-row-number">
-                  <div class="mobile-screen-number">4</div>
-                  <the-checkbox></the-checkbox>
-                </div>
-                <div class="inner-container">
-                  <div class="program-row-label">Financial Sector Technology Scheme</div>
-                  <div class="program-row-description">
-                    <div class="program-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
-                    <span class="program-row-see-details">See details &#x1F517;</span>
-                  </div>
-                  
-                </div>
-                <div class="flex program-separator"></div>
-                <div class="program-row-checkbox"></div>
-              </div>
-
-              <div class="explanation-text mobile-screen">
-                We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process.
-                <br /> <br /> We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. 
-                <br /> <br /> Check the programs you want to evaluate and click the button below.
-              </div>
-
-
-              <!-- desktop -->
-
-              <div class="program-row program-row-top-border desktop-screen">
-                <div class="program-row-number">1</div>
-                <div class="program-row-label">Enterprise Development Grant</div>
-                <div class="program-row-description">Early-stage funding to fast-track commercialization of the technology solutions.</div>
-                <div class="flex"></div>
-                <div class="program-row-see-details">See details</div>
-                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-              </div>
-
-              <div class="program-row desktop-screen">
-                <div class="program-row-number">2</div>
-                <div class="program-row-label">Double tax deduction for IP licensing costs</div>
-                <div class="program-row-description">Supports companies licensing IP in Singapore and allows a deduction of double the costs incurred in securing IP.</div>
-                <div class="flex"></div>
-                <div class="program-row-see-details">See details</div>
-                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-              </div>
-
-              <div class="program-row desktop-screen">
-                <div class="program-row-number">3</div>
-                <div class="program-row-label">IRS Co-creation Grants</div>
-                <div class="program-row-description">Supports software developers in the development of innovative solutions for tax filing preparation or tax management.</div>
-                <div class="flex"></div>
-                <div class="program-row-see-details">See details</div>
-                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-              </div>
-
-              <div class="program-row desktop-screen">
-                <div class="program-row-number">4</div>
-                <div class="program-row-label">Financial Sector Technology Scheme</div>
-                <div class="program-row-description">Supports Financial Institutions (FI) in setting up innovation Centres of Excellence (COE) or labs in Singapore to test-bed innovative ideas and roll out market solutions.</div>
-                <div class="flex"></div>
-                <div class="program-row-see-details">See details</div>
-                <div class="program-row-checkbox"><the-checkbox></the-checkbox></div>
-              </div>
-
-              <div class="explanation-text desktop-screen">
-                We can conduct a preliminary evaluation of your company's suitability for these programs and provide you a realistic assessment of your chances of success. After that, you can either apply for the programs on your own; or we can help you manage the complete application process. We offer a "no risk" fee structure — you pay our fees only if your application is approved; if the application is not approved, you pay no fees to us. We do charge a nominal fee for the initial evaluation. Check the programs you want to evaluate and click the button below.
-              </div>
-
-    `}});class K extends J{static get styles(){return Q`
+    `}});class K extends G{static get styles(){return Y`
       :host {
         font-size: 17px;
       }
@@ -1896,8 +1025,8 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
 
 
       .animate {
-        -webkit-animation-duration: 2s;
-        animation-duration: 2s;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
@@ -1928,9 +1057,9 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
          }
-    `}static get properties(){return{}}constructor(){super(),this._configResponseRetrieved=!1,fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES").then(e=>e.json()).then(e=>this._parseResponse(e))}_parseResponse(e){this._configResponseRetrieved=!0,this.config=e,this.config.Steps.sort((e,t)=>e.SortOrder-t.SortOrder),this.requestUpdate(),this.currentStepIndex=0,this.currentStep=this.config.Steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.Questions&&(this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion);let t=this;setTimeout(()=>{t.shadowRoot.querySelector("#information-description").innerHTML=this.currentStep.Description})}render(){return F` 
+    `}static get properties(){return{}}constructor(){super(),this.searchPayload=[],this._configResponseRetrieved=!1,fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES").then(t=>t.json()).then(t=>this._parseResponse(t))}_parseResponse(t){this._configResponseRetrieved=!0,this.config=t,this.config.Steps.sort((t,e)=>t.SortOrder-e.SortOrder),this.requestUpdate(),this.currentStepIndex=0,this.currentStep=this.config.Steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.Questions&&(this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion);let e=this;setTimeout(()=>{e.shadowRoot.querySelector("#information-description").innerHTML=this.currentStep.Description})}render(){return j` 
     
-    ${this._configResponseRetrieved?F`
+    ${this._configResponseRetrieved?j`
       
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
                 <div class="main-container">
@@ -1938,20 +1067,20 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="content-container animate__animated" id="animate-container">
                     <div>
 
-                  ${"QUESTION_ANSWER"===this.currentStep.Type?F`
+                  ${"QUESTION_ANSWER"===this.currentStep.Type?j`
 
                             <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
                         
-                        `:F``}
+                        `:j``}
 
-                  ${"RESULTS"===this.currentStep.Type?F`
+                  ${"RESULTS"===this.currentStep.Type?j`
                           
                               <the-results></the-results>
                               
                           
-                          `:F``}
+                          `:j``}
 
-                  ${"INFORMATION"===this.currentStep.Type?F`
+                  ${"INFORMATION"===this.currentStep.Type?j`
 
 
               <!-- animate__fadeOutDown -->
@@ -1967,12 +1096,12 @@ const G="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                             </div>
 
                             
-                          `:F``}
+                          `:j``}
 
 
                     </div>
                   </div>
                 </div>
-      `:F``}
+      `:j``}
 
-    `}nextStepClicked(){console.log("nextStepClicked"),this.currentStepIndex=this.currentStepIndex+1,this.currentStep=this.config.Steps[this.currentStepIndex],"QUESTION_ANSWER"===this.currentStep.Type&&(this.currentQuestionIndex=0,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]);const e=this.shadowRoot.querySelector("#animate-container");e.classList.add("animate__fadeOutUp");const t=this;setTimeout(()=>{e.classList.remove("animate__fadeOutUp"),t.requestUpdate(),e.classList.add("animate__fadeInUp"),"QUESTION_ANSWER"===this.currentStep.Type&&t._updateDescription(t.currentStep.Description)},1e3)}_updateDescription(e){let t=this;setTimeout(()=>{t.shadowRoot.querySelector("the-question")._updateDescription(e)})}_nextQuestion(e){if(console.log("_nextQuestion",e),this.currentQuestionIndex+1===this.currentStep.Questions.length)return this.currentQuestionIndex=0,void this.nextStepClicked();this.currentQuestionIndex=this.currentQuestionIndex+1,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex];const t=this.shadowRoot.querySelector("#animate-container");t.classList.add("animate__fadeOutUp");const i=this;setTimeout(()=>{t.classList.remove("animate__fadeOutUp"),i.requestUpdate(),t.classList.add("animate__fadeInUp"),i.scrollTo({top:0,behavior:"smooth"})},1e3)}}window.customElements.define("singapore-incentives-match",K);export{K as SingaporeIncentivesMatch};
+    `}nextStepClicked(){console.log("nextStepClicked"),this.currentStepIndex=this.currentStepIndex+1,this.currentStep=this.config.Steps[this.currentStepIndex],"QUESTION_ANSWER"===this.currentStep.Type&&(this.currentQuestionIndex=0,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),"RESULTS"===this.currentStep.Type&&fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES/teaser-search",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(this.searchPayload)}).then(t=>t.json()).then(t=>{const e=this.shadowRoot.querySelector("the-results");this.teaserSearchResponse=t,e.teaserSearchResponse=this.teaserSearchResponse,e.requestUpdate(),console.log("teaserSearchResponse",t)});const t=this.shadowRoot.querySelector("#animate-container");t.classList.add("animate__fadeOutUp");const e=this;setTimeout(()=>{t.classList.remove("animate__fadeOutUp"),e.requestUpdate(),t.classList.add("animate__fadeInUp"),"QUESTION_ANSWER"===this.currentStep.Type&&e._updateDescription()},1e3)}_updateDescription(t){let e=this;setTimeout(()=>{e.shadowRoot.querySelector("the-question")._updateDescription()})}_nextQuestion(t){if(this.searchPayload.push(t.detail),console.log("_nextQuestion",this.searchPayload),this.currentQuestionIndex+1===this.currentStep.Questions.length)return this.currentQuestionIndex=0,void this.nextStepClicked();this.currentQuestionIndex=this.currentQuestionIndex+1,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex];const e=this.shadowRoot.querySelector("#animate-container");e.classList.add("animate__fadeOutUp");const i=this;setTimeout(()=>{e.classList.remove("animate__fadeOutUp"),i.requestUpdate(),e.classList.add("animate__fadeInUp"),i.scrollTo({top:0,behavior:"smooth"}),"QUESTION_ANSWER"===this.currentStep.Type&&i._updateDescription()},1e3)}}window.customElements.define("singapore-incentives-match",K);export{K as SingaporeIncentivesMatch};
