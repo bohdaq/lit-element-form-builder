@@ -364,8 +364,8 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
       .animate {
-        -webkit-animation-duration: 2s;
-        animation-duration: 2s;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
@@ -408,6 +408,7 @@ export class SingaporeIncentivesMatch extends LitElement {
   constructor() {
     super();
 
+    this.searchPayload = [];
     this._configResponseRetrieved = false;
 
     fetch('https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES')
@@ -545,7 +546,8 @@ export class SingaporeIncentivesMatch extends LitElement {
   }
 
   _nextQuestion(ev) {
-    console.log('_nextQuestion', ev)
+    this.searchPayload.push(ev.detail);
+    console.log('_nextQuestion', this.searchPayload);
     const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.Questions.length;
     if(isLastQuestion) {
       this.currentQuestionIndex = 0;

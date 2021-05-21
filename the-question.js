@@ -59,13 +59,13 @@ export class TheQuestion extends LitElement {
     return {
         item: Object,
         index: Number,
-        allowMultipleAnswers: Boolean
+        allowMultipleAnswers: Boolean,
     };
   }
 
   constructor() {
     super();
-
+    this.answers = new Set();
     this.addEventListener('answer-selected', this._answerSelected);
   }
 
@@ -99,10 +99,12 @@ export class TheQuestion extends LitElement {
       this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
         if(item.item.Code === ev.detail.Code) {
           if(item.selected) {
-            console.log('answer-deselected', ev.detail.Code);
+            console.log('answer-deselected', ev.detail.Value);
+            this.answers.delete(ev.detail.Value);
             item.deselect();
           } else {
-            console.log('answer-selected', ev.detail.Code);
+            console.log('answer-selected', ev.detail.Value);
+            this.answers.add(ev.detail.Value);
             item.select();
           }
         } else {
@@ -125,11 +127,20 @@ export class TheQuestion extends LitElement {
     });
 
 
+    const questionKey = this.item._Key;
+
+    const detail = {
+      questionKey: questionKey,
+      answers: [...this.answers]
+    }
+
     let event = new CustomEvent('next-question', {
-      detail: this.item,
+      detail: detail,
       bubbles: true, 
       composed: true
     });
+
+    this.answers = new Set();
     this.dispatchEvent(event);
   }
 
