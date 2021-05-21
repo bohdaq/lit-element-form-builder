@@ -521,6 +521,28 @@ export class SingaporeIncentivesMatch extends LitElement {
       this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
     }
 
+    if(this.currentStep.Type === 'RESULTS') {
+      fetch(
+        'https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES/teaser-search',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.searchPayload)
+        }
+      )
+      .then(response => response.json())
+      .then(data => {
+        const theResultsView = this.shadowRoot.querySelector('the-results');
+        this.teaserSearchResponse = data;
+        theResultsView.teaserSearchResponse = this.teaserSearchResponse;
+        theResultsView.requestUpdate();
+
+        console.log('teaserSearchResponse', data);
+      });
+    }
+
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
     animationContainer.classList.add('animate__fadeOutUp');
 
