@@ -43,9 +43,16 @@ export class TheResults extends LitElement {
 
               <p class="matches-heading">${this.teaserSearchResponse.Result}</p>
               <div class="button-container">
-                <the-button>Sign Up</the-button>
+                <the-button @click="${this.navigateToPlatform}">Sign Up</the-button>
               </div>
     `;
+  }
+
+  navigateToPlatform() {
+    console.log('navigateToPlatform');
+    if(location.hostname === 'localhost') {
+      location.href = `http://localhost:3000/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
+    }
   }
 
 }

@@ -98,12 +98,12 @@ export class TheQuestion extends LitElement {
       this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
         if(item.item.Code === ev.detail.Code) {
           if(item.selected) {
-            console.log('answer-deselected', ev.detail.Value);
-            this.answers.delete(ev.detail.Value);
+            console.log('answer-deselected', ev.detail.Code);
+            this.answers.delete(ev.detail.Code);
             item.deselect();
           } else {
-            console.log('answer-selected', ev.detail.Value);
-            this.answers.add(ev.detail.Value);
+            console.log('answer-selected', ev.detail.Code);
+            this.answers.add(ev.detail.Code);
             item.select();
           }
         } else {
