@@ -6,7 +6,7 @@ export class TheAnswer extends LitElement {
     return css`
       :host {
         display: inline-block;
-        font-size: 2em;
+        font-size: 1.5em;
       }
 
       .answer-container {

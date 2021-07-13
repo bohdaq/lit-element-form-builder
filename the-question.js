@@ -35,7 +35,7 @@ export class TheQuestion extends LitElement {
         margin-right: calc(0em * -1);
         text-transform: none;
         color: rgb(117,117,117);
-        margin-bottom: 1em;
+        margin: 1em 0;
       }
 
 

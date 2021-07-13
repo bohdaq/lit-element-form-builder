@@ -37,7 +37,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       .main-container {
         font-size: 1em;
         
-        width: 80vh;
+        width: 100%;
         display: flex;
         justify-content: center;
 
