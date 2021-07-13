@@ -118,8 +118,9 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .buttons-bottom-bar {
         display: block;
-        height: 3em;
-        background-color: green;
+        display: flex;
+        padding: 1em;
+        border-top: 1px solid lightgrey;
       }
 
 
@@ -506,7 +507,23 @@ export class SingaporeIncentivesMatch extends LitElement {
                     </div>
 
                     <div class="content-flex"></div>
-                    <div class="buttons-bottom-bar"></div>
+                    <div class="buttons-bottom-bar">
+                      <div class="content-flex"></div>
+                      <div class="buttons-right-container">
+                        ${this.currentStep.Type === 'INFORMATION'  ?
+                            html`
+                              <the-button @click="${this.nextStepClicked}">Get Started</the-button>
+                            ` : html`` 
+                        }
+
+                        ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
+                            html`
+                              <the-button @click="${this._nextQuestion}">Next</the-button>
+                            ` : html`` 
+                        }
+                        
+                      </div>
+                    </div>
 
 
 

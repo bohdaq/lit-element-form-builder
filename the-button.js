@@ -11,7 +11,6 @@ export class TheButton extends LitElement {
       a.button {
         display:inline-block;
         padding: 0.3em 1.2em;
-        margin:0 0.3em 0.3em 0;
         border-radius: .5em;
         box-sizing: border-box;
         text-decoration: none;
