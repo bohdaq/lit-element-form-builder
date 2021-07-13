@@ -6,16 +6,19 @@ export class TheAnswer extends LitElement {
     return css`
       :host {
         display: inline-block;
+        font-size: 2em;
       }
 
       .answer-container {
+        transition: background-color 1s ease;
+        background-color: transparent;
         color: rgb(2, 0, 35);
-        margin: 1.2em 1.2em 1.2em 0;
+        margin: .6em 1.2em .6em 0;
         cursor: pointer;
-        padding: .2em .5em;
+        padding: 1em;
         width: 10em;
-        border: 1px solid black;
-        border-radius: 10px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
       }
 
 
@@ -64,23 +67,28 @@ export class TheAnswer extends LitElement {
     return html`
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-
-        ${this.selected ? html`
-            <div class="answer-container selected animate__animated animate__pulse"  @click="${this._selectAnswerEvent}">
-                <div class="answer-label">
-                  <slot></slot>
-                  <div class="spacing"></div>
-                </div>
+        <div id="answer-container" class="answer-container"  @click="${this._selectAnswerEvent}">
+            <div class="answer-label">
+              <slot></slot>
+              <div class="spacing"></div>
             </div>
-        ` : html`
-            <div class="answer-container"  @click="${this._selectAnswerEvent}">
-                <div class="answer-label"><slot></slot></div>
-            </div>
-        `}
+        </div>
     `;
   }
 
   _selectAnswerEvent() {
+    const answerContainer = this.shadowRoot.querySelector('#answer-container');
+    if(!this.selected) {
+      answerContainer.classList.add('selected');
+      answerContainer.classList.add('animate__animated');
+      answerContainer.classList.add('animate__pulse');
+    } else {
+      answerContainer.classList.remove('selected');
+      answerContainer.classList.remove('animate__animated');
+      answerContainer.classList.remove('animate__pulse');
+    }
+
+    
     this.answerSelectedEvent();
   }
 
