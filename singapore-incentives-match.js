@@ -40,6 +40,8 @@ export class SingaporeIncentivesMatch extends LitElement {
         width: 100%;
         display: flex;
         justify-content: center;
+
+        min-height: 80vh;
       }
 
       .progress-bar-container {
@@ -98,7 +100,6 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
       .content-container {
-        padding: 1.5em 2em;
         background-color: rgb(255,255,255);
 
         border-width: 1px;
@@ -457,28 +458,24 @@ export class SingaporeIncentivesMatch extends LitElement {
                   <div class="content-container animate__animated" id="animate-container">
                     <div>
 
-                  ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
+                        ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                           html`
 
                             <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
                         
-                        ` :
-                          html``}
+                        ` : html``}
 
-                  ${this.currentStep.Type === 'RESULTS'  ?
+                        ${this.currentStep.Type === 'RESULTS'  ?
                           html`
                           
-                              <the-results></the-results>
-                              
+                            <the-results></the-results>
                           
-                          ` :
-                          html``}
+                        ` : html``}
 
-                  ${this.currentStep.Type === 'INFORMATION'  ?
+                        ${this.currentStep.Type === 'INFORMATION'  ?
                           html`
 
 
-              <!-- animate__fadeOutDown -->
                             <div class="intro-container">
                                 <h4>${this.currentStep.Name}</h4>
 
@@ -491,9 +488,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                             </div>
 
                             
-                          ` :
-                          html``}
-
+                          ` : html``}
 
                     </div>
                   </div>
