@@ -451,6 +451,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     this.addEventListener('next-question', this._nextQuestion);
+    this.addEventListener('proceed-to-the-platform', this._proceedToThePlatform);
 
 
     let that = this;
@@ -519,6 +520,12 @@ export class SingaporeIncentivesMatch extends LitElement {
                         ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                             html`
                               <the-button @click="${this._nextQuestion}">Next</the-button>
+                            ` : html`` 
+                        }
+
+                        ${this.currentStep.Type === 'RESULTS'  ?
+                            html`
+                              <the-button @click="${this._proceedToThePlatform}">Sign Up</the-button>
                             ` : html`` 
                         }
                         
@@ -624,6 +631,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         that._updateDescription();
       }
     }, 300)
+  }
+
+  _proceedToThePlatform(ev) {
+    if(location.hostname === 'localhost') {
+      location.href = `http://localhost:3000/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
+    } else {
+      location.href = `https://avocado-platform-qa.web.app/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
+    }
   }
 
   
