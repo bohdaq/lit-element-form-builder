@@ -110,7 +110,7 @@ export class TheQuestion extends LitElement {
         const that = this;
         setTimeout(() => {
           that._nextQuestionClicked();
-        }, 1000)
+        }, 300)
       }
   }
 
