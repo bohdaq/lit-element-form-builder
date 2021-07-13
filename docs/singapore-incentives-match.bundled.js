@@ -78,7 +78,7 @@ class x{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */;function A(t){let e=O.get(t.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},O.set(t.type,e));let s=e.stringsArray.get(t.strings);if(void 0!==s)return s;const n=t.strings.join(i);return s=e.keyString.get(n),void 0===s&&(s=new o(t,t.getTemplateElement()),e.keyString.set(n,s)),e.stringsArray.set(t.strings,s),s}const O=new Map,U=new WeakMap;
+ */;function A(t){let e=U.get(t.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},U.set(t.type,e));let s=e.stringsArray.get(t.strings);if(void 0!==s)return s;const n=t.strings.join(i);return s=e.keyString.get(n),void 0===s&&(s=new o(t,t.getTemplateElement()),e.keyString.set(n,s)),e.stringsArray.set(t.strings,s),s}const U=new Map,O=new WeakMap;
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -91,7 +91,7 @@ class x{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const N=new
+ */const I=new
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -118,7 +118,7 @@ class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new C(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const I=(t,...e)=>new w(t,e,"html",N)
+ */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.2.1");const N=(t,...e)=>new w(t,e,"html",I)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -131,7 +131,7 @@ class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new C(
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */,j=(t,e)=>`${t}--${e}`;let R=!0;void 0===window.ShadyCSS?R=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),R=!1);const M=t=>e=>{const s=j(e.type,t);let n=O.get(s);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},O.set(s,n));let r=n.stringsArray.get(e.strings);if(void 0!==r)return r;const a=e.strings.join(i);if(r=n.keyString.get(a),void 0===r){const i=e.getTemplateElement();R&&window.ShadyCSS.prepareTemplateDom(i,t),r=new o(e,i),n.keyString.set(a,r)}return n.stringsArray.set(e.strings,r),r},q=["html","svg"],F=new Set,D=(t,e,i)=>{F.add(t);const s=i?i.element:document.createElement("template"),n=e.querySelectorAll("style"),{length:o}=n;if(0===o)return void window.ShadyCSS.prepareTemplateStyles(s,t);const r=document.createElement("style");for(let t=0;t<o;t++){const e=n[t];e.parentNode.removeChild(e),r.textContent+=e.textContent}(t=>{q.forEach(e=>{const i=O.get(j(e,t));void 0!==i&&i.keyString.forEach(t=>{const{element:{content:e}}=t,i=new Set;Array.from(e.querySelectorAll("style")).forEach(t=>{i.add(t)}),h(t,i)})})})(t);const a=s.content;i?function(t,e,i=null){const{element:{content:s},parts:n}=t;if(null==i)return void s.appendChild(e);const o=document.createTreeWalker(s,133,null,!1);let r=d(n),a=0,c=-1;for(;o.nextNode();){for(c++,o.currentNode===i&&(a=p(e),i.parentNode.insertBefore(e,i));-1!==r&&n[r].index===c;){if(a>0){for(;-1!==r;)n[r].index+=a,r=d(n,r);return}r=d(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(s,t);const c=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==c)e.insertBefore(c.cloneNode(!0),e.firstChild);else if(i){a.insertBefore(r,a.firstChild);const t=new Set;t.add(r),h(i,t)}};window.JSCompiler_renameProperty=(t,e)=>t;const V={toAttribute(t,e){switch(e){case Boolean:return t?"":null;case Object:case Array:return null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){switch(e){case Boolean:return null!==t;case Number:return null===t?null:Number(t);case Object:case Array:return JSON.parse(t)}return t}},B=(t,e)=>e!==t&&(e==e||t==t),W={attribute:!0,type:String,converter:V,reflect:!1,hasChanged:B};class L extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(t=>this._enableUpdatingResolver=t),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const t=[];return this._classProperties.forEach((e,i)=>{const s=this._attributeNameForProperty(i,e);void 0!==s&&(this._attributeToPropertyMap.set(s,i),t.push(s))}),t}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const t=Object.getPrototypeOf(this)._classProperties;void 0!==t&&t.forEach((t,e)=>this._classProperties.set(e,t))}}static createProperty(t,e=W){if(this._ensureClassProperties(),this._classProperties.set(t,e),e.noAccessor||this.prototype.hasOwnProperty(t))return;const i="symbol"==typeof t?Symbol():"__"+t,s=this.getPropertyDescriptor(t,i,e);void 0!==s&&Object.defineProperty(this.prototype,t,s)}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(i){const s=this[t];this[e]=i,this._requestUpdate(t,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this._classProperties&&this._classProperties.get(t)||W}static finalize(){const t=Object.getPrototypeOf(this);if(t.hasOwnProperty("finalized")||t.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const t=this.properties,e=[...Object.getOwnPropertyNames(t),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(t):[]];for(const i of e)this.createProperty(i,t[i])}}static _attributeNameForProperty(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}static _valueHasChanged(t,e,i=B){return i(t,e)}static _propertyValueFromAttribute(t,e){const i=e.type,s=e.converter||V,n="function"==typeof s?s:s.fromAttribute;return n?n(t,i):t}static _propertyValueToAttribute(t,e){if(void 0===e.reflect)return;const i=e.type,s=e.converter;return(s&&s.toAttribute||V.toAttribute)(t,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((t,e)=>{if(this.hasOwnProperty(e)){const t=this[e];delete this[e],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(e,t)}})}_applyInstanceProperties(){this._instanceProperties.forEach((t,e)=>this[e]=t),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(t,e,i){e!==i&&this._attributeToProperty(t,i)}_propertyToAttribute(t,e,i=W){const s=this.constructor,n=s._attributeNameForProperty(t,i);if(void 0!==n){const t=s._propertyValueToAttribute(e,i);if(void 0===t)return;this._updateState=8|this._updateState,null==t?this.removeAttribute(n):this.setAttribute(n,t),this._updateState=-9&this._updateState}}_attributeToProperty(t,e){if(8&this._updateState)return;const i=this.constructor,s=i._attributeToPropertyMap.get(t);if(void 0!==s){const t=i.getPropertyOptions(s);this._updateState=16|this._updateState,this[s]=i._propertyValueFromAttribute(e,t),this._updateState=-17&this._updateState}}_requestUpdate(t,e){let i=!0;if(void 0!==t){const s=this.constructor,n=s.getPropertyOptions(t);s._valueHasChanged(this[t],e,n.hasChanged)?(this._changedProperties.has(t)||this._changedProperties.set(t,e),!0!==n.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(t,n))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(t,e){return this._requestUpdate(t,e),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(t){}const t=this.performUpdate();return null!=t&&await t,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let t=!1;const e=this._changedProperties;try{t=this.shouldUpdate(e),t?this.update(e):this._markUpdated()}catch(e){throw t=!1,this._markUpdated(),e}t&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(e)),this.updated(e))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(t){return!0}update(t){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((t,e)=>this._propertyToAttribute(e,this[e],t)),this._reflectingProperties=void 0),this._markUpdated()}updated(t){}firstUpdated(t){}}L.finalized=!0;
+ */,j=(t,e)=>`${t}--${e}`;let R=!0;void 0===window.ShadyCSS?R=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),R=!1);const M=t=>e=>{const s=j(e.type,t);let n=U.get(s);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},U.set(s,n));let r=n.stringsArray.get(e.strings);if(void 0!==r)return r;const a=e.strings.join(i);if(r=n.keyString.get(a),void 0===r){const i=e.getTemplateElement();R&&window.ShadyCSS.prepareTemplateDom(i,t),r=new o(e,i),n.keyString.set(a,r)}return n.stringsArray.set(e.strings,r),r},q=["html","svg"],F=new Set,D=(t,e,i)=>{F.add(t);const s=i?i.element:document.createElement("template"),n=e.querySelectorAll("style"),{length:o}=n;if(0===o)return void window.ShadyCSS.prepareTemplateStyles(s,t);const r=document.createElement("style");for(let t=0;t<o;t++){const e=n[t];e.parentNode.removeChild(e),r.textContent+=e.textContent}(t=>{q.forEach(e=>{const i=U.get(j(e,t));void 0!==i&&i.keyString.forEach(t=>{const{element:{content:e}}=t,i=new Set;Array.from(e.querySelectorAll("style")).forEach(t=>{i.add(t)}),h(t,i)})})})(t);const a=s.content;i?function(t,e,i=null){const{element:{content:s},parts:n}=t;if(null==i)return void s.appendChild(e);const o=document.createTreeWalker(s,133,null,!1);let r=d(n),a=0,c=-1;for(;o.nextNode();){for(c++,o.currentNode===i&&(a=p(e),i.parentNode.insertBefore(e,i));-1!==r&&n[r].index===c;){if(a>0){for(;-1!==r;)n[r].index+=a,r=d(n,r);return}r=d(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(s,t);const c=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==c)e.insertBefore(c.cloneNode(!0),e.firstChild);else if(i){a.insertBefore(r,a.firstChild);const t=new Set;t.add(r),h(i,t)}};window.JSCompiler_renameProperty=(t,e)=>t;const V={toAttribute(t,e){switch(e){case Boolean:return t?"":null;case Object:case Array:return null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){switch(e){case Boolean:return null!==t;case Number:return null===t?null:Number(t);case Object:case Array:return JSON.parse(t)}return t}},B=(t,e)=>e!==t&&(e==e||t==t),W={attribute:!0,type:String,converter:V,reflect:!1,hasChanged:B};class L extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=new Promise(t=>this._enableUpdatingResolver=t),this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const t=[];return this._classProperties.forEach((e,i)=>{const s=this._attributeNameForProperty(i,e);void 0!==s&&(this._attributeToPropertyMap.set(s,i),t.push(s))}),t}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const t=Object.getPrototypeOf(this)._classProperties;void 0!==t&&t.forEach((t,e)=>this._classProperties.set(e,t))}}static createProperty(t,e=W){if(this._ensureClassProperties(),this._classProperties.set(t,e),e.noAccessor||this.prototype.hasOwnProperty(t))return;const i="symbol"==typeof t?Symbol():"__"+t,s=this.getPropertyDescriptor(t,i,e);void 0!==s&&Object.defineProperty(this.prototype,t,s)}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(i){const s=this[t];this[e]=i,this._requestUpdate(t,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this._classProperties&&this._classProperties.get(t)||W}static finalize(){const t=Object.getPrototypeOf(this);if(t.hasOwnProperty("finalized")||t.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const t=this.properties,e=[...Object.getOwnPropertyNames(t),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(t):[]];for(const i of e)this.createProperty(i,t[i])}}static _attributeNameForProperty(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}static _valueHasChanged(t,e,i=B){return i(t,e)}static _propertyValueFromAttribute(t,e){const i=e.type,s=e.converter||V,n="function"==typeof s?s:s.fromAttribute;return n?n(t,i):t}static _propertyValueToAttribute(t,e){if(void 0===e.reflect)return;const i=e.type,s=e.converter;return(s&&s.toAttribute||V.toAttribute)(t,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((t,e)=>{if(this.hasOwnProperty(e)){const t=this[e];delete this[e],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(e,t)}})}_applyInstanceProperties(){this._instanceProperties.forEach((t,e)=>this[e]=t),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(t,e,i){e!==i&&this._attributeToProperty(t,i)}_propertyToAttribute(t,e,i=W){const s=this.constructor,n=s._attributeNameForProperty(t,i);if(void 0!==n){const t=s._propertyValueToAttribute(e,i);if(void 0===t)return;this._updateState=8|this._updateState,null==t?this.removeAttribute(n):this.setAttribute(n,t),this._updateState=-9&this._updateState}}_attributeToProperty(t,e){if(8&this._updateState)return;const i=this.constructor,s=i._attributeToPropertyMap.get(t);if(void 0!==s){const t=i.getPropertyOptions(s);this._updateState=16|this._updateState,this[s]=i._propertyValueFromAttribute(e,t),this._updateState=-17&this._updateState}}_requestUpdate(t,e){let i=!0;if(void 0!==t){const s=this.constructor,n=s.getPropertyOptions(t);s._valueHasChanged(this[t],e,n.hasChanged)?(this._changedProperties.has(t)||this._changedProperties.set(t,e),!0!==n.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(t,n))):i=!1}!this._hasRequestedUpdate&&i&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(t,e){return this._requestUpdate(t,e),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(t){}const t=this.performUpdate();return null!=t&&await t,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let t=!1;const e=this._changedProperties;try{t=this.shouldUpdate(e),t?this.update(e):this._markUpdated()}catch(e){throw t=!1,this._markUpdated(),e}t&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(e)),this.updated(e))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(t){return!0}update(t){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((t,e)=>this._propertyToAttribute(e,this[e],t)),this._reflectingProperties=void 0),this._markUpdated()}updated(t){}firstUpdated(t){}}L.finalized=!0;
 /**
 @license
 Copyright (c) 2019 The Polymer Project Authors. All rights reserved.
@@ -156,7 +156,7 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const X={};class G extends L{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const t=this.getStyles();if(void 0===t)this._styles=[];else if(Array.isArray(t)){const e=(t,i)=>t.reduceRight((t,i)=>Array.isArray(i)?e(i,t):(t.add(i),t),i),i=e(t,new Set),s=[];i.forEach(t=>s.unshift(t)),this._styles=s}else this._styles=[t]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const t=this.constructor._styles;0!==t.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?Q?this.renderRoot.adoptedStyleSheets=t.map(t=>t.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(t.map(t=>t.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(t){const e=this.render();super.update(t),e!==X&&this.constructor.render(e,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(t=>{const e=document.createElement("style");e.textContent=t.cssText,this.renderRoot.appendChild(e)}))}render(){return X}}G.finalized=!0,G.render=(t,i,s)=>{if(!s||"object"!=typeof s||!s.scopeName)throw new Error("The `scopeName` option is required.");const n=s.scopeName,o=U.has(i),r=R&&11===i.nodeType&&!!i.host,a=r&&!F.has(n),c=a?document.createDocumentFragment():i;if(((t,i,s)=>{let n=U.get(i);void 0===n&&(e(i,i.firstChild),U.set(i,n=new _(Object.assign({templateFactory:A},s))),n.appendInto(i)),n.setValue(t),n.commit()})(t,c,Object.assign({templateFactory:M(n)},s)),a){const t=U.get(c);U.delete(c);const s=t.value instanceof x?t.value.template:void 0;D(n,c,s),e(i,i.firstChild),i.appendChild(c),U.set(i,t)}!o&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends G{static get styles(){return Y`
+(window.litElementVersions||(window.litElementVersions=[])).push("2.3.1");const X={};class G extends L{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const t=this.getStyles();if(void 0===t)this._styles=[];else if(Array.isArray(t)){const e=(t,i)=>t.reduceRight((t,i)=>Array.isArray(i)?e(i,t):(t.add(i),t),i),i=e(t,new Set),s=[];i.forEach(t=>s.unshift(t)),this._styles=s}else this._styles=[t]}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const t=this.constructor._styles;0!==t.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?Q?this.renderRoot.adoptedStyleSheets=t.map(t=>t.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(t.map(t=>t.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(t){const e=this.render();super.update(t),e!==X&&this.constructor.render(e,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(t=>{const e=document.createElement("style");e.textContent=t.cssText,this.renderRoot.appendChild(e)}))}render(){return X}}G.finalized=!0,G.render=(t,i,s)=>{if(!s||"object"!=typeof s||!s.scopeName)throw new Error("The `scopeName` option is required.");const n=s.scopeName,o=O.has(i),r=R&&11===i.nodeType&&!!i.host,a=r&&!F.has(n),c=a?document.createDocumentFragment():i;if(((t,i,s)=>{let n=O.get(i);void 0===n&&(e(i,i.firstChild),O.set(i,n=new _(Object.assign({templateFactory:A},s))),n.appendInto(i)),n.setValue(t),n.commit()})(t,c,Object.assign({templateFactory:M(n)},s)),a){const t=O.get(c);O.delete(c);const s=t.value instanceof x?t.value.template:void 0;D(n,c,s),e(i,i.firstChild),i.appendChild(c),O.set(i,t)}!o&&r&&window.ShadyCSS.styleElement(i.host)};window.customElements.define("the-checkbox",class extends G{static get styles(){return Y`
       :host {
         display: flex;
       }
@@ -486,7 +486,7 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       }
 
       
-    `}static get properties(){return{}}constructor(){super()}render(){return I`
+    `}static get properties(){return{}}constructor(){super()}render(){return N`
       <label class="pure-material-checkbox">
         <input type="checkbox">
         <span></span>
@@ -519,7 +519,7 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         display: block;
         margin: 0.2em auto;
       }
-    `}static get properties(){return{}}constructor(){super()}render(){return I`
+    `}static get properties(){return{}}constructor(){super()}render(){return N`
       <a href="#" class="button"><slot></slot></a>
     `}});window.customElements.define("the-question",class extends G{static get styles(){return Y`
       :host {
@@ -570,13 +570,13 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
         flex: 1;
       }
 
-    `}static get properties(){return{item:Object,index:Number,allowMultipleAnswers:Boolean}}constructor(){super(),this.answers=new Set,this.addEventListener("answer-selected",this._answerSelected)}render(){return I`
+    `}static get properties(){return{item:Object,index:Number,allowMultipleAnswers:Boolean}}constructor(){super(),this.answers=new Set,this.addEventListener("answer-selected",this._answerSelected)}render(){return N`
                   <div class="question-container">
                     <div id="information-description" class="question-description"></div>
                     <div class="answers-container">
 
 
-                    ${this.item.AnswerOptions.map((t,e)=>I`
+                    ${this.item.AnswerOptions.map((t,e)=>N`
                         <the-answer Code="${t.Code}" .item="${t}">${t.AnswerText}</the-answer>
                       
                       `)}
@@ -632,18 +632,18 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       }
 
       
-    `}static get properties(){return{selected:Boolean,item:Boolean}}constructor(){super(),this.selected=!1}render(){return I`
+    `}static get properties(){return{selected:Boolean,item:Boolean}}constructor(){super(),this.selected=!1}render(){return N`
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 
-        ${this.selected?I`
+        ${this.selected?N`
             <div class="answer-container selected animate__animated animate__pulse"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label">
                   <slot></slot>
                   <div class="spacing"></div>
                 </div>
             </div>
-        `:I`
+        `:N`
             <div class="answer-container"  @click="${this._selectAnswerEvent}">
                 <div class="answer-label"><slot></slot></div>
             </div>
@@ -666,13 +666,13 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
       }
 
       
-    `}static get properties(){return{selected:Boolean,item:Boolean,teaserSearchResponse:Object}}constructor(){super(),this.selected=!1,this.teaserSearchResponse={Result:""}}render(){return I`
+    `}static get properties(){return{selected:Boolean,item:Boolean,teaserSearchResponse:Object}}constructor(){super(),this.selected=!1,this.teaserSearchResponse={Result:""}}render(){return N`
 
               <p class="matches-heading">${this.teaserSearchResponse.Result}</p>
               <div class="button-container">
                 <the-button @click="${this.navigateToPlatform}">Sign Up</the-button>
               </div>
-    `}navigateToPlatform(){console.log("navigateToPlatform"),"localhost"===location.hostname&&(location.href="http://localhost:3000/matchme?AnonymousUserId="+this.teaserSearchResponse.AnonymousUserId)}});class K extends G{static get styles(){return Y`
+    `}navigateToPlatform(){console.log("navigateToPlatform"),"localhost"===location.hostname?location.href="http://localhost:3000/matchme?AnonymousUserId="+this.teaserSearchResponse.AnonymousUserId:location.href="https://avocado-platform-qa.web.app/matchme?AnonymousUserId="+this.teaserSearchResponse.AnonymousUserId}});class K extends G{static get styles(){return Y`
       :host {
         font-size: 17px;
       }
@@ -1057,9 +1057,9 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
             -webkit-animation-name: fadeInDown;
             animation-name: fadeInDown;
          }
-    `}static get properties(){return{}}constructor(){super(),this.searchPayload=[],this._configResponseRetrieved=!1,fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES").then(t=>t.json()).then(t=>this._parseResponse(t))}_parseResponse(t){this._configResponseRetrieved=!0,this.config=t,this.config.Steps.sort((t,e)=>t.SortOrder-e.SortOrder),this.requestUpdate(),this.currentStepIndex=0,this.currentStep=this.config.Steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.Questions&&(this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion);let e=this;setTimeout(()=>{e.shadowRoot.querySelector("#information-description").innerHTML=this.currentStep.Description})}render(){return I` 
+    `}static get properties(){return{}}constructor(){super(),this.searchPayload=[],this._configResponseRetrieved=!1,fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES").then(t=>t.json()).then(t=>this._parseResponse(t))}_parseResponse(t){this._configResponseRetrieved=!0,this.config=t,this.config.Steps.sort((t,e)=>t.SortOrder-e.SortOrder),this.requestUpdate(),this.currentStepIndex=0,this.currentStep=this.config.Steps[this.currentStepIndex],this.currentQuestionIndex=0,this.currentStep.Questions&&(this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),this.addEventListener("next-question",this._nextQuestion);let e=this;setTimeout(()=>{e.shadowRoot.querySelector("#information-description").innerHTML=this.currentStep.Description})}render(){return N` 
     
-    ${this._configResponseRetrieved?I`
+    ${this._configResponseRetrieved?N`
       
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
                 <div class="main-container">
@@ -1067,20 +1067,20 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                   <div class="content-container animate__animated" id="animate-container">
                     <div>
 
-                  ${"QUESTION_ANSWER"===this.currentStep.Type?I`
+                  ${"QUESTION_ANSWER"===this.currentStep.Type?N`
 
                             <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
                         
-                        `:I``}
+                        `:N``}
 
-                  ${"RESULTS"===this.currentStep.Type?I`
+                  ${"RESULTS"===this.currentStep.Type?N`
                           
                               <the-results></the-results>
                               
                           
-                          `:I``}
+                          `:N``}
 
-                  ${"INFORMATION"===this.currentStep.Type?I`
+                  ${"INFORMATION"===this.currentStep.Type?N`
 
 
               <!-- animate__fadeOutDown -->
@@ -1096,12 +1096,12 @@ const Q="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.pro
                             </div>
 
                             
-                          `:I``}
+                          `:N``}
 
 
                     </div>
                   </div>
                 </div>
-      `:I``}
+      `:N``}
 
     `}nextStepClicked(){console.log("nextStepClicked"),this.currentStepIndex=this.currentStepIndex+1,this.currentStep=this.config.Steps[this.currentStepIndex],"QUESTION_ANSWER"===this.currentStep.Type&&(this.currentQuestionIndex=0,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex]),"RESULTS"===this.currentStep.Type&&fetch("https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES/teaser-search",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(this.searchPayload)}).then(t=>t.json()).then(t=>{const e=this.shadowRoot.querySelector("the-results");this.teaserSearchResponse=t,e.teaserSearchResponse=this.teaserSearchResponse,e.requestUpdate(),console.log("teaserSearchResponse",t)});const t=this.shadowRoot.querySelector("#animate-container");t.classList.add("animate__fadeOutUp");const e=this;setTimeout(()=>{t.classList.remove("animate__fadeOutUp"),e.requestUpdate(),t.classList.add("animate__fadeInUp"),"QUESTION_ANSWER"===this.currentStep.Type&&e._updateDescription()},1e3)}_updateDescription(t){let e=this;setTimeout(()=>{e.shadowRoot.querySelector("the-question")._updateDescription()})}_nextQuestion(t){if(this.searchPayload.push(t.detail),console.log("_nextQuestion",this.searchPayload),this.currentQuestionIndex+1===this.currentStep.Questions.length)return this.currentQuestionIndex=0,void this.nextStepClicked();this.currentQuestionIndex=this.currentQuestionIndex+1,this.currentQuestion=this.currentStep.Questions[this.currentQuestionIndex];const e=this.shadowRoot.querySelector("#animate-container");e.classList.add("animate__fadeOutUp");const i=this;setTimeout(()=>{e.classList.remove("animate__fadeOutUp"),i.requestUpdate(),e.classList.add("animate__fadeInUp"),i.scrollTo({top:0,behavior:"smooth"}),"QUESTION_ANSWER"===this.currentStep.Type&&i._updateDescription()},1e3)}}window.customElements.define("singapore-incentives-match",K);export{K as SingaporeIncentivesMatch};

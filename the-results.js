@@ -49,10 +49,21 @@ export class TheResults extends LitElement {
   }
 
   navigateToPlatform() {
+    //TODO: show only remaining questions in the platform
+    // proper redirect not inside the iframe
+    // for option show tags inide the platform
+    // clear the tags state
+
     console.log('navigateToPlatform');
+    debugger;
+
     if(location.hostname === 'localhost') {
       location.href = `http://localhost:3000/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
+    } else {
+      location.href = `https://avocado-platform-qa.web.app/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
     }
+
+
   }
 
 }
