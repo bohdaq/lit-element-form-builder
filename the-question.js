@@ -82,12 +82,6 @@ export class TheQuestion extends LitElement {
                       
                       `)}
                       
-
-                      <div class="buttons-container">
-                        <the-button @click="${this._nextQuestionClicked}">Next</the-button>
-                        <div class="flex"></div>
-                      </div>
-
                     </div>
 
                   </div>

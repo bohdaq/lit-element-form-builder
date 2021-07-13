@@ -37,7 +37,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       .main-container {
         font-size: 1em;
         
-        width: 100%;
+        width: 80vh;
         display: flex;
         justify-content: center;
 
@@ -109,6 +109,8 @@ export class SingaporeIncentivesMatch extends LitElement {
 
         display: flex;
         flex-direction: column;
+
+        width: 100%;
 
       }
 
@@ -374,6 +376,10 @@ export class SingaporeIncentivesMatch extends LitElement {
           }
       }
 
+      .inner-content-container {
+        padding: 1em;
+      }
+
 
       
 
@@ -471,7 +477,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                 <div class="main-container">
                   
                   <div class="content-container animate__animated" id="animate-container">
-                    <div>
+                    <div class="inner-content-container">
 
                         ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                           html`
@@ -495,11 +501,6 @@ export class SingaporeIncentivesMatch extends LitElement {
                                 <h4>${this.currentStep.Name}</h4>
 
                                 <span id="information-description" class="intro-description"></span>
-
-                                <div class="buttons-container">
-                                  <the-button @click="${this.nextStepClicked}">Next</the-button>
-                                  <div class="flex"></div>
-                                </div>
                             </div>
 
                             
