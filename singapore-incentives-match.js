@@ -341,7 +341,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         color: rgb(117, 117, 117);
 
         animation: bounce; /* referring directly to the animation's @keyframe declaration */
-        animation-duration: 2s; /* don't forget to set a duration! */
+        animation-duration: .3s; /* don't forget to set a duration! */
       }
 
       .progress-bar {
@@ -364,8 +364,8 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
       .animate {
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
+        -webkit-animation-duration: .3s;
+        animation-duration: .3s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
@@ -556,7 +556,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       if(this.currentStep.Type === 'QUESTION_ANSWER') {
         that._updateDescription();
       }
-    }, 1000)
+    }, 300)
     
   }
 
@@ -593,7 +593,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       if(this.currentStep.Type === 'QUESTION_ANSWER') {
         that._updateDescription();
       }
-    }, 1000)
+    }, 300)
   }
 
   
