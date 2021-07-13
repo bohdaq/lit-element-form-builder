@@ -107,6 +107,19 @@ export class SingaporeIncentivesMatch extends LitElement {
         border-color: rgb(220,220,220);
         border-radius: 10px;
 
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .content-flex {
+        flex: 1;
+      }
+
+      .buttons-bottom-bar {
+        display: block;
+        height: 3em;
+        background-color: green;
       }
 
 
@@ -491,10 +504,15 @@ export class SingaporeIncentivesMatch extends LitElement {
                           ` : html``}
 
                     </div>
+
+                    <div class="content-flex"></div>
+                    <div class="buttons-bottom-bar"></div>
+
+
+
                   </div>
                 </div>
-      ` :
-      html``}
+      ` : html `` }
 
     `;
     
