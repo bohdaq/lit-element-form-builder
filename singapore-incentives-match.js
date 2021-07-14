@@ -13,6 +13,49 @@ export class SingaporeIncentivesMatch extends LitElement {
   static get styles() {
     return css`
       :host {
+        --main-bg-color: brown;
+        --heading-font-color: rgb(77, 161, 255);
+        --heading-font-weight: normal;
+        --heading-font-margin: 48px 0 24px -20px;
+        --heading-font-padding: 8px 20px;
+        --heading-font-font-size: 1.6em;
+        --heading-font-weight: 300;
+        --heading-font-family: "Roboto", sans-serif;
+        --heading-font-background-color: rgba(0, 106, 177, 0.05);
+
+
+        --desciption-color: rgb(0, 0, 0);
+        --desciption-font-family: "Roboto Regular", RobotoDraft, Roboto, sans-serif;
+        --desciption-font-size: 16px;
+        --desciption-font-weight: 100;
+        --desciption-line-height: 24px;
+        --desciption-padding: var(--heading-font-padding);
+      }
+
+      .heading {
+        color: var(--heading-font-color);
+        font-weight: var(--heading-font-weight);
+        padding: var(--heading-font-padding);
+        font-size: var(--heading-font-font-size);
+        font-weight: var(--heading-font-weight);
+        font-family: var(--heading-font-family);
+        background-color: var(--heading-font-background-color);
+      }
+
+      .description {
+        color: var(--desciption-color);
+        font-family: var(--desciption-font-family);
+        font-size: var(--desciption-font-size);
+        font-weight: var(--desciption-font-weight);
+        line-height: var(--desciption-line-height);
+        padding: var(--desciption-padding);
+      }
+
+      .into-text-wrapper {
+        margin: 1em;
+      }
+
+      :host {
         font-size: 17px;
       }
       @media (max-width: 900px) {
@@ -346,19 +389,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       }
 
       .intro-description {
-        margin-top: 0.35em;
-        font-family: Poppins, sans-serif;
-        font-size: .8em;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        margin-right: calc(0em);
-        text-transform: none;
-        color: rgb(117, 117, 117);
 
-        animation: bounce; /* referring directly to the animation's @keyframe declaration */
-        animation-duration: .3s; /* don't forget to set a duration! */
       }
 
       .progress-bar {
@@ -462,7 +493,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
     let that = this;
     setTimeout(()=> {
-      that.shadowRoot.querySelector('#information-description').innerHTML = this.currentStep.Description;
+      // TODO that.shadowRoot.querySelector('#information-description').innerHTML = this.currentStep.Description;
     });
 
   }
@@ -498,9 +529,13 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
                             <div class="intro-container">
-                                <h4>${this.currentStep.Name}</h4>
+                                <h1 class="heading">${this.currentStep.Name}</h1>
 
-                                <span id="information-description" class="intro-description"></span>
+                                <div class="into-text-wrapper">
+                                  <span id="information-description" class="intro-description description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                  </span>
+                                </div>
                             </div>
 
                             
