@@ -84,7 +84,7 @@ export class TheQuestion extends LitElement {
 
                       ${this.item.AnswerOptions.map((answer, index) => 
                         html`
-                          <the-answer Code="${answer.Code}" .item="${answer}">${answer.AnswerText}</the-answer>
+                          <the-answer Code="${answer.Code}" .item="${answer}"></the-answer>
                         `)}
                       
                     </div>

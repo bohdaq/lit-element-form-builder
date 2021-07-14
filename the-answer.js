@@ -17,8 +17,13 @@ export class TheAnswer extends LitElement {
         cursor: pointer;
         padding: 1em;
         min-width: 300px;
+        max-width: 300px;
         border: 1px solid lightgrey;
         border-radius: 5px;
+      }
+
+      .answer-container:not(.selected):hover {
+        background-color: rgb(192 214 255 / 20%);
       }
 
 
@@ -47,6 +52,13 @@ export class TheAnswer extends LitElement {
         flex: 1;
       }
 
+      .inner-option-text-container {
+        width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       
     `;
   }
@@ -69,7 +81,7 @@ export class TheAnswer extends LitElement {
 
         <div id="answer-container" class="answer-container"  @click="${this._selectAnswerEvent}">
             <div class="answer-label">
-              <slot></slot>
+              <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div>
               <div class="spacing"></div>
             </div>
         </div>
