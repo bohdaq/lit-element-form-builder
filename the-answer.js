@@ -44,7 +44,7 @@ export class TheAnswer extends LitElement {
         padding-right: 6px;
       }
 
-      .selected {
+      selected {
         background-color: rgb(118 154 220 / 20%);
         color: rgb(2, 0, 35);
       }
@@ -79,9 +79,9 @@ export class TheAnswer extends LitElement {
 
   render() {
     return html`
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-        <div id="answer-container" class="answer-container"  @click="${this._selectAnswerEvent}">
+        <div id="answer-container" class="answer-container" .selected=${this.selected} @click="${this._selectAnswerEvent}">
             <div class="answer-label">
               <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div><the-checkbox .selected="${this.selected}" .disabled="${this.disabled}"></the-checkbox>
               <div class="spacing"></div>
@@ -93,11 +93,9 @@ export class TheAnswer extends LitElement {
   _selectAnswerEvent() {
     const answerContainer = this.shadowRoot.querySelector('#answer-container');
     if(!this.selected) {
-      answerContainer.classList.add('selected');
       answerContainer.classList.add('animate__animated');
       answerContainer.classList.add('animate__pulse');
     } else {
-      answerContainer.classList.remove('selected');
       answerContainer.classList.remove('animate__animated');
       answerContainer.classList.remove('animate__pulse');
     }
