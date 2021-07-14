@@ -158,7 +158,7 @@ export class TheCheckbox extends LitElement {
     return html`
           <div class="checkbox">
             <input type="checkbox" id="checkbox-1" ?checked="${this.selected}" class="checkbox__input">
-            <label for="checkbox-1" class="checkbox__label">${this.selected}</label>
+            <label for="checkbox-1" class="checkbox__label"></label>
           </div>
 
           <!-- <div class="checkbox">
