@@ -8,327 +8,134 @@ export class TheCheckbox extends LitElement {
         display: flex;
       }
 
-
-      .pure-material-checkbox {
-          z-index: 0;
-          position: relative;
-          display: inline-block;
-          color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
-          font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
-          font-size: 16px;
-          line-height: 1.5;
+      .content {
+        background-color: #FFFFFF;
+        max-width: 80%;
+        padding: 8px 16px;
+        margin-top: -56px;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
       }
 
-      /* Input */
-      .pure-material-checkbox > input {
-          appearance: none;
-          -moz-appearance: none;
-          -webkit-appearance: none;
-          z-index: -1;
-          position: absolute;
-          left: -10px;
-          top: -8px;
-          display: block;
-          margin: 0;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
-          box-shadow: none;
-          outline: none;
-          opacity: 0;
-          transform: scale(1);
-          pointer-events: none;
-          transition: opacity 0.3s, transform 0.2s;
+      .checkbox {
+        font-family: 'Roboto', sans-serif;
+        margin-top: 8px;
+        margin-bottom: 8px;
       }
 
-      /* Span */
-      .pure-material-checkbox > span {
-          display: inline-block;
-          width: 100%;
-          cursor: pointer;
+      .checkbox__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
       }
 
-      /* Box */
-      .pure-material-checkbox > span::before {
-          content: "";
-          display: inline-block;
-          box-sizing: border-box;
-          margin: 3px 11px 3px 1px;
-          border: solid 2px; /* Safari */
-          border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
-          border-radius: 2px;
-          width: 18px;
-          height: 18px;
-          vertical-align: top;
-          transition: border-color 0.2s, background-color 0.2s;
+      .checkbox__label {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.87);
+        position: relative;
+        cursor: pointer;
+        line-height: 24px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 28px;
       }
 
-      /* Checkmark */
-      .pure-material-checkbox > span::after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 3px;
-          left: 1px;
-          width: 10px;
-          height: 5px;
-          border: solid 2px transparent;
-          border-right: none;
-          border-top: none;
-          transform: translate(3px, 4px) rotate(-45deg);
+      .checkbox__label:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        margin: 3px;
+        border: 2px rgba(0, 0, 0, 0.54) solid;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
       }
 
-      /* Checked, Indeterminate */
-      .pure-material-checkbox > input:checked,
-      .pure-material-checkbox > input:indeterminate {
-          background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+      .checkbox__input:checked ~ .checkbox__label:before {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K");
+        background-color: #2196F3;
+        border-color: #2196F3;
+        -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjx0aXRsZT51bnRpdGxlZDwvdGl0bGU+PHBhdGggZD0iTTAsMFYxSDFWMEgwWk0wLjQ1LDAuNzRsLTAuMDguMDhMMC4yOCwwLjc0LDAuMTQsMC42bDAuMDgtLjA4TDAuMzYsMC42NWwwLjQxLS40MUwwLjg2LDAuMzJaIi8+PC9zdmc+");
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjx0aXRsZT51bnRpdGxlZDwvdGl0bGU+PHBhdGggZD0iTTAsMFYxSDFWMEgwWk0wLjQ1LDAuNzRsLTAuMDguMDhMMC4yOCwwLjc0LDAuMTQsMC42bDAuMDgtLjA4TDAuMzYsMC42NWwwLjQxLS40MUwwLjg2LDAuMzJaIi8+PC9zdmc+");
       }
 
-      .pure-material-checkbox > input:checked + span::before,
-      .pure-material-checkbox > input:indeterminate + span::before {
-          border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-          background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+      .checkbox__input:disabled ~ .checkbox__label {
+        color: rgba(0, 0, 0, 0.38);
       }
 
-      .pure-material-checkbox > input:checked + span::after,
-      .pure-material-checkbox > input:indeterminate + span::after {
-          border-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+      .checkbox__input:disabled ~ .checkbox__label:before {
+        border-color: rgba(0, 0, 0, 0.26);
       }
 
-      .pure-material-checkbox > input:indeterminate + span::after {
-          border-left: none;
-          transform: translate(4px, 3px);
+      .checkbox__input:checked:disabled ~ .checkbox__label:before {
+        background-color: rgba(0, 0, 0, 0.26);
+        background-clip: padding-box;
       }
 
-      /* Hover, Focus */
-      .pure-material-checkbox:hover > input {
-          opacity: 0.04;
+      .checkbox__description {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 28px;
       }
 
-      .pure-material-checkbox > input:focus {
-          opacity: 0.12;
+      .checkbox__input ~ .checkbox__label:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
       }
 
-      .pure-material-checkbox:hover > input:focus {
-          opacity: 0.16;
+      .checkbox__input:focus ~ .checkbox__label:after {
+        -webkit-animation: click-wave .5s;
+        animation: click-wave .5s;
       }
 
-      /* Active */
-      .pure-material-checkbox > input:active {
-          opacity: 1;
-          transform: scale(0);
-          transition: transform 0s, opacity 0s;
+      .checkbox__input:checked ~ .checkbox__label:after {
+        background-color: #2196F3;
       }
 
-      .pure-material-checkbox > input:active + span::before {
-          border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+      .checkbox__input:not(:checked) ~ .checkbox__label:after {
+        background-color: #000;
       }
 
-      .pure-material-checkbox > input:checked:active + span::before {
-          border-color: transparent;
-          background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
-      }
-
-      /* Disabled */
-      .pure-material-checkbox > input:disabled {
-          opacity: 0;
-      }
-
-      .pure-material-checkbox > input:disabled + span {
-          color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
-          cursor: initial;
-      }
-
-      .pure-material-checkbox > input:disabled + span::before {
-          border-color: currentColor;
-      }
-
-      .pure-material-checkbox > input:checked:disabled + span::before,
-      .pure-material-checkbox > input:indeterminate:disabled + span::before {
-          border-color: transparent;
-          background-color: currentColor;
-      }
-
-      /* iPhone X and Xs Max */
-      @media only screen 
-          and (min-device-width: 375px) 
-          and (min-device-height: 812px) 
-          and (-webkit-device-pixel-ratio: 3)
-          and (orientation: portrait) { 
-          /* styles */
-          .pure-material-checkbox > span::before {
-          content: "";
-            width: 50px;
-            height: 50px;
+      @-webkit-keyframes click-wave {
+        0% {
+          width: 24px;
+          height: 24px;
+          opacity: 0.5;
         }
-
-        /* Checkmark */
-        .pure-material-checkbox > span::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 50px;
-            height: 20px;
-            border: solid 5px transparent;
-            border-right: none;
-            border-top: none;
-            transform: translate(3px, 4px) rotate(-45deg);
+        100% {
+          width: 48px;
+          height: 48px;
+          margin-left: -12px;
+          margin-top: -12px;
+          opacity: 0.0;
         }
-
-        .pure-material-checkbox > input {
-            left: 0px;
-            top: 0px;
-            width: 50px;
-            height: 50px;
-        }
-
-          
       }
 
-      /* iPhone XR */
-      @media only screen 
-          and (min-device-width: 414px) 
-          and (min-device-height: 896px) 
-          and (-webkit-device-pixel-ratio: 2) 
-          and (orientation: portrait) { 
-          /* styles */
-          .pure-material-checkbox > span::before {
-          content: "";
-            width: 50px;
-            height: 50px;
+      @keyframes click-wave {
+        0% {
+          width: 24px;
+          height: 24px;
+          opacity: 0.5;
         }
-
-        /* Checkmark */
-        .pure-material-checkbox > span::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 50px;
-            height: 20px;
-            border: solid 5px transparent;
-            border-right: none;
-            border-top: none;
-            transform: translate(3px, 4px) rotate(-45deg);
-        }
-
-        .pure-material-checkbox > input {
-            left: 0px;
-            top: 0px;
-            width: 50px;
-            height: 50px;
-        }
-
-      }
-
-
-      /* iPhone 6,7 */
-      @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 667px) { 
-          /* styles */
-          .pure-material-checkbox > span::before {
-          content: "";
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Checkmark */
-        .pure-material-checkbox > span::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 50px;
-            height: 20px;
-            border: solid 5px transparent;
-            border-right: none;
-            border-top: none;
-            transform: translate(3px, 4px) rotate(-45deg);
-        }
-
-        .pure-material-checkbox > input {
-            left: 0px;
-            top: 0px;
-            width: 50px;
-            height: 50px;
-        }
-
-
-      }
-
-      /* iPhone 6+,7+ */
-      @media only screen 
-        and (min-device-width : 414px) 
-        and (max-device-width : 736px) { 
-        /* styles */
-        .pure-material-checkbox > span::before {
-          content: "";
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Checkmark */
-        .pure-material-checkbox > span::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 50px;
-            height: 20px;
-            border: solid 5px transparent;
-            border-right: none;
-            border-top: none;
-            transform: translate(3px, 4px) rotate(-45deg);
-        }
-
-        .pure-material-checkbox > input {
-            left: 0px;
-            top: 0px;
-            width: 50px;
-            height: 50px;
-        }
-
-      }
-
-      /* iPhone 5, SE (portrait & landscape)----------- */
-      @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px) {
-        /* STYLES GO HERE */
-
-        .pure-material-checkbox > span::before {
-          content: "";
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Checkmark */
-        .pure-material-checkbox > span::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 50px;
-            height: 20px;
-            border: solid 5px transparent;
-            border-right: none;
-            border-top: none;
-            transform: translate(3px, 4px) rotate(-45deg);
-        }
-
-        .pure-material-checkbox > input {
-            left: 0px;
-            top: 0px;
-            width: 50px;
-            height: 50px;
+        100% {
+          width: 48px;
+          height: 48px;
+          margin-left: -12px;
+          margin-top: -12px;
+          opacity: 0.0;
         }
       }
 
@@ -338,7 +145,7 @@ export class TheCheckbox extends LitElement {
 
   static get properties() {
     return {
-       
+       selected: Boolean
     };
   }
 
@@ -349,10 +156,26 @@ export class TheCheckbox extends LitElement {
 
   render() {
     return html`
-      <label class="pure-material-checkbox">
-        <input type="checkbox">
-        <span></span>
-      </label>
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox-1" ?checked="${this.selected}" class="checkbox__input">
+            <label for="checkbox-1" class="checkbox__label"></label>
+          </div>
+
+          <!-- <div class="checkbox">
+            <input type="checkbox" id="checkbox-2" class="checkbox__input">
+            <label for="checkbox-2" class="checkbox__label">Checkbox 2</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox-3" checked="checked" class="checkbox__input" disabled>
+            <label for="checkbox-3" class="checkbox__label">Checkbox 3</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox-4" class="checkbox__input" disabled>
+            <label for="checkbox-4" class="checkbox__label">Checkbox 4</label>
+          </div> -->
+
     `;
   }
 

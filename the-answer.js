@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import './the-checkbox';
 
 
 export class TheAnswer extends LitElement {
@@ -73,6 +74,7 @@ export class TheAnswer extends LitElement {
   constructor() {
     super();
     this.selected = false;
+    this.disabled = true;
   }
 
   render() {
@@ -81,7 +83,7 @@ export class TheAnswer extends LitElement {
 
         <div id="answer-container" class="answer-container"  @click="${this._selectAnswerEvent}">
             <div class="answer-label">
-              <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div>
+              <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div><the-checkbox .selected="${this.selected}" .disabled="${this.disabled}"></the-checkbox>
               <div class="spacing"></div>
             </div>
         </div>
