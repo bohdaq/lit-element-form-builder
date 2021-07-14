@@ -476,8 +476,8 @@ export class SingaporeIncentivesMatch extends LitElement {
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
                 <div class="main-container">
                   
-                  <div class="content-container animate__animated" id="animate-container">
-                    <div class="inner-content-container">
+                  <div class="content-container">
+                    <div class="inner-content-container animate__animated" id="animate-container">
 
                         ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                           html`
@@ -582,13 +582,13 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
-    animationContainer.classList.add('animate__fadeOutUp');
+    animationContainer.classList.add('animate__slideOutLeft');
 
     const that = this;
     setTimeout(() => {
-      animationContainer.classList.remove('animate__fadeOutUp');
+      animationContainer.classList.remove('animate__slideOutLeft');
       that.requestUpdate();
-      animationContainer.classList.add('animate__fadeInUp');
+      animationContainer.classList.add('animate__slideInRight');
 
 
       if(this.currentStep.Type === 'QUESTION_ANSWER') {
@@ -608,6 +608,12 @@ export class SingaporeIncentivesMatch extends LitElement {
   _nextQuestion(ev) {
     this.searchPayload.push(ev.detail);
     console.log('_nextQuestion', this.searchPayload);
+
+    // const theQuestion = this.shadowRoot.querySelector('the-question');
+    // theQuestion._clearSelection();
+
+    this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+
     const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.Questions.length;
     if(isLastQuestion) {
       this.currentQuestionIndex = 0;
@@ -620,12 +626,12 @@ export class SingaporeIncentivesMatch extends LitElement {
 
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
-    animationContainer.classList.add('animate__fadeOutUp');
+    animationContainer.classList.add('animate__slideOutLeft');
     const that = this;
     setTimeout(() => {
-      animationContainer.classList.remove('animate__fadeOutUp');
+      animationContainer.classList.remove('animate__slideOutLeft');
       that.requestUpdate();
-      animationContainer.classList.add('animate__fadeInUp');
+      animationContainer.classList.add('animate__slideInRight');
       that.scrollTo({top: 0, behavior: 'smooth'});
 
       if(this.currentStep.Type === 'QUESTION_ANSWER') {

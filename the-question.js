@@ -111,6 +111,8 @@ export class TheQuestion extends LitElement {
           }
         }
       });
+
+
       if(!this.AllowMultipleAnswers) {
         const that = this;
         setTimeout(() => {
@@ -120,9 +122,7 @@ export class TheQuestion extends LitElement {
   }
 
   _nextQuestionClicked(ev) {
-    this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
-      item.deselect();
-    });
+    this._clearSelection();
 
 
     const questionKey = this.item._Key;
@@ -146,6 +146,12 @@ export class TheQuestion extends LitElement {
     let that = this;
     setTimeout(()=> {
       that.shadowRoot.querySelector('#information-description').innerHTML = this.item.Description;
+    });
+  }
+
+  _clearSelection() {
+    this.shadowRoot.querySelectorAll('the-answer').forEach((item) => {
+      item.deselect();
     });
   }
 
