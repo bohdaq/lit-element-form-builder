@@ -16,7 +16,7 @@ export class TheAnswer extends LitElement {
         margin: .6em 1.2em .6em 0;
         cursor: pointer;
         padding: 1em;
-        width: 10em;
+        min-width: 300px;
         border: 1px solid lightgrey;
         border-radius: 5px;
       }
