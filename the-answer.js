@@ -81,7 +81,7 @@ export class TheAnswer extends LitElement {
     return html`
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-        <div id="answer-container" class="answer-container" .selected=${this.selected} @click="${this._selectAnswerEvent}">
+        <div id="answer-container" class="answer-container" ?selected=${this.selected} @click="${this._selectAnswerEvent}">
             <div class="answer-label">
               <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div><the-checkbox .selected="${this.selected}" .disabled="${this.disabled}"></the-checkbox>
               <div class="spacing"></div>

@@ -609,8 +609,8 @@ export class SingaporeIncentivesMatch extends LitElement {
     this.searchPayload.push(ev.detail);
     console.log('_nextQuestion', this.searchPayload);
 
-    // const theQuestion = this.shadowRoot.querySelector('the-question');
-    // theQuestion._clearSelection();
+    const theQuestion = this.shadowRoot.querySelector('the-question');
+    theQuestion._clearSelection();
 
     this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
 
