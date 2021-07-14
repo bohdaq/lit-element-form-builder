@@ -36,6 +36,7 @@ export class TheQuestion extends LitElement {
         text-transform: none;
         color: rgb(117,117,117);
         margin: 1em 0;
+        height: 3em;
       }
 
 
@@ -73,14 +74,18 @@ export class TheQuestion extends LitElement {
     return html`
                   <div class="question-container">
                     <div id="information-description" class="question-description"></div>
+                    <div class="hint">
+                      ${!this.item.AllowMultipleAnswers  ?
+                        html`Please select one` : html`Please select one or more and click next`
+                      }
+                    </div>
                     <div class="answers-container">
 
 
-                    ${this.item.AnswerOptions.map((answer, index) => 
-                      html`
-                        <the-answer Code="${answer.Code}" .item="${answer}">${answer.AnswerText}</the-answer>
-                      
-                      `)}
+                      ${this.item.AnswerOptions.map((answer, index) => 
+                        html`
+                          <the-answer Code="${answer.Code}" .item="${answer}">${answer.AnswerText}</the-answer>
+                        `)}
                       
                     </div>
 
