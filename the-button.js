@@ -6,24 +6,30 @@ export class TheButton extends LitElement {
     return css`
       :host {
         display: inline-block;
+        --button-background-color-accent: rgb(245, 147, 54);
       }
 
+
       a.button {
-        display:inline-block;
+        background-color: var(--button-background-color-accent);
+        border-radius: 3px;
+        height: 33px;
+        display:flex;
+        align-items: center;
         padding: 0.3em 1.2em;
-        border-radius: .5em;
         box-sizing: border-box;
         text-decoration: none;
         font-family: 'Roboto',sans-serif;
         font-weight: 300;
+        font-size: 13px;
         color: #FFFFFF;
-        background-color: #4eb5f1;
         text-align: center;
         transition: all 0.2s;
+        text-transform: uppercase;
       }
       
       a.button:hover {
-        background-color: #4095c6;
+        opacity: 0.8;
       }
       @media all and (max-width:30em){
        a.button {

@@ -10,6 +10,7 @@ export class TheQuestion extends LitElement {
 
       .question-container {
         font-size: 1.2rem;
+        padding: var(--desciption-padding);
       }
 
       .question-title {
@@ -24,19 +25,10 @@ export class TheQuestion extends LitElement {
         color: rgba(0,0,0,1);
       }
 
-      .question-description {
-        margin-top: 0.35em;
-        font-family: "Poppins",sans-serif;
-        font-size: 1em;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0em;
-        margin-right: calc(0em * -1);
-        text-transform: none;
-        color: rgb(117,117,117);
-        margin: 1em 0;
-        height: 3em;
+      .answers-container {
+        padding: var(--desciption-padding);
+        padding-bottom: 0;
+        
       }
 
 
@@ -51,6 +43,25 @@ export class TheQuestion extends LitElement {
 
       .flex {
         flex: 1;
+      }
+
+      .description {
+        color: var(--desciption-color);
+        font-family: var(--desciption-font-family);
+        font-size: var(--desciption-font-size);
+        font-weight: var(--desciption-font-weight);
+        line-height: var(--desciption-line-height);
+        padding: var(--desciption-padding);
+      }
+
+      .hint {
+        color: var(--hint-color);
+        font-family: var(--hint-font-family);
+        font-size: var(--hint-font-size);
+        font-weight: var(--hint-font-weight);
+        line-height: var(--hint-line-height);
+        padding: var(--desciption-padding);
+        padding-top: 1.7em;
       }
 
     `;
@@ -73,7 +84,7 @@ export class TheQuestion extends LitElement {
   render() {
     return html`
                   <div class="question-container">
-                    <div id="information-description" class="question-description"></div>
+                    <div id="information-description" class="question-description description"></div>
                     <div class="hint">
                       ${!this.item.AllowMultipleAnswers  ?
                         html`Please select one` : html`Please select one or more and click next`

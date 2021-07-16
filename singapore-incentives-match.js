@@ -30,7 +30,14 @@ export class SingaporeIncentivesMatch extends LitElement {
         --desciption-font-weight: 100;
         --desciption-line-height: 24px;
         --desciption-padding: var(--heading-font-padding);
+
+        --hint-color: rgba(0, 0, 0, 0.87);
+        --hint-font-family: "Roboto Regular", RobotoDraft, Roboto, sans-serif;
+        --hint-font-size: 16px;
+        --hint-font-weight: 700;
+        --hint-line-height: 24px;
       }
+
 
       .heading {
         color: var(--heading-font-color);
@@ -50,6 +57,8 @@ export class SingaporeIncentivesMatch extends LitElement {
         line-height: var(--desciption-line-height);
         padding: var(--desciption-padding);
       }
+
+
 
       .into-text-wrapper {
         margin: 1em;
@@ -549,7 +558,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="buttons-right-container">
                         ${this.currentStep.Type === 'INFORMATION'  ?
                             html`
-                              <the-button @click="${this.nextStepClicked}">Get Started</the-button>
+                              <the-button accent @click="${this.nextStepClicked}">Get Started</the-button>
                             ` : html`` 
                         }
 
