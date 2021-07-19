@@ -7,11 +7,12 @@ export class TheButton extends LitElement {
       :host {
         display: inline-block;
         --button-background-color-accent: rgb(245, 147, 54);
+        --button-background-color: rgba(255,255,255,1);
+        --button-text-color: rgb(77, 161, 255);
       }
 
-
       a.button {
-        background-color: var(--button-background-color-accent);
+        background-color: var(--button-background-color);
         border-radius: 3px;
         height: 33px;
         display:flex;
@@ -22,12 +23,17 @@ export class TheButton extends LitElement {
         font-family: 'Roboto',sans-serif;
         font-weight: 300;
         font-size: 13px;
-        color: #FFFFFF;
+        color: var(--button-text-color);
         text-align: center;
         transition: all 0.2s;
         text-transform: uppercase;
       }
       
+      :host([accent]) a.button {
+        background-color: var(--button-background-color-accent);
+        color: white;
+      }
+
       a.button:hover {
         opacity: 0.8;
       }

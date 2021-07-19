@@ -558,19 +558,22 @@ export class SingaporeIncentivesMatch extends LitElement {
                       <div class="buttons-right-container">
                         ${this.currentStep.Type === 'INFORMATION'  ?
                             html`
+                              
                               <the-button accent @click="${this.nextStepClicked}">Get Started</the-button>
                             ` : html`` 
                         }
 
                         ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                             html`
-                              <the-button @click="${this._nextQuestion}">Next</the-button>
+                              <the-button @click="${this.backClicked}">Back</the-button>
+                              <the-button accent @click="${this._nextQuestion}">Next</the-button>
                             ` : html`` 
                         }
 
                         ${this.currentStep.Type === 'RESULTS'  ?
                             html`
-                              <the-button @click="${this._proceedToThePlatform}">Sign Up</the-button>
+                              <the-button @click="${this.backClicked}">Back</the-button>
+                              <the-button accent @click="${this._proceedToThePlatform}">Sign Up</the-button>
                             ` : html`` 
                         }
                         
