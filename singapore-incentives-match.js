@@ -408,6 +408,12 @@ export class SingaporeIncentivesMatch extends LitElement {
         background-color: blue;
       }
 
+      .top-part-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
       
       @media all and (max-width: 768px) {
           
@@ -418,6 +424,16 @@ export class SingaporeIncentivesMatch extends LitElement {
 
       .inner-content-container {
         padding: 1em;
+      }
+
+      .content-free-space {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+
+      .content-free-space the-button {
+        transform: scale(2);
       }
 
 
@@ -517,43 +533,55 @@ export class SingaporeIncentivesMatch extends LitElement {
                 <div class="main-container">
                   
                   <div class="content-container">
-                    <div class="inner-content-container animate__animated" id="animate-container">
+                    <div class="animate__animated top-part-container" id="animate-container">
+                      <div class="inner-content-container">
 
-                        ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
-                          html`
+                          ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
+                            html`
 
-                            <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
-                        
-                        ` : html``}
-
-                        ${this.currentStep.Type === 'RESULTS'  ?
-                          html`
+                              <the-question .index="${this.currentQuestionIndex}" .item="${this.currentQuestion}" .AllowMultipleAnswers="${this.currentQuestion.AllowMultipleAnswers}"></the-question>
                           
-                            <the-results></the-results>
-                          
-                        ` : html``}
+                          ` : html``}
 
-                        ${this.currentStep.Type === 'INFORMATION'  ?
-                          html`
-
-
-                            <div class="intro-container">
-                                <h1 class="heading">${this.currentStep.Name}</h1>
-
-                                <div class="into-text-wrapper">
-                                  <span id="information-description" class="intro-description description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                                  </span>
-                                </div>
-                            </div>
-
+                          ${this.currentStep.Type === 'RESULTS'  ?
+                            html`
+                            
+                              <the-results></the-results>
                             
                           ` : html``}
 
-                    </div>
+                          ${this.currentStep.Type === 'INFORMATION'  ?
+                            html`
 
-                    <div class="content-flex"></div>
-                    <div class="buttons-bottom-bar">
+
+                              <div class="intro-container">
+                                  <h1 class="heading">${this.currentStep.Name}</h1>
+
+                                  <div class="into-text-wrapper">
+                                    <span id="information-description" class="intro-description description">
+                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                    </span>
+                                  </div>
+                              </div>
+
+                              
+                            ` : html``}
+
+                      </div>
+
+                      <div class="content-flex content-free-space">
+
+                          ${this.currentStep.Type === 'INFORMATION'  ?
+                            html`
+
+                              <the-button accent @click="${this.nextStepClicked}">Get Started</the-button>
+
+                            ` : html``}   
+
+                      </div>
+
+
+                      <div class="buttons-bottom-bar">
                       <div class="content-flex"></div>
                       <div class="buttons-right-container">
                         ${this.currentStep.Type === 'INFORMATION'  ?
@@ -579,8 +607,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                         
                       </div>
                     </div>
-
-
+                    </div>
 
                   </div>
                 </div>

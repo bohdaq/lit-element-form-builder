@@ -20,6 +20,10 @@ export class TheResults extends LitElement {
         justify-content: center;
       }
 
+      the-button {
+        transform: scale(2);
+      }
+
       
     `;
   }
@@ -43,7 +47,7 @@ export class TheResults extends LitElement {
 
               <p class="matches-heading">${this.teaserSearchResponse.Result}</p>
               <div class="button-container">
-                <the-button @click="${this.navigateToPlatform}">Sign Up</the-button>
+                <the-button accent @click="${this.navigateToPlatform}">Sign Up</the-button>
               </div>
     `;
   }
