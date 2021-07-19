@@ -512,7 +512,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
     }
 
-    this.addEventListener('next-question', this._nextQuestion);
+    this.addEventListener('next-question', this._nextQuestionListener);
     this.addEventListener('proceed-to-the-platform', this._proceedToThePlatform);
 
 
@@ -680,12 +680,34 @@ export class SingaporeIncentivesMatch extends LitElement {
   }
 
   _nextQuestion(ev) {
-    this.searchPayload.push(ev.detail);
+    const question = this.shadowRoot.querySelector('the-question');
+
+    const detail = {
+      questionKey: question.item._Key,
+      answers: [...question.answers]
+    }
+
+    this.searchPayload.push(detail);
+    question._clearSelection();
+
+    this._nextQuestionTransition();
+
     console.log('_nextQuestion', this.searchPayload);
+  }
+
+  _nextQuestionListener(ev) {
+    this.searchPayload.push(ev.detail);
+    console.log('_nextQuestionListener', this.searchPayload);
 
     const theQuestion = this.shadowRoot.querySelector('the-question');
     theQuestion._clearSelection();
 
+    this._nextQuestionTransition();
+
+    console.log('_nextQuestionListener', this.searchPayload);
+  }
+
+  _nextQuestionTransition() {
     this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
 
     const isLastQuestion = this.currentQuestionIndex + 1 === this.currentStep.Questions.length;
