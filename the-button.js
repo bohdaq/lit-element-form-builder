@@ -34,9 +34,22 @@ export class TheButton extends LitElement {
         color: white;
       }
 
+      :host([disabled]) a.button {
+        background-color: rgba(0, 0, 0, 0.07);
+        color: rgba(0, 0, 0, 0.40);
+      }
+
       a.button:hover {
         opacity: 0.8;
       }
+
+      :host([disabled]) a.button:hover {
+        opacity: 1;
+        cursor: default;
+      }
+
+
+
       @media all and (max-width:30em){
        a.button {
         display: block;
