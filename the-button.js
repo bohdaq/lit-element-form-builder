@@ -59,7 +59,11 @@ export class TheButton extends LitElement {
   }
 
   static get properties() {
-    return {};
+    return {
+      disabled: {
+        reflect: true,
+      }
+    };
   }
 
   constructor() {

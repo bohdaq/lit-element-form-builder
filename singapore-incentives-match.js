@@ -478,15 +478,26 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   static get properties() {
     return {
-       
+       answers: Object,
+       isButtonDisabled: Boolean,
     };
   }
 
   constructor() {
     super();
 
+    Array.prototype.remove = function(elem) {
+      var indexElement = this.findIndex(el => el === elem);
+      if (indexElement != -1)
+        this.splice(indexElement, 1);
+      return this;
+    };  
+
     this.searchPayload = [];
     this._configResponseRetrieved = false;
+    this.answers = {};
+    this.isButtonDisabled = true;
+    this.requestUpdate();
 
     fetch('https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES')
     .then(response => response.json())
@@ -514,6 +525,7 @@ export class SingaporeIncentivesMatch extends LitElement {
 
     this.addEventListener('next-question', this._nextQuestionListener);
     this.addEventListener('proceed-to-the-platform', this._proceedToThePlatform);
+    this.addEventListener('answer-selected', this._answerSelected);
 
 
     let that = this;
@@ -594,7 +606,7 @@ export class SingaporeIncentivesMatch extends LitElement {
                         ${this.currentStep.Type === 'QUESTION_ANSWER'  ?
                             html`
                               <the-button @click="${this.backClicked}">Back</the-button>
-                              <the-button accent @click="${this._nextQuestion}">Next</the-button>
+                              <the-button accent ?disabled="${this.isButtonDisabled}" @click="${this._nextQuestion}">Next</the-button>
                             ` : html`` 
                         }
 
@@ -614,15 +626,36 @@ export class SingaporeIncentivesMatch extends LitElement {
       ` : html `` }
 
     `;
-    
 
-    
-    
-    
   }
+
+
+  _answerSelected(ev) {
+    const question = ev.detail.question;
+    const answer = ev.detail.answer;
+
+    const isAnswerArrayInitialized = !!this.answers[question._Key];
+    if(!isAnswerArrayInitialized) this.answers[question._Key] = [];
+
+    const isAnswerAlreadyPresent = this.answers[question._Key].includes(answer.Code);
+    if(!isAnswerAlreadyPresent) { 
+      this.answers[question._Key].push(answer.Code);
+    } else {
+      this.answers[question._Key].remove(answer.Code);
+    }
+
+    this.isButtonDisabled = this.answers[question._Key].length === 0;
+    this.requestUpdate();
+
+    console.log('_answerSelected', this.answers[question._Key], this.answers, this.isButtonDisabled);
+  }
+
 
   nextStepClicked() {
     console.log('nextStepClicked');
+
+    this.isButtonDisabled = true;
+    this.requestUpdate();
 
     this.currentStepIndex = this.currentStepIndex + 1;
     this.currentStep = this.config.Steps[this.currentStepIndex];
@@ -680,6 +713,8 @@ export class SingaporeIncentivesMatch extends LitElement {
   }
 
   _nextQuestion(ev) {
+    if(this.isButtonDisabled) return;
+
     const question = this.shadowRoot.querySelector('the-question');
 
     const detail = {
@@ -697,12 +732,12 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   _nextQuestionListener(ev) {
     this.searchPayload.push(ev.detail);
-    console.log('_nextQuestionListener', this.searchPayload);
 
     const theQuestion = this.shadowRoot.querySelector('the-question');
     theQuestion._clearSelection();
 
     this._nextQuestionTransition();
+    this.isButtonDisabled = true;
 
     console.log('_nextQuestionListener', this.searchPayload);
   }
@@ -742,6 +777,10 @@ export class SingaporeIncentivesMatch extends LitElement {
     } else {
       location.href = `https://avocado-platform-qa.web.app/matchme?AnonymousUserId=${this.teaserSearchResponse.AnonymousUserId}`
     }
+  }
+
+  isAtLeastOneAnswerSelected(searchPayload, question) {
+    console.log('isAtLeastOneAnswerSelected', searchPayload, question);
   }
 
   
