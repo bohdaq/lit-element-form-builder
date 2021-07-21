@@ -712,17 +712,10 @@ export class SingaporeIncentivesMatch extends LitElement {
     });
   }
 
-  _nextQuestion(ev) {
+  _nextQuestion(ev) { // invoked explicitly by button press
     if(this.isButtonDisabled) return;
 
     const question = this.shadowRoot.querySelector('the-question');
-
-    const detail = {
-      questionKey: question.item._Key,
-      answers: [...question.answers]
-    }
-
-    this.searchPayload.push(detail);
     question._clearSelection();
 
     this._nextQuestionTransition();
@@ -730,9 +723,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     console.log('_nextQuestion', this.searchPayload);
   }
 
-  _nextQuestionListener(ev) {
-    this.searchPayload.push(ev.detail);
-
+  _nextQuestionListener(ev) { // invoked if single selection and option selected
     const theQuestion = this.shadowRoot.querySelector('the-question');
     theQuestion._clearSelection();
 
