@@ -93,12 +93,15 @@ export class TheAnswer extends LitElement {
 
   _selectAnswerEvent() {
     const answerContainer = this.shadowRoot.querySelector('#answer-container');
-    if(!this.selected) {
-      answerContainer.classList.add('animate__pulse');
-    } else {
-      answerContainer.classList.remove('animate__pulse');
-    }
+    answerContainer.classList.remove('animate__pulse');
 
+
+    if(!this.selected) {
+      setTimeout(()=> {
+        answerContainer.classList.add('animate__pulse');
+      });
+  
+    } 
     
     this.answerSelectedEvent();
   }
