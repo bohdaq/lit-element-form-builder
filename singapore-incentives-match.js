@@ -650,6 +650,46 @@ export class SingaporeIncentivesMatch extends LitElement {
     console.log('_answerSelected', this.answers[question._Key], this.answers, this.isButtonDisabled);
   }
 
+  backClicked() {
+    const numberOfSteps = `step ${this.currentStepIndex} of ${this.config.Steps.length}`;
+    const numberOfQuestions = `question ${this.currentQuestionIndex} of ${this.currentStep.Questions.length}`;
+    
+    console.log(numberOfSteps);
+    console.log(numberOfQuestions);
+
+    if(this.currentQuestionIndex === 0) {
+      this.currentStepIndex = this.currentStepIndex - 1;
+      this.currentStep = this.config.Steps[this.currentStepIndex];
+      this.currentQuestionIndex = this.currentStep.Questions.length - 1;
+      this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+      this.backAnimationTransition();
+      return
+    } 
+    
+    
+    this.currentQuestionIndex = this.currentQuestionIndex - 1;
+    this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+    this.backAnimationTransition();
+
+
+  }
+
+  backAnimationTransition() {
+    const animationContainer = this.shadowRoot.querySelector('#animate-container');
+    animationContainer.classList.add('animate__slideOutRight');
+
+    const that = this;
+    setTimeout(() => {
+      animationContainer.classList.remove('animate__slideOutRight');
+      that.requestUpdate();
+      animationContainer.classList.add('animate__slideInLeft');
+
+
+      if(this.currentStep.Type === 'QUESTION_ANSWER') {
+        that._updateDescription();
+      }
+    }, 300)
+  }
 
   nextStepClicked() {
     console.log('nextStepClicked');
@@ -714,12 +754,12 @@ export class SingaporeIncentivesMatch extends LitElement {
 
   _nextQuestion(ev) { // invoked explicitly by button press
     console.log('_nextQuestion');
+    if(this.isButtonDisabled) return;
     this._nextQuestionListener();
   }
 
   _nextQuestionListener(ev) { // invoked if single selection and option selected
     console.log('_nextQuestionListener');
-    if(this.isButtonDisabled) return;
 
     const theQuestion = this.shadowRoot.querySelector('the-question');
     theQuestion._clearSelection();
