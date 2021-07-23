@@ -400,10 +400,6 @@ export class SingaporeIncentivesMatch extends LitElement {
         flex-direction: column;
       }
 
-      .intro-description {
-
-      }
-
       .progress-bar {
         display: block;
         width: 100px;
@@ -672,7 +668,9 @@ export class SingaporeIncentivesMatch extends LitElement {
       this.currentStep = this.config.Steps[this.currentStepIndex];
       this.currentQuestionIndex = this.currentStep.Questions.length - 1;
       this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
-      this.answers[this.currentQuestion._Key] = [];
+      if(this.answers[this.currentQuestion._Key] ) {
+        this.answers[this.currentQuestion._Key] = [];
+      }
       this.backAnimationTransition();
       return
     } 
@@ -801,22 +799,25 @@ export class SingaporeIncentivesMatch extends LitElement {
       return;
     }
 
-    this.currentQuestionIndex = this.currentQuestionIndex + 1;
-    this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
-
+    const that = this;
 
     const animationContainer = this.shadowRoot.querySelector('#animate-container');
     animationContainer.classList.add('animate__slideOutLeft');
-    const that = this;
     setTimeout(() => {
       animationContainer.classList.remove('animate__slideOutLeft');
       that.requestUpdate();
+
+      that.currentQuestionIndex = this.currentQuestionIndex + 1;
+      that.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+      that.requestUpdate();
+
       animationContainer.classList.add('animate__slideInRight');
       that.scrollTo({top: 0, behavior: 'smooth'});
 
       if(this.currentStep.Type === 'QUESTION_ANSWER') {
         that._updateDescription();
       }
+      that.requestUpdate();
     }, 300)
   }
 
