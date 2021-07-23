@@ -13,6 +13,7 @@ export class TheResults extends LitElement {
 
       .matches-heading {
         text-align: center;
+        margin-bottom: 3em;
       }
 
       .button-container {
