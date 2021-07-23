@@ -633,12 +633,12 @@ export class SingaporeIncentivesMatch extends LitElement {
   _answerSelected(ev) {
     const question = ev.detail.question;
     const answer = ev.detail.answer;
+    const isSelected = ev.detail.selected;
 
     const isAnswerArrayInitialized = !!this.answers[question._Key];
     if(!isAnswerArrayInitialized) this.answers[question._Key] = [];
 
-    const isAnswerAlreadyPresent = this.answers[question._Key].includes(answer.Code);
-    if(!isAnswerAlreadyPresent) { 
+    if(!isSelected) { 
       this.answers[question._Key].push(answer.Code);
     } else {
       this.answers[question._Key].remove(answer.Code);
@@ -662,6 +662,7 @@ export class SingaporeIncentivesMatch extends LitElement {
       this.currentStep = this.config.Steps[this.currentStepIndex];
       this.currentQuestionIndex = this.currentStep.Questions.length - 1;
       this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+      this.answers[this.currentQuestion._Key] = [];
       this.backAnimationTransition();
       return
     } 
@@ -669,6 +670,7 @@ export class SingaporeIncentivesMatch extends LitElement {
     
     this.currentQuestionIndex = this.currentQuestionIndex - 1;
     this.currentQuestion = this.currentStep.Questions[this.currentQuestionIndex];
+    this.answers[this.currentQuestion._Key] = [];
     this.backAnimationTransition();
 
 

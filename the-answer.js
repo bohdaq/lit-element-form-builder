@@ -110,7 +110,8 @@ export class TheAnswer extends LitElement {
     let event = new CustomEvent('answer-selected', {
       detail: {
         question: this.question,
-        answer: this.item
+        answer: this.item,
+        selected: this.selected
       },
       bubbles: true, 
       composed: true
