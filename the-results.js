@@ -34,6 +34,10 @@ export class TheResults extends LitElement {
         padding: var(--desciption-padding);
       }
 
+      [hidden] {
+        display: none;
+      }
+
       
     `;
   }
@@ -42,7 +46,8 @@ export class TheResults extends LitElement {
     return {
         selected: Boolean,
         item: Boolean,
-        teaserSearchResponse: Object
+        teaserSearchResponse: Object,
+        isLoaded: Boolean,
     };
   }
 
@@ -50,17 +55,23 @@ export class TheResults extends LitElement {
     super();
     this.selected = false;
     this.teaserSearchResponse = { Result: '' };
+
+    this.isLoaded = false;
   }
 
   render() {
     return html`
 
-            <div class="description">
+            <div class="description" ?hidden="${!this.isLoaded}">
               <p class="matches-heading">${this.teaserSearchResponse.Result}</p>
               <div class="button-container">
                 <the-button accent @click="${this.navigateToPlatform}">Sign Up</the-button>
               </div>
             </div>
+
+            <the-spinner ?hidden="${this.isLoaded}"></the-spinner>
+
+
     `;
   }
 

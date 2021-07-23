@@ -4,6 +4,7 @@ import './the-question';
 import './the-answer';
 import './the-results';
 import './the-button';
+import './the-spinner';
 
 
 /**
@@ -743,6 +744,7 @@ export class SingaporeIncentivesMatch extends LitElement {
         const theResultsView = this.shadowRoot.querySelector('the-results');
         this.teaserSearchResponse = data;
         theResultsView.teaserSearchResponse = this.teaserSearchResponse;
+        theResultsView.isLoaded = true;
         theResultsView.requestUpdate();
 
         console.log('teaserSearchResponse', data);
