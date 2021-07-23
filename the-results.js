@@ -8,6 +8,7 @@ export class TheResults extends LitElement {
         justify-content: center;
         align-items: center;
         display: flex;
+        flex: 1;
       }
 
       .matches-heading {
