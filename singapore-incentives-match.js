@@ -493,7 +493,6 @@ export class SingaporeIncentivesMatch extends LitElement {
       return this;
     };  
 
-    this.searchPayload = [];
     this._configResponseRetrieved = false;
     this.answers = {};
     this.isButtonDisabled = true;
@@ -709,6 +708,16 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
 
     if(this.currentStep.Type === 'RESULTS') {
+      let payload = [];
+
+
+      for (const [key, value] of Object.entries(this.answers)) {
+        console.log(`${key}: ${value}`);
+        payload.push({
+          questionKey: key,
+          answers: value
+        });
+      }
       fetch(
         'https://mithun-dot-avocado-backend-v1.appspot.com/v1/programmes/INCENTIVES/teaser-search',
         {
@@ -716,7 +725,7 @@ export class SingaporeIncentivesMatch extends LitElement {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(this.searchPayload)
+          body: JSON.stringify(payload)
         }
       )
       .then(response => response.json())
@@ -807,9 +816,6 @@ export class SingaporeIncentivesMatch extends LitElement {
     }
   }
 
-  isAtLeastOneAnswerSelected(searchPayload, question) {
-    console.log('isAtLeastOneAnswerSelected', searchPayload, question);
-  }
 
   
 
