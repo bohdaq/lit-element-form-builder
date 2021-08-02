@@ -6,7 +6,7 @@ export class TheAnswer extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: inline-block;
+        display: flex;
         font-size: 1.5em;
       }
 
@@ -14,13 +14,12 @@ export class TheAnswer extends LitElement {
         transition: background-color 1s ease;
         background-color: transparent;
         color: rgb(2, 0, 35);
-        margin: .6em 1.2em .6em 0;
+        margin: .6em 0;
         cursor: pointer;
         padding: 1em;
-        min-width: 300px;
-        max-width: 300px;
         border: 1px solid lightgrey;
         border-radius: 5px;
+        flex: 1;
       }
 
       .answer-container:not(.selected):hover {
@@ -54,7 +53,6 @@ export class TheAnswer extends LitElement {
       }
 
       .inner-option-text-container {
-        width: 300px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -84,8 +82,7 @@ export class TheAnswer extends LitElement {
 
         <div id="answer-container" class="answer-container animate__animated" selected="${this.selected}" @click="${this._selectAnswerEvent}">
             <div class="answer-label">
-              <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div><the-checkbox .selected="${this.selected}" .disabled="${this.disabled}"></the-checkbox>
-              <div class="spacing"></div>
+              <div class="inner-option-text-container" title="${this.item.AnswerText}">${this.item.AnswerText}</div><div class="spacing"></div><the-checkbox .selected="${this.selected}" .disabled="${this.disabled}"></the-checkbox>
             </div>
         </div>
     `;

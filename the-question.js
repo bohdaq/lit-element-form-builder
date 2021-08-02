@@ -13,6 +13,13 @@ export class TheQuestion extends LitElement {
         padding: var(--desciption-padding);
       }
 
+
+      @media screen and (max-width: 375px) {
+        .question-container {
+            padding: 0;
+          }
+      }
+
       .question-title {
         font-family: "Poppins",sans-serif;
         font-size: 2em;
